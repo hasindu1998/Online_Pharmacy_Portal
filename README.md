@@ -1,4 +1,4 @@
-# IWT-Web-Project
+# Online_Pharmacy_Portal
 
 ## Project Contributors
 
