@@ -1,0 +1,50 @@
+.main_header 
+{
+    background-color: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_header img 
+{
+    height: 50px;
+}
+
+.main_header nav ul 
+{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.main_header nav ul li a 
+{
+    text-decoration: none;
+    font-size: 21px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #333;
+}
+
+.main_header nav ul li a:hover
+{
+    color: #007bff;
+}
+
+.main_header button 
+{
+    padding: 15px 20px;
+    background-color: #007bff;
+    font-size: 15px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.main_header button:hover 
+{
+    background-color: #0056b3;
+}
