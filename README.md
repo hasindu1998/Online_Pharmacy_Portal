@@ -11,8 +11,8 @@
 | IT23569522 | Medhani W A P      | Register page, Order page, FAQ, About us         |      |
 
 
-## Colour Palatte
+## Colour Palette
 
-Headings = #111111
-Content = #444444
-Buttons = #0098DA
+**Headings** = #111111 <br>
+**Content** = #444444 <br>
+**Buttons** = #0098DA
