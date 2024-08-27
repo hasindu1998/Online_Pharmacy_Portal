@@ -9,3 +9,10 @@
 | IT23539372 | Deshan G G D       | Product add/delete page, T&C                     |      |
 | IT23573000 | Lisaldi H B K      | Home, Contact us, User account                   |      |
 | IT23569522 | Medhani W A P      | Register page, Order page, FAQ, About us         |      |
+
+
+## Colour Palatte
+
+Headings = #111111
+Content = #444444
+Buttons = #0098DA

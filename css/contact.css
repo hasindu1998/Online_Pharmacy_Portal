@@ -1,0 +1,22 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+h1
+{
+    color: #111111;
+}
+
+h2
+{
+    color: #111111;
+}
+
+p
+{
+    color: #444444;
+}
