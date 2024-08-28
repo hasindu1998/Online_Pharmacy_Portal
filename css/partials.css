@@ -1,58 +1,90 @@
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
 }
 
-.main_header 
-{
-    background-color: #f8f9fa;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.main_header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.main_header img 
-{
-    height: 50px;
+.main_header img {
+  height: 50px;
 }
 
-.main_header nav ul 
-{
-    list-style: none;
-    display: flex;
-    gap: 15px;
+.main_header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
 }
 
-.main_header nav ul li a 
-{
-    text-decoration: none;
-    font-size: 18px;
-    padding-left: 15px;
-    padding-right: 15px;
-    color: #333;
+.main_header nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #333;
 }
 
-.main_header nav ul li a:hover
-{
-    color: #0098DA;
+.main_header nav ul li a:hover {
+  color: #0098da;
 }
 
-.main_header button 
-{
-    padding: 15px 20px;
-    background-color: #0098DA;
-    font-size: 15px;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+.main_header button {
+  padding: 15px 20px;
+  background-color: #0098da;
+  font-size: 15px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
 
-.main_header button:hover 
-{
-    background-color: #0077B6;
+.main_header button:hover {
+  background-color: #0077b6;
+}
+
+/* Footer CSS */
+
+.footer-container {
+  background-color: #f8f9fa;
+}
+.container {
+  display: flex;
+  justify-content: left;
+  margin-left: 50px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.footer-content {
+  margin-right: 300px;
+}
+
+.footer-details-icon{
+    vertical-align: center;
+}
+
+.footer-details {
+  margin-top: 10px;
+  cursor: pointer;
+  vertical-align: center;
+}
+
+.footer-links {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-details:hover {
+  color: #0098da;
+}
+
+.footer-links:hover{
+    color: #0098da;
 }
