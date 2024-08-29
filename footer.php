@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="./css/partials.css">
+    <link rel="stylesheet" href="./CSS/partials.css">
     <script src="./js/partials.js"></script>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <footer>
+<footer>
         <div class="footer-container">
             <div class="container">
                 <div class="footer-content">
@@ -45,6 +45,20 @@
                     <p class="footer-details">&#10148 <a href="" class="footer-links">About</a></p>
                     <p class="footer-details">&#10148 <a href="" class="footer-links">FAQ</a></p>
                     <p class="footer-details">&#10148 <a href="" class="footer-links">Contact</a></p>
+                </div>
+            </div>
+            <hr class="footer-row">
+            <div class="footer-end">
+                <div>
+                <p class="copyright-tag">Copyright &copy; 2024 <span class="bold-text">PharmacyX</span> All right reserved</p>
+                </div>
+
+                <div class="footer-end-links">
+                    <div><a href="" class="footer-end-links-content">Terms & Conditions</a></div>
+
+                    <div><h3>|</h3></div>
+
+                    <div><a href="" class="footer-end-links-content">Privacy Policy</a></div>
                 </div>
             </div>
         </div>
