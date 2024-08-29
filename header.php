@@ -15,7 +15,7 @@
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="aboutUs.php">About</a></li>
-                    <li><a href="">products</a></li>
+                    <li><a href="">Products</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>

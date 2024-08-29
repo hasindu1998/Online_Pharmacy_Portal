@@ -63,7 +63,7 @@ footer{
 }
 
 .footer-content {
-  margin-right: 300px;
+  margin-right: 200px;
 }
 
 .footer-details-icon{
@@ -79,10 +79,6 @@ footer{
 .footer-links {
   text-decoration: none;
   color: black;
-}
-
-.footer-details:hover {
-  color: #0098da;
 }
 
 .footer-links:hover{

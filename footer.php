@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="./CSS/partials.css">
+    <link rel="stylesheet" href="./css/partials.css">
     <script src="./js/partials.js"></script>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
                 <div class="footer-content">
                     <img src="./Images/Pharmacy X.png" alt="" width="150px">
     
-                    <p class="footer-details">166/2, Havelock Road, Colombo 05</p>
+                    <p class="footer-details">166/2,<br> Havelock Road,<br> Colombo 05.</p>
 
                     <div class="social-media-icons-container">
                         
@@ -24,27 +24,24 @@
     
                 <div class="footer-content">
                     <h3 class="footer-heading">Products</h3>
-                    <p class="footer-details">&#10148 Vitamins</p>
-                    <p class="footer-details">&#10148 Skin Care</p>
-                    <p class="footer-details">&#10148
-                        Pain Killers</p>
+                    <p class="footer-details"><a href="" class="footer-links">&#10148 Vitamins</a></p>
+                    <p class="footer-details"><a href="" class="footer-links">&#10148 Skin Care</a></p>
+                    <p class="footer-details"><a href="" class="footer-links">&#10148 Pain Killers</a></p>
                 </div>
                 
     
                 <div class="footer-content">
                     <h3 footer-heading>Support</h3>
-                    <p class="footer-details">&#10148 Pricing</p>
-                    <p class="footer-details">&#10148
-                        Documentaion</p>
-                    <p class="footer-details">&#10148
-                        Guides</p>
+                    <p class="footer-details"><a href="" class="footer-links">&#10148 Pricing</a></p>
+                    <p class="footer-details"><a href="" class="footer-links">&#10148 Documentaion</a></p>
+                    <p class="footer-details"><a href="" class="footer-links">&#10148 Guides</a></p>
                 </div>
     
                 <div class="footer-content">
                     <h3 footer-heading>Company</h3>
-                    <p class="footer-details">&#10148 <a href="" class="footer-links">About</a></p>
-                    <p class="footer-details">&#10148 <a href="" class="footer-links">FAQ</a></p>
-                    <p class="footer-details">&#10148 <a href="" class="footer-links">Contact</a></p>
+                    <p class="footer-details"><a href="" class="footer-links">&#10148 About</a></p>
+                    <p class="footer-details"><a href="" class="footer-links">&#10148 FAQ</a></p>
+                    <p class="footer-details"><a href="" class="footer-links">&#10148 Contact</a></p>
                 </div>
             </div>
             <hr class="footer-row">
