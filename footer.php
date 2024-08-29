@@ -55,7 +55,7 @@
 
                     <div><h3>|</h3></div>
 
-                    <div><a href="" class="footer-end-links-content">Privacy Policy</a></div>
+                    <div><a href="privacyPolicy.php" class="footer-end-links-content">Privacy Policy</a></div>
                 </div>
             </div>
         </div>
