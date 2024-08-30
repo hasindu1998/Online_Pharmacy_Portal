@@ -39,9 +39,9 @@
     
                 <div class="footer-content">
                     <h3 footer-heading>Company</h3>
-                    <p class="footer-details"><a href="" class="footer-links">&#10148 About</a></p>
-                    <p class="footer-details"><a href="" class="footer-links">&#10148 FAQ</a></p>
-                    <p class="footer-details"><a href="" class="footer-links">&#10148 Contact</a></p>
+                    <p class="footer-details"><a href="aboutUs.php" class="footer-links">&#10148 About</a></p>
+                    <p class="footer-details"><a href="faq.php" class="footer-links">&#10148 FAQ</a></p>
+                    <p class="footer-details"><a href="contact.php" class="footer-links">&#10148 Contact</a></p>
                 </div>
             </div>
             <hr class="footer-row">
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="footer-end-links">
-                    <div><a href="" class="footer-end-links-content">Terms & Conditions</a></div>
+                    <div><a href="t&c.php" class="footer-end-links-content">Terms & Conditions</a></div>
 
                     <div><h3>|</h3></div>
 

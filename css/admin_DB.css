@@ -12,7 +12,7 @@
     height : 285px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 50px;
     display:grid;
     grid-template-columns: 1fr 1fr;
 }
