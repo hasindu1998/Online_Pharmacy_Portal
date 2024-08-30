@@ -28,6 +28,7 @@
   font-size: 18px;
   padding-left: 15px;
   padding-right: 15px;
+  font-weight: 400;
   color: #333;
 }
 
@@ -48,6 +49,74 @@
 .main_header button:hover {
   background-color: #0077b6;
 }
+
+.user_profile 
+{
+  text-align: center;
+}
+
+.user_profile img 
+{
+  height: 41px;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.user_profile h3 
+{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.username
+{
+  cursor: pointer;
+}
+
+.Profile_dropdown 
+{
+  position: absolute;
+  top: 85px;
+  right: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  transition: max-height 1s ease-out;
+  box-shadow: 0 6px 20px 0 rgba(55, 53, 53, 0.19);
+  display: none;
+}
+
+.dropdown_items
+{
+  display: flex;
+  flex-direction: column;
+  padding-left: 37px;
+  padding-right: 37px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.dropdown_items a 
+{
+  text-decoration: none;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: #333;
+}
+
+.dropdown_items a:hover 
+{
+  color: #0098da;
+}
+
+.no-select 
+{
+  -webkit-user-select: none;  /* Safari */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* Internet Explorer/Edge */
+  user-select: none;          /* Standard */
+}
+
 
 /* Footer CSS */
 footer{
@@ -91,7 +160,7 @@ footer{
   margin-left: 50px;
   margin-right: 30px;
   margin-top: 25px;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 .footer-row{
   margin-left: 50px;
