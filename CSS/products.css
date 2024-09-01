@@ -71,7 +71,9 @@ color: #fff;
 
 .product-image-container{
   margin-bottom: 12px;
+  padding: 8px;
 }
+
 .item-image{
   width: 200px;
   height: 200px;
