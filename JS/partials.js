@@ -7,7 +7,7 @@ function dropdownmenu() {
     }
 }
 
-// Optional: Close the dropdown if the user clicks outside of it
+//Close the dropdown if clicks outside
 window.onclick = function(event) {
     if (!event.target.matches('.username')) {
         var dropdown = document.getElementById("prof_dropdown");
@@ -16,5 +16,3 @@ window.onclick = function(event) {
         }
     }
 }
-
-
