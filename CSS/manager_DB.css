@@ -27,7 +27,7 @@
 
 .manage-admin-container{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 .add-admin-container{
   margin-right: 100px;
@@ -60,7 +60,9 @@
   margin-left: 30px;
 }
 
-
+.form-rows{
+  display: flex;
+}
 .add-admin-button-container{
   display: flex;
   justify-content: center;
