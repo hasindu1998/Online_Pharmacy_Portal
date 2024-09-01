@@ -28,12 +28,12 @@
 .manage-admin-container{
   display: flex;
   justify-content: center;
-  align-items: start;
 }
-
+.add-admin-container{
+  margin-right: 100px;
+}
 .admin-form-container{
   display: flex;
-  margin-right: 150px;
 }
 .admin-form{
   border-style: none;
@@ -41,6 +41,7 @@
   padding: 40px 50px 40px 50px;
   margin-left: 30px;
   margin-bottom: 30px;
+  border-radius: 9px;
 }
 
 .form-input-box,
