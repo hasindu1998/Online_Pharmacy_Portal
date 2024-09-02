@@ -27,7 +27,7 @@
                 <div class="Profile_dropdown" id="prof_dropdown">
                     <div class="dropdown_items">
                         <a href="my_account.php">My Profile</a>
-                        <a href="logout.php">Sign Out</a>
+                        <a onclick="return confirm('Do you want to sign out now?')" href="logout.php">Sign Out</a>
                     </div>
                 </div>
             </div>
