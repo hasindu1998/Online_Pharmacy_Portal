@@ -59,7 +59,7 @@
 
     <div class="manage_product">
         <form>
-            <button type="" class="action_btn bg">Add/Delete Products</button>
+            <button type="" class="action_btn bg">Manage Products</button>
         </form>
     </div>
 
