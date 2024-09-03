@@ -39,6 +39,7 @@ p
 .contact_form_container
 {
     display: flex;
+    flex-direction: row;
     justify-content: right;
     margin-top: 20px;
 
@@ -49,15 +50,12 @@ p
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 40px 50px 40px 50px;
     border-style: none;
-    margin-right: 50px;
+    margin-right: 40px;
     margin-bottom: 30px;
     border-radius: 9px;
     margin-left: 30px;
     justify-content: space-between;
     margin-top: 30px;
-    
-    
-
 }
 
 #form-input-box,
@@ -70,19 +68,33 @@ p
   border-style: none;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
-  
-  
 }
 
-#form-input-box-right{
+#form-input-box-right
+{
     margin-left: 30px;
-    
-  }
+}
   
 .form-row
 {
     display: flex;
-  
+}
+
+.form-row input
+{
+    flex: 1;
+    min-width: 250px;
+    height: 45px;
+}
+
+input#form-input-box
+{
+    height: 45px;
+}
+
+.contact-form textarea
+{
+    min-width: 100%;
 }
 
 
@@ -116,11 +128,8 @@ p
     border-style: none;
     margin-left: 150px;
     margin-bottom: 60px;
-    margin-right: 150px;
+    margin-right: auto;
     border-radius: 9px;
-    
-    
-
 }
 
 a{
@@ -141,6 +150,10 @@ a{
     display: flex;
     margin-left: 50px;
     margin-bottom: 60px;
-    
 }
 
+.contact_img img
+{
+    width: 100%;
+    height: 100%;
+}

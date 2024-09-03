@@ -30,11 +30,11 @@
             <div class="contact-form">
                 <div class="form-row">
                     <input type="text" name="name" id="form-input-box" placeholder="Name" required>
-                    <input type="phone" name="mobile" id="form-input-box-right" placeholder="Phone Number" required>
+                    <input type="email" name="email" id="form-input-box-right" placeholder="Email" required>
                 </div>
                 <div class="from-row">
-                    <input type="email" name="email" id="form-input-box" placeholder="Email" required>
-                    <input type="file" name="fileupload" id="form-input-box-right" class="browser" placeholder="Browser" required>
+                    <input type="phone" name="mobile" id="form-input-box" placeholder="Phone Number" required>
+                    <input type="file" name="fileupload" id="form-input-box-right" class="browser" placeholder="Browser" >
                 </div>
                 <div class="form-row">
                     <textarea rows="5" id="form-input-box" placeholder="Message"></textarea>
@@ -49,11 +49,11 @@
 
        <div class="contact-details">
 
-            <h3><b>PharmacyX Pharmacy Limited</b></h3><br>
+            <h3><b>PharmacyX (Pvt) Limited</b></h3><br>
              <p>We’re here to help! Whether you have a question or need assistance ,<br>
                  feel free to get in touch with us through any of the methods below.</p><br><br>
              <p><b>Address :</b> 162/2, Havelock Road, Colombo 05</p><br>
-             <p><b>Email :</b><a href="pharmacyX@gmail.com">pharmacyX@gmail.com</a></p><br>
+             <p><b>Email :</b><a href="mailto:pharmacyX@gmail.com"> pharmacyX@gmail.com</a></p><br>
              <p><b>Phone : </b>+94 70 153 6490</p><br>
              <div class="contact-icon">
                <a href="https://www.facebook.com/public/PharmacyX/"><img src="./Images/facebook-icon.png" class="facebook" alt="Facebook"></a>
