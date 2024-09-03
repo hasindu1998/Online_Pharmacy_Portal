@@ -1,0 +1,170 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+h1
+{
+    color: #111111;
+}
+
+h2
+{
+    color: #111111;
+}
+
+h3
+{
+    padding-bottom: 20px;
+    
+
+}
+
+p
+{
+    color: #444444;
+}
+
+.my-account-content
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 40px
+}
+
+.account-information-form-container
+{
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+}
+
+.my-account-form
+{
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 40px 50px 40px 50px;
+    border-style: none;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    border-radius: 9px;
+    margin-left: 30px;
+    justify-content: space-between;
+    margin-top: 30px;
+    
+
+}
+
+#form-input-box,
+#form-input-box-right{
+ 
+  margin-bottom: 18px;
+  font-size: 15px;
+  padding: 8px 25px 8px 10px;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  
+  
+}
+
+#form-input-box-right{
+    margin-left: 30px;
+    
+  }
+  
+.form-row
+{
+    display: flex;
+  
+}
+
+.save-changes-container
+{
+    display: flex;
+    justify-content: center;
+}
+
+.save-changes-button
+{
+    padding: 10px 20px 10px 20px;
+    margin-top: 30px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #0098DA;
+    color: #fff;
+    font-size: 18px;
+    
+
+}
+
+.save-changes-button:hover
+{
+    background-color:#0079B8;
+}
+
+.change-password-form-container
+{
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+    
+}
+
+.change-password-form
+{
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 40px 50px 40px 50px;
+    border-style: none;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    border-radius: 9px;
+    margin-left: 30px;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.edit-container
+{
+    display: grid;
+    justify-content: left;
+    margin-top: 20px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-style: none;
+    border-radius: 9px;
+    margin-left: 30px;
+
+    
+    
+}
+
+.inbox-container
+{
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-style: none;
+    border-radius: 9px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    width: 1400px;
+    height: 250px;
+}
+
+h2.inbox
+{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
