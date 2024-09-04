@@ -32,27 +32,34 @@ p
 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 40px
+    margin-top: 40px;
+
+   
+}
+
+.box
+{
+    margin-right: 50px;
 }
 
 .account-information-form-container
 {
     display: flex;
     justify-content: right;
-    margin-top: 20px;
+    
 }
 
 .my-account-form
 {
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 40px 50px 40px 50px;
+    padding: 40px 70px 40px 70px;
     border-style: none;
-    margin-right: 50px;
+    margin-right: 80px;
     margin-bottom: 30px;
     border-radius: 9px;
     margin-left: 30px;
     justify-content: space-between;
-    margin-top: 30px;
+   
     
 
 }
@@ -62,7 +69,7 @@ p
  
   margin-bottom: 18px;
   font-size: 15px;
-  padding: 8px 25px 8px 10px;
+  padding: 8px 25px 8px 15px;
   border-radius: 5px;
   border-style: none;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -86,6 +93,7 @@ p
 {
     display: flex;
     justify-content: center;
+    
 }
 
 .save-changes-button
@@ -97,6 +105,7 @@ p
     background-color: #0098DA;
     color: #fff;
     font-size: 18px;
+
     
 
 }
@@ -108,37 +117,56 @@ p
 
 .change-password-form-container
 {
-    display: flex;
+    display: grid;
     justify-content: right;
-    margin-top: 20px;
+   
+    
     
 }
 
 .change-password-form
 {
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 40px 50px 40px 50px;
+    padding: 40px 70px 40px 70px;
     border-style: none;
-    margin-right: 50px;
+    margin-right: 80px;
     margin-bottom: 30px;
     border-radius: 9px;
     margin-left: 30px;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 20px;
+   
 }
 
 .edit-container
 {
-    display: grid;
-    justify-content: left;
-    margin-top: 20px;
+    width: 50%;
+    text-align: center;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 40px 70px 40px 70px;
     border-style: none;
+    margin-bottom: 20px;
     border-radius: 9px;
-    margin-left: 30px;
+    margin-left: 100px;
+    height: 700px;
+    
+}
 
-    
-    
+.edit-container img
+{
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.edit-container a
+{
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
 }
 
 .inbox-container
@@ -149,21 +177,50 @@ p
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-style: none;
     border-radius: 9px;
-    margin-left: 50px;
+    margin-left: 100px;
     margin-bottom: 30px;
-    margin-right: 30px;
-    width: 1400px;
+    margin-right: 20px;
+    width: 1300px;
     height: 250px;
 }
 
 h2.inbox
 {
-    margin-left: 50px;
+    margin-left: 100px;
     margin-top: 30px;
 }
 
+.delete-account-container
+{
+    display: flex;
+    justify-content: right;
+}
 
+.delete-account-button
+{
+    padding: 10px 20px 10px 20px;
+    margin-top: 350px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #0098DA;
+    color: #fff;
+    font-size: 18px;
+}
 
+.delete-account-button:hover
+{
+    background-color:#0079B8;
+}
+
+hr
+{
+    margin-top: 30px;
+}
+
+.bio
+{
+    text-align: left;
+}
 
 
 
