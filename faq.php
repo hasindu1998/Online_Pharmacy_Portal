@@ -14,6 +14,37 @@
 </head>
 <body>
     <?php include ("./header.php"); ?>
+    
+    <img src="images/FAQ 1.png" alt="FAQ Image" class="FAQImage" >
+	<div class ="image">
+	    <h2>Got A question?</h2> 
+	        <p>Find our FAQ here.If your question hasn't been answerd here please <a href="#">contact us </a> </p>
+    </div>	
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question">1. Do you offer a free trial?</button>
+            <div class="faq-answer">
+                <p>Yes, we offer a 14-day free trial for each plan.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">2. Do I need a credit card to start?</button>
+            <div class="faq-answer">
+                <p>No, you do not need a credit card to start the trial.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">3. Can I cancel my account anytime?</button>
+            <div class="faq-answer">
+                <p>Yes, you can cancel your account at any time.</p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="faq.js"></script>
+
 
     
 
