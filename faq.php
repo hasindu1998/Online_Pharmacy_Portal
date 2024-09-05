@@ -43,7 +43,7 @@
         
     </div>
     
-    <script src="faq.js"></script>
+    <script src="./JS/faq.js"></script>
 
 
     
