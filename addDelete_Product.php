@@ -15,6 +15,27 @@
 <body>
     <?php include ("./header.php"); ?>
 
+    <div class="product-form">
+        <h2>Product Add</h2>
+        <form action="#" method ="POST" enctype="multipart/form-data">
+            <label for="title">Add Title :</lable>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Add Description :</lable>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="price">Price :</lable>
+            <input type="number" id="price" name="price" required>
+
+            <label for="quantity">Quantity Available :</lable>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="image">Choose Image :</lable>
+            <input type="file" id="image" name="image" required>
+
+ 
+        </form>
+    </div>
     
 
     <?php include ("./footer.php"); ?>
