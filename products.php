@@ -18,7 +18,7 @@
     <?php include("./header.php"); ?>
     <div class="main-image-container">
         <div class="main-heading-container">
-            <h1 class="main-heading">Order Medicine Easily by Uploading Prescription</h1>
+            <p class="main-heading">Order Medicine Easily by Uploading Prescription</p>
             <button class="main-heading-button">Try Now</button>
         </div>
         <img src="./Images\Product-Page-Image.jpg" alt="" class="main-image">
