@@ -1,6 +1,6 @@
 .main-image-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: right;
 }
 
 .main-heading{
@@ -8,9 +8,9 @@
   font-size: 55px;
   font-weight: 500;
   z-index: 100;
-  width: 800px;
+  width: 100%;
   margin-top: 200px;
-  margin-left: 70px;
+  margin-left: 40px;
 }
 
 .main-heading-button{
@@ -25,7 +25,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: 0.5s;
-  margin-left: 70px;
+  margin-left: 40px;
 }
 
 .main-heading-button:hover{

@@ -18,11 +18,13 @@
     <?php include("./header.php"); ?>
     <div class="main-image-container">
         <div class="main-heading-container">
-            <p class="main-heading">Order Medicine Easily by Uploading Prescription</p>
+            <h1 class="main-heading">Order Medicine Easily by Uploading Prescription</h1>
             <button class="main-heading-button">Try Now</button>
         </div>
-        <img src="./Images\Product-Page-Image.jpg" alt="" class="main-image">
-    </div>
+        <div>
+            <img src="./Images/Product-Page-Image.jpg" alt="" class="main-image">
+        </div>
+        
     </div>
 
     <div class="products-section-container">
