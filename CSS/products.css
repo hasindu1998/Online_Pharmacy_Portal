@@ -1,7 +1,6 @@
 .main-image-container{
   display: flex;
-  justify-content: right;
-  margin-left: 70px;
+  justify-content: space-between;
 }
 
 .main-heading{
@@ -11,6 +10,7 @@
   z-index: 100;
   width: 100%;
   margin-top: 200px;
+  margin-left: 70px;
 }
 
 .main-heading-button{
@@ -25,6 +25,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: 0.5s;
+  margin-left: 70px;
 }
 
 .main-heading-button:hover{

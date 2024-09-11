@@ -32,10 +32,10 @@
 
 .manage-admin-container{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .add-admin-container{
-  margin-right: 150px;
+  
 }
 .admin-form-container{
   display: flex;
@@ -68,6 +68,7 @@
 .form-rows{
   display: flex;
 }
+
 .add-admin-button-container{
   display: flex;
   justify-content: center;
@@ -88,17 +89,21 @@
   background-color: #0079B8;
 }
 
+.control-admins{
+  margin-left: 150px;
+}
 
-
+.check-admin-heading{
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
 .control-admin-form{
   border-style: none;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 40px 50px 40px 50px;
-  margin-left: 150px;
   margin-bottom: 30px;
   margin-right: 150px;
   border-radius: 9px;
-
 }
 
 .check-admin form{

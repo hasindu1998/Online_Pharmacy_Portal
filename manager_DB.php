@@ -58,7 +58,7 @@
       </div>
 
       <div class="control-admins">
-        <h1 class="manager-headings">Manage Admins</h1>
+        <h1 class="check-admin-heading">Manage Admins</h1>
 
         <div class="control-admin-form">
           <div class="check-admin">
