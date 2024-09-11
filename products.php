@@ -21,9 +21,9 @@
             <h1 class="main-heading">Order Medicine Easily by Uploading Prescription</h1>
             <button class="main-heading-button">Try Now</button>
         </div>
-        <div>
+        
             <img src="./Images/Product-Page-Image.jpg" alt="" class="main-image">
-        </div>
+        
         
     </div>
 
