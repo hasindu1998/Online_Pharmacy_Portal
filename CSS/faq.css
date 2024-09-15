@@ -1,63 +1,102 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-     margin: 0;
-    padding: 20px;
-}
-.FAQImage
-{
-	float: right;
-	width: 600px;
-	height:500px;
-	margin-left:20px
-}
-.image{
-	padding : 20px;
-	text-align: left;
-	margin-top:20px;
-	margin-right:100px;
-	
-}
-.faq-container {
-    max-width: 800px;
-    margin: 20%;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.faq-item {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.faq-question {
-    width: 100%;
-    text-align: left;
-    background: none;
-    border: none;
-    padding: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    outline: none;
-}
-
-.faq-question:after {
-    content: '+';
-    float: right;
-}
-
-.faq-question.active:after {
-    content: '-';
-}
-
-.faq-answer {
-    display: none;
-    padding: 15px;
-    font-size: 14px;
+    background-color:white;
+    background-image: url(FAQ-background.jpg);
     
 }
+.topic {
+    padding-left: 100px;
+    padding-right: 0px;
+    padding-bottom: 200px;
+    padding-top:  0%;
+    background-color:#f9f9f9;
+   
+    
+ 
+    
+
+}
+h1{
+    color: #333;
+    font-size: 100px;
+    text-align: center;
+    
+}
+h2 {
+    color:rgb(15, 1, 1);
+    font-size: 30px;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+/* FAQ Container */
+.FAQ {
+    width: 80%;
+    margin: auto;
+    padding: 2px;
+    border-radius: 30px;
+    text-align: center ;
+    padding-top: 50px;
+   padding-right: 0%;
+    font-size: 80px;
+
+
+
+}
+
+/* FAQ Question */
+.faq-question {
+    font-size: 20px;
+    background-color:skyblue;
+    color:black;
+    padding: 20px;
+    cursor: pointer;
+    border: none;
+    text-align:left;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline:rgb(4, 168, 233);
+    transition: background-color 0.3s;
+}
+
+
+
+/* FAQ Answer  */
+.faq-answer {
+    display:none;
+    background-color: #130111;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: left;
+    color:white;
+    border-radius: 5px;
+}
+
+/* Image */
+
+
+.FAQImage {
+    max-width: 50%;
+    height: 500px;
+    border-radius: 50px;
+    float: right;
+    padding-top : 10px;
+}
+
+/* Topic1*/
+.topic1 {
+    text-align: left;
+    margin: 20px 0;
+    padding: 10px;
+}
+/*h3*/
+ h3{
+    text-align: center;
+ }
+
+
+
+

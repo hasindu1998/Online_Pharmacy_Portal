@@ -1,16 +1,14 @@
-document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        
-        // Toggle the active state
-        button.classList.toggle('active');
-        
-        // Toggle the visibility of the answer
-        const faqAnswer = faqItem.querySelector('.faq-answer');
-        if (faqAnswer.style.display === 'block') {
-            faqAnswer.style.display = 'none';
-        } else {
-            faqAnswer.style.display = 'block';
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        });
     });
 });
