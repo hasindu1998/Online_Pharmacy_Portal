@@ -16,7 +16,7 @@
     <?php include ("./header.php"); ?>
     
     <div class="topic">
-    <img src="FAQ 1.jpg" alt="FAQ Image" class="FAQImage" >
+    <img src="./Images/ 1.jpg" alt="FAQ Image" class="FAQImage" >
 	<div class ="topic1">
 	<h1>Got A Question?</h1> 
 	<h3>Find our FAQ here.If your question hasn't been answerd here please <a href="#">contact us </a> </h3>
@@ -78,7 +78,7 @@
         </div>
     </div>
 
-    <script src="faq.js"></script>
+    <script src="/JS/faq.js"></script>
     
 
 
