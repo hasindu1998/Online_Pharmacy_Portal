@@ -176,6 +176,15 @@
     margin-top: 15px;
     height: 350px;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px 20px 20px 20px;
+    overflow: scroll;
+}
+
+.message_content
+{
+    margin-top: 15px;
+    height: 350px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 40px 50px 40px 50px;
 }
 
@@ -191,4 +200,50 @@ hr.order_hr
 {
     margin: 30px auto 30px auto;
     width: 300px;
+}
+
+.order_content table
+{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.order_content table tr
+{
+    border-bottom: 2px solid #f2f2f2;
+}
+
+.order_content table tr:nth-child(odd)
+{
+    background-color: #f2f2f2;
+}
+
+.order_content table tr td
+{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.ordertb_title 
+{
+    font-weight: 900;
+}
+
+.shipped_box
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.shipped_box input
+{
+    margin-left: 10px;
+    width: 20px;
+}
+
+.order_stat_row
+{
+    color: rgb(0, 184, 0);
 }

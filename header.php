@@ -33,6 +33,20 @@ session_start();
                 }
                 else
                 {
+                    //check if user is admin manager or customer and display DB links accordingly
+                    if($_SESSION['user_type']== 'Admin')
+                    {
+                        $DBLink = "<a href='./admin_DB.php'>Admin DB</a>";
+                    }
+                    else if($_SESSION['user_type']== 'Manager')
+                    {
+                        $DBLink = "<a href='./manager_DB.php'>Manager DB</a>";
+                    }
+                    else if($_SESSION['user_type']== 'Customer')
+                    {
+                        $DBLink = "<a href='./my_orders.php'>My Orders</a>";
+                    }
+
                     // assign profile picture name to a variable
                     $baseProfilePicUrl = './Images/Profile_Pics/'; // base derecotry of profile pictures
                     $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProfilePicUrl.$_SESSION['profilePic_url']) : './Images/Profile_Pics/student-avatar-illustratio.jpg'; // Default profile picture
@@ -44,6 +58,7 @@ session_start();
                             <div class='Profile_dropdown' id='prof_dropdown'>
                                 <div class='dropdown_items'>
                                     <a href='my_account.php'>My Profile</a>
+                                    ".$DBLink."
                                     <a onclick='return confirm(\"Do you want to sign out now?\")' href='logout.php'>Sign Out</a>
                                 </div>
                             </div>
