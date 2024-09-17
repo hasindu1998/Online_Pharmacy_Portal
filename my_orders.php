@@ -1,3 +1,17 @@
+<?php
+//By Moditha IT23539990
+    session_start();
+
+    if(!isset($_SESSION['username']))
+    {
+        header("Location: ./signin.php");
+    }
+    else
+    {
+        require_once './db_Config/config.php';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,48 +41,37 @@
                     <th>Order Status</th>
                     <th>Order Total</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2021-08-01</td>
-                    <td>Panadol</td>
-                    <td><span class="status">Delivered</span></td>
-                    <td>Rs. 5000</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>2021-08-05</td>
-                    <td>Siddhalepa Balm</td>
-                    <td><span class="status">Delivered</span></td>
-                    <td>Rs. 3000</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>2021-08-10</td>
-                    <td>Whitening Cream</td>
-                    <td><span class="status">Delivered</span></td>
-                    <td>Rs. 7000</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>2021-08-15</td>
-                    <td>Mass Gainer</td>
-                    <td><span class="status">Processing</span></td>
-                    <td>Rs. 9000</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>2021-08-20</td>
-                    <td>Vitamin C</td>
-                    <td><span class="status">Pending Approval</span></td>
-                    <td>Rs. 12000</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>2021-08-25</td>
-                    <td>Vitamin E</td>
-                    <td><span class="status">Pending Approval</span></td>
-                    <td>Rs. 2000</td>
-                </tr>
+
+                <?php 
+                    $query = "SELECT o.*, p.product_name
+                              FROM Orders o
+                              INNER JOIN Products p ON o.product_id = p.product_id
+                              WHERE o.user_name = '".$_SESSION['username']."';
+                             ";
+
+                    $result = mysqli_query($Connection, $query);
+
+                    if(mysqli_num_rows($result) > 0)
+                    {
+                        while($row = mysqli_fetch_array($result))
+                        {
+                            echo "<tr>
+                                    <td>{$row['order_id']}</td>
+                                    <td>{$row['order_date']}</td>
+                                    <td>{$row['product_name']}</td>
+                                    <td><span class=\"status\">{$row['order_status']}</span></td>
+                                    <td>Rs. {$row['Order_total']}</td>
+                                </tr>";
+                        }
+                    }
+                    else
+                    {
+                        echo "<tr>";
+                        echo "<td colspan='5'>No Orders Found</td>";
+                        echo "</tr>";
+                    }
+                ?>
+                
             </table>
         </div>
     </div>
