@@ -1,3 +1,17 @@
+<?php 
+session_start();
+
+//to check if the user is logged in
+if(isset($_SESSION['username']))
+{
+    require_once './db_Config/config.php';
+}
+else
+{
+    header('location: ./signin.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
