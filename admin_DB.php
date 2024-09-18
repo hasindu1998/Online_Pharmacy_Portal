@@ -27,7 +27,7 @@ else
 
 
 
-//Manage users functionality
+//check user status 
 
 $UserStatus = '-----';
 $inputValue = '';
@@ -178,6 +178,37 @@ if(isset($_POST['Shipped']) && $_POST['Shipped'] == 'shipped')
     }
 }
 
+
+//Message Reply and Delete functionality
+//submit reply
+if(isset($_POST['submit_rply']))
+{
+    $messageID = $_POST['message_id'];
+    $reply = $_POST['Reply_in'];
+
+    $sql = "UPDATE Messages SET response_text='$reply' WHERE message_id='$messageID' ";
+    $result = mysqli_query($Connection, $sql);
+
+    if($result && mysqli_affected_rows($Connection) > 0)
+    {
+        header("Location: ".$_SERVER['PHP_SELF']);
+        exit();
+    }
+}
+//delete message
+if(isset($_POST['Delete_msg']))
+{
+    $messageID = $_POST['message_id'];
+
+    $sql = "DELETE FROM Messages WHERE message_id='$messageID' ";
+    $result = mysqli_query($Connection, $sql);
+
+    if($result && mysqli_affected_rows($Connection) > 0)
+    {
+        header("Location: ".$_SERVER['PHP_SELF']);
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -297,7 +328,60 @@ if(isset($_POST['Shipped']) && $_POST['Shipped'] == 'shipped')
     <div class="Container2">
         <h2>Inbox</h2>
         <div class="message_content">
+            <table>
+                <tr>
+                    <th>Message ID</th>
+                    <th>Sender Email</th>
+                    <th>Message</th>
+                    <th>Attachments</th>
+                    <th>Reply</th>
+                    <th>Submit</th>
+                    <th>Delete</th>
+                </tr>
 
+                <?php
+                    $sql = "SELECT * FROM Messages WHERE response_text IS NULL;";
+                    $result = mysqli_query($Connection, $sql);
+
+                    if(mysqli_num_rows($result) > 0)
+                    {
+                        while($row = $result->fetch_assoc()) 
+                        {
+                            $messageID = $row['message_id'];
+                            $senderEmail = $row['email'];
+                            $message = $row['message_text'];
+                            $attachment = $row['Uploads_url'];
+
+                            if($attachment===NULL)
+                            {
+                                $uploads_Url = "----";
+                            }
+                            else
+                            {
+                                $uploads_Url = "<a href='./Images/PrescriptionMessage/$attachment' target='_blank'>Link</a>";
+                            }
+
+                            echo "<tr>
+                                    <td>$messageID</td>
+                                    <td>$senderEmail</td>
+                                    <td>$message</td>
+                                    <td>$uploads_Url</td>
+                                        <form action='admin_DB.php' method='POST'>
+                                            <input type='hidden' value='$messageID' name='message_id'>
+                                            <td><input class=\"Reply_in\" type=\"text\" placeholder=\"Reply\" name='Reply_in'></td>
+                                            <td><button type=\"submit\" class=\"Submit_rply\" name='submit_rply'>Submit</button></td>
+                                            <td><button type=\"submit\" class=\"Delete_rply\" name='Delete_msg'>Delete</button></td>
+                                        </form>
+                                    </tr>";
+                        }
+                    }
+                    else
+                    {
+                        echo "<tr><td colspan='7'>No Messages Found</td></tr>";
+                    }
+                
+                ?>
+            </table>
         </div>
     </div>
 
