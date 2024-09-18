@@ -136,47 +136,32 @@ if(isset($_POST['delete']))
 
 //User Analytics
 
-//count all users
-$sql = "SELECT COUNT(user_name) AS TotalUsers FROM User_info WHERE user_type='Customer' ";
+//count all users and active users and deactivated users
+$sql = "SELECT 
+            COUNT(user_name) AS TotalUsers,
+            COUNT(CASE WHEN acc_status = 'Active' THEN 1 END) AS ActiveUsers,
+            COUNT(CASE WHEN acc_status = 'Inactive' THEN 1 END) AS DeactivatedUsers
+        FROM 
+            User_info
+        WHERE 
+            user_type = 'Customer';
+        ";
 $result = mysqli_query($Connection, $sql);
 
 if(mysqli_num_rows($result) > 0)
 {
     $row = mysqli_fetch_assoc($result);
     $TotalUsers = $row['TotalUsers'];
-}
-else
-{
-    $TotalUsers = '0';
-}
-
-//count active users
-$sql = "SELECT COUNT(user_name) AS ActiveUsers FROM User_info WHERE user_type='Customer' AND acc_status='Active' ";
-$result = mysqli_query($Connection, $sql);
-
-if(mysqli_num_rows($result) > 0)
-{
-    $row = mysqli_fetch_assoc($result);
     $ActiveUsers = $row['ActiveUsers'];
-}
-else
-{
-    $ActiveUsers = '0';
-}
-
-//count deactivated users
-$sql = "SELECT COUNT(user_name) AS DeactivatedUsers FROM User_info WHERE user_type='Customer' AND acc_status='Inactive' ";
-$result = mysqli_query($Connection, $sql);
-
-if(mysqli_num_rows($result) > 0)
-{
-    $row = mysqli_fetch_assoc($result);
     $DeactivatedUsers = $row['DeactivatedUsers'];
 }
 else
 {
-    $DeactivatedUsers = '0';
+    $TotalUsers = 0;
+    $ActiveUsers = 0;
+    $DeactivatedUsers = 0;
 }
+
 
 //Order Requests section mark as shipped functionality
 if(isset($_POST['Shipped']) && $_POST['Shipped'] == 'shipped')
