@@ -27,7 +27,7 @@ else
 
 
 
-//check user status 
+//check user status functionality
 
 $UserStatus = '-----';
 $inputValue = '';

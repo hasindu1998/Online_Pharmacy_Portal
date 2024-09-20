@@ -30,7 +30,7 @@ if(isset($_POST['signin']))
             }
             else if($_SESSION['user_type'] == 'Customer')
             {
-                header('location: ./index.php');
+                header('location: ./products.php');
             }
             else if($_SESSION['user_type'] == 'Manager')
             {

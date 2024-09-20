@@ -13,6 +13,7 @@
 </head>
 <body>
     <?php include ("./header.php"); ?>
+
     <div class="slider">
         <div class="slides">
             <img class="slide" src="images/slide01.jpg" alt="">
@@ -22,6 +23,7 @@
         <button class="prev" onclick="prevSlide()">&#10094</button>
         <button class="next" onclick="nextSlide()">&#10095</button>
     </div>
+
     <section class="popular-products">
         <h2><b>Popular Products</b></h2>
         <div class="products">
@@ -80,14 +82,6 @@
         </div>
         <button class="buy-now-button"><a href="products.php">Buy Now</a></button>
     </section>
-
-        
-
-    
-
-
-
-
     
     <?php include ("./footer.php"); ?>
     <script src="./js/index.js"></script>
