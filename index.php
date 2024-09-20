@@ -13,10 +13,84 @@
 </head>
 <body>
     <?php include ("./header.php"); ?>
+    <div class="slider">
+        <div class="slides">
+            <img class="slide" src="images/slide01.jpg" alt="">
+            <img class="slide" src="images/slide02.jpg" alt="">
+            <img class="slide" src="images/slide03.jpg" alt="">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+    </div>
+    <section class="popular-products">
+        <h2><b>Popular Products</b></h2>
+        <div class="products">
+            <div class="product-content">
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="">
+                <h3>Vitamin</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
+                <h6>Rs.3200.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="">
+                <h3>Skin care</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
+                <h6>Rs.3000.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="">
+                <h3>Pain Killers</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error </p>
+                <h6>Rs.1000.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="">
+                <h3>panadol</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
+                <h6>Rs.800.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                </ul>
+            </div>
+        </div>
+        <button class="buy-now-button"><a href="products.php">Buy Now</a></button>
+    </section>
+
+        
+
+    
+
+
 
 
     
     <?php include ("./footer.php"); ?>
     <script src="./js/index.js"></script>
+    
 </body>
 </html>

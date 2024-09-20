@@ -16,7 +16,7 @@ h2
     color: #111111;
 }
 
-h3
+.my-account-form h3
 {
     padding-bottom: 20px;
     
@@ -221,10 +221,7 @@ h2.inbox
     background-color: #701c1c;
 }
 
-hr
-{
-    margin-top: 30px;
-}
+
 
 .bio
 {

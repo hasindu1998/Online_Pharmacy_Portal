@@ -21,8 +21,6 @@
                   <img src="default-profile.png">
                 </div>
                    <a href="#">Edit Profile</a>
-                   <hr><br>
-                     
                      <div class="delete-account-container">
                        <button type="submit" class="delete-account-button">Delete Acoount</button>
                      </div>
@@ -71,21 +69,22 @@
                  <div class="account-edit">
                     <div class="input-container">
                       <label>Current Password</label>
-                      <input type="password"    required>
+                      <input type="password" required>
                     </div>
                  </div>
                  <div class="account-edit">
                    <div class="input-container">
                      <label>New Password</label>
-                     <input type="password"    required>
+                     <input type="password" id="newPassword" onkeyup="checkPsassword()" required>
                    </div>
                    <div class="input-container">
                      <label>Confirm Password</label>
-                     <input type="password"    required>
+                     <input type="password" id="confirmPassword" onkeyup="checkPsassword()" required>
                   </div>
                  </div>
                  <div class="save-changes-container">
                      <button type="submit" class="save-changes-button" >Save Changes</button>
+                     <p id="error-message" style="color: red;"> </p>
                  </div>
                  </div>
             </form>
@@ -101,7 +100,7 @@
      </div>
 
     
-
+    <script src="./js/my_account.js"></script>
     <?php include ("./footer.php"); ?>
 </body>
 </html>
