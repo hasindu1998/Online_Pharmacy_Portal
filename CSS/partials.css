@@ -124,7 +124,7 @@ footer{
   background-color: #f8f9fa;
 }
 
-.container {
+.footer_container {
   display: flex;
   justify-content: left;
   margin-left: 50px;

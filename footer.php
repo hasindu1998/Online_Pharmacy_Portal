@@ -10,8 +10,8 @@
 </head>
 <body>
 <footer>
-        <div class="footer-container">
-            <div class="container">
+        <div>
+            <div class="footer_container">
                 <div class="footer-content">
                     <img src="./Images/Pharmacy X.png" alt="" width="150px">
     
