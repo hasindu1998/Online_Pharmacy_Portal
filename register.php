@@ -63,7 +63,7 @@
             <button type="submit">Register</button>
         </form>
     </div>
-    <script src="/js/order.js"></script>
+    <script src="./js/order.js"></script>
     
 
     
