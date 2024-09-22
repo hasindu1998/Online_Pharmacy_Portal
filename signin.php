@@ -88,7 +88,7 @@ else
                 <button type="submit" name="signin" >Sign In</button>
             </form>
             <p class="error"> <?php echo $errors; ?> </p>
-            <p class="acctxt">Don't have an account? <a href="">Register Now</a></p>
+            <p class="acctxt">Don't have an account? <a href="./register.php">Register Now</a></p>
         </div>
     </div>
 </body>
