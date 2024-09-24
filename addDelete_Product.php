@@ -11,32 +11,85 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="./Images/Pharmacy X Icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./Images/Pharmacy X Icon.png">
+    <link rel="stylesheet" href="../CSS/addDelete_Product.css">
+    <link rel="stylesheet" href="./CSS/index.css">
 </head>
 <body>
     <?php include ("./header.php"); ?>
 
     <div class="product-form">
         <h2>Product Add</h2>
-        <form action="#" method ="POST" enctype="multipart/form-data">
-            <label for="title">Add Title :</lable>
-            <input type="text" id="title" name="title" required>
 
-            <label for="description">Add Description :</lable>
-            <textarea id="description" name="description" rows="4" required></textarea>
+        <div class="add-product-form">
+            <div class="add-product-form-container">
+                <form action="#" method ="POST" enctype="multipart/form-data">
+                    <div class="add-porduct-row">
+                        <input type="text" class="add-products-inputs" placeholder="Product ID">
+                        <input type="text" class="add-products-inputs product-name-input" placeholder="Product Name">
+                    </div>
 
-            <label for="price">Price :</lable>
-            <input type="number" id="price" name="price" required>
+                    <div class="add-product-row">
+                        <input type="text" class="add-products-inputs" placeholder="Price">
+                        <input type="text" class="add-products-inputs" placeholder="Quantity">
+                    </div>
+                    <div class="add-product row">
+                        <input type="file" class="add-product-inputs choose-file-input">
+                    </div>
 
-            <label for="quantity">Quantity Available :</lable>
-            <input type="number" id="quantity" name="quantity" required>
+                    <div class="submit-button-container">
+                        <button class="submit-button">Submit</button>
+                    </div>
 
-            <label for="image">Choose Image :</lable>
-            <input type="file" id="image" name="image" required>
-
- 
-        </form>
+                </form>
+            </div>
+        
+        </div>
     </div>
     
+    <div class="product-container">
+        <div class="product-heading">
+            <h2 class="product-list-heading">Products</h2>
+        </div>
+
+        <div class="products-list-container">
+            <table>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Panadol</td>
+                    <td>100.00</td>
+                    <td>50</td>
+                    <td><button class="edit-product-button">Edit</button></td>
+                    <td><button class="delete-product-button">Delete</button></td>
+                </tr>
+
+                <tr>
+                    <td>002</td>
+                    <td>Panadol</td>
+                    <td>100.00</td>
+                    <td>50</td>
+                    <td><button class="edit-product-button">Edit</button></td>
+                    <td><button class="delete-product-button">Delete</button></td>
+                </tr>
+
+                <tr>
+                    <td>003</td>
+                    <td>Panadol</td>
+                    <td>100.00</td>
+                    <td>50</td>
+                    <td><button class="edit-product-button">Edit</button></td>
+                    <td><button class="delete-product-button">Delete</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
     <?php include ("./footer.php"); ?>
 </body>
