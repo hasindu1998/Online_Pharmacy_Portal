@@ -68,7 +68,7 @@
         </div>
 
         <div class="faq9">
-            <div class="faq-question">9.Can I cancel my order</div>
+            <div class="faq-question">9.Can I cancel my order?</div>
             <div class="faq-answer">You can cancel an order before it has been processed by contacting our support team or through your account dashboard.</div>
         </div>
 

@@ -28,17 +28,32 @@
      <div class="contact_form_container">
         <form action="contact.php" method="post">
             <div class="contact-form">
-                <div class="form-row">
-                    <input type="text" name="name" id="form-input-box" placeholder="Name" required>
-                    <input type="email" name="email" id="form-input-box-right" placeholder="Email" required>
-                </div>
-                <div class="from-row">
-                    <input type="phone" name="mobile" id="form-input-box" placeholder="Phone Number" required>
-                    <input type="file" name="fileupload" id="form-input-box-right" class="browser" placeholder="Browser" >
-                </div>
-                <div class="form-row">
-                    <textarea rows="5" id="form-input-box" placeholder="Message"></textarea>
-                </div>
+            <div class="account-edit">
+                        <div class="input-container">
+                           <label>Name</label>
+                           <input type="text"  required>
+                        </div>
+                        <div class="input-container">
+                            <label>Email</label>
+                            <input type="email"  required>
+                        </div>
+                     </div>
+                     <div class="account-edit">
+                         <div class="input-container">
+                           <label>Phone Number</label>
+                           <input type="text"  required>
+                         </div>
+                         <div class="input-container">
+                           <label>Image</label>
+                           <input type="file"  required>
+                         </div>
+                     </div>
+                     <div class="account-edit">
+                         <div class="input-container">
+                            <label>Message</label>
+                            <textarea rows="5"></textarea>
+                         </div>
+                     </div>
                 <div class="submit-button-container">
                     <button type="submit" class="submit-button" >Submit</button>
                 </div>

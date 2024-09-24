@@ -176,7 +176,17 @@
     margin-top: 15px;
     height: 350px;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 40px 50px 40px 50px;
+    padding: 20px 20px 20px 20px;
+    overflow: scroll;
+}
+
+.message_content
+{
+    margin-top: 15px;
+    height: 350px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px 20px 20px 20px;
+    overflow: scroll;
 }
 
 hr.order_hr
@@ -191,4 +201,117 @@ hr.order_hr
 {
     margin: 30px auto 30px auto;
     width: 300px;
+}
+
+.order_content table
+{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.order_content table tr
+{
+    border-bottom: 2px solid #f2f2f2;
+}
+
+.order_content table tr:nth-child(odd)
+{
+    background-color: #f2f2f2;
+}
+
+.order_content table tr td
+{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.ordertb_title 
+{
+    font-weight: 900;
+}
+
+.shipped_box
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.shipped_box input
+{
+    margin-left: 10px;
+    width: 20px;
+}
+
+.order_stat_row
+{
+    color: rgb(0, 184, 0);
+}
+
+.message_content table
+{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.message_content table tr
+{
+    border-bottom: 2px solid #f2f2f2;
+}
+
+.message_content table tr th
+{
+    background-color: #5bb3d9;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.message_content table tr td
+{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.message_content table tr:nth-child(even)
+{
+    background-color: #f2f2f2;
+}
+
+input.Reply_in 
+{
+    width: 190px;
+    height: 30px;
+    padding: 2px;
+}
+
+button.Submit_rply
+{
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0098DA;
+    color: aliceblue;
+}
+
+button.Delete_rply
+{
+    height: 30px;
+    padding: 5px;
+    background-color: rgb(238, 0, 0);
+    border: none;
+    border-radius: 10px;
+    color: aliceblue;
+}
+
+button.Submit_rply:hover
+{
+    background-color: #0079B8;
+}
+
+button.Delete_rply:hover
+{
+    background-color: rgb(187, 0, 0);
 }

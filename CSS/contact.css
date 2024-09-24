@@ -58,39 +58,39 @@ p
     margin-top: 30px;
 }
 
-#form-input-box,
-#form-input-box-right{
- 
-  margin-bottom: 18px;
-  font-size: 15px;
-  padding: 8px 25px 8px 10px;
-  border-radius: 5px;
-  border-style: none;
-  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
-}
-
-#form-input-box-right
-{
-    margin-left: 30px;
-}
-  
-.form-row
+.account-edit
 {
     display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
 }
 
-.form-row input
+.input-container
 {
-    flex: 1;
-    min-width: 250px;
-    height: 45px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+  
+.input-container label
+{
+    
+    margin-bottom: 10px;
 }
 
-input#form-input-box
+.input-container input
 {
-    height: 45px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    padding: 8px 25px 8px 10px;
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 }
+
+
 
 .contact-form textarea
 {
@@ -132,7 +132,7 @@ input#form-input-box
     border-radius: 9px;
 }
 
-a{
+.contact-icon a{
     text-decoration: none;
 }
 

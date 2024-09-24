@@ -116,6 +116,12 @@ p
 .signin_form p
 {
     text-align: center;
-    margin-top: 55px;
+    margin-top: 35px;
     font-size: 20px;
+}
+
+.error
+{
+    color: red;
+    font-size: 16px;
 }

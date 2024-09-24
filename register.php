@@ -14,7 +14,56 @@
 </head>
 <body>
     
-
+<div class="container">
+        <h2>Registration</h2>
+        <form id="registrationForm">
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="Enter Your Full Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="mail@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Minimum of 8 characters" required>
+                    </div>
+                </div>
+                
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="username">User Name</label>
+                        <input type="text" id="username" placeholder="Enter Your User Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter Your Phone Number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Minimum of 8 characters" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group gender">
+                <label>Gender</label>
+                <input type="radio" name="gender" value="male" id="male" required> Male
+                <input type="radio" name="gender" value="female" id="female"> Female
+                <input type="radio" name="gender" value="none" id="none"> Prefer not to say
+            </div>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script src="./js/order.js"></script>
     
 
     

@@ -15,61 +15,82 @@
 <body>
     <?php include ("./header.php"); ?>
 
-    <div class="my-account-content">
-           <div class="edit-container">
+      <div class="my-account-content">
+            <div class="edit-container">
                 <div class="profile-pic">
                   <img src="default-profile.png">
                 </div>
                    <a href="#">Edit Profile</a>
-                   <hr><br>
-                    <div class="bio">
-                       <p>Bio:</p>
-                    </div>
-                    <div class="delete-account-container">
+                     <div class="delete-account-container">
                        <button type="submit" class="delete-account-button">Delete Acoount</button>
-                    </div>
-            </div>
+                     </div>
+                </div>
         <div class="box">
-             <div class="account-information-form-container">
+        <div class="account-information-form-container">
                <form action="my_account.php" method="post">
                   <div class="my-account-form">
                   <h3>Account Information</h3>
-                    <div class="form-row">
-                       <input type="text" name="name" id="form-input-box" placeholder="First Name" required>
-                       <input type="text" name="name" id="form-input-box-right" placeholder="Last Name" required>
-                    </div>
-                    <div class="from-row">
-                       <input type="text" name="name" id="form-input-box" placeholder="Username" required>
-                       <input type="phone" name="mobile" id="form-input-box-right"  placeholder="Phone Number" required>
-                    </div>
-                    <div class="form-row">
-                       <input type="email" name="email" id="form-input-box" placeholder="Email" required>
-                    </div>
-                    <div class="save-changes-container">
-                       <button type="submit" class="save-changes-button" >Save Changes</button>
-                    </div>
+                     <div class="account-edit">
+                        <div class="input-container">
+                           <label>First Name</label>
+                           <input type="text"  required>
+                        </div>
+                        <div class="input-container">
+                           <label>Last Name</label>
+                           <input type="text"  required>
+                        </div>
+                     </div>
+                     <div class="account-edit">
+                         <div class="input-container">
+                           <label>Username</label>
+                           <input type="text"  required>
+                         </div>
+                         <div class="input-container">
+                           <label>Phone Number</label>
+                           <input type="text"  required>
+                         </div>
+                     </div>
+                     <div class="account-edit">
+                         <div class="input-container">
+                            <label>Email</label>
+                            <input type="email"  required>
+                         </div>
+                     </div>
+                     <div class="save-changes-container">
+                         <button type="submit" class="save-changes-button" >Save Changes</button>
+                     </div>
                   </div>
-                </form>
-             </div>
-             <div class="change-password-form-container">
-               <form action="my_account.php" method="post">
-                    <div class="change-password-form">
-                    <h3>Change Password</h3>
-                    <div class="form-row">
-                        <input type="password" name="password" id="form-input-box" placeholder="Current Password" required>
-                    </div>
-                    <div class="form-row">
-                        <input type="password" name="password" id="form-input-box" placeholder="New Password" required>
-                        <input type="password" name="password" id="form-input-box-right" placeholder="Confirm Password" required>
-                    </div>
-                    <div class="save-changes-container">
-                        <button type="submit" class="save-changes-button" >Save Changes</button>
-                    </div>
-                    </div>
                </form>
-             </div>
+            </div>
+            <div class="change-password-form-container">
+            <form action="my_account.php" method="post">
+                 <div class="change-password-form">
+                 <h3>Change Password</h3>
+                 <div class="account-edit">
+                    <div class="input-container">
+                      <label>Current Password</label>
+                      <input type="password" required>
+                    </div>
+                 </div>
+                 <div class="account-edit">
+                   <div class="input-container">
+                     <label>New Password</label>
+                     <input type="password" id="newPassword" onkeyup="checkPsassword()" required>
+                   </div>
+                   <div class="input-container">
+                     <label>Confirm Password</label>
+                     <input type="password" id="confirmPassword" onkeyup="checkPsassword()" required>
+                  </div>
+                 </div>
+                 <div class="save-changes-container">
+                     <button type="submit" class="save-changes-button" >Save Changes</button>
+                     <p id="error-message" style="color: red;"> </p>
+                 </div>
+                 </div>
+            </form>
+          </div>
         </div>
-    </div>
+     </div>
     <h2 class="inbox"><b>Inbox</b></h2>
     <div class="inbox-container">
             
@@ -79,7 +100,7 @@
      </div>
 
     
-
+    <script src="./js/my_account.js"></script>
     <?php include ("./footer.php"); ?>
 </body>
 </html>

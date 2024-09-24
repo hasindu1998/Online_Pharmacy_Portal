@@ -83,6 +83,7 @@
   transition: max-height 1s ease-out;
   box-shadow: 0 6px 20px 0 rgba(55, 53, 53, 0.19);
   display: none;
+  z-index: 2;
 }
 
 .dropdown_items
@@ -123,7 +124,7 @@ footer{
   background-color: #f8f9fa;
 }
 
-.container {
+.footer_container {
   display: flex;
   justify-content: left;
   margin-left: 50px;
