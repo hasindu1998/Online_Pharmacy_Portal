@@ -25,12 +25,12 @@
     </div>
 
     <section class="popular-products">
-        <h2><b>Popular Products</b></h2>
+        <h2><b>Featured Products</b></h2>
         <div class="products">
             <div class="product-content">
-                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="">
-                <h3>Vitamin</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-8.png" alt="">
+                <h3>Multi Vitamin</h3>
+                <p>Multivitamins provide essential vitamins and minerals to support overall health. </p>
                 <h6>Rs.3200.00</h6>
                 <ul>
                     <li><i class="fa fa-star checked"></i></li>
@@ -43,7 +43,7 @@
             <div class="product-content">
                 <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="">
                 <h3>Skin care</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
+                <p>Skincare involves routines and products to cleanse, protect, and nourish the skin. </p>
                 <h6>Rs.3000.00</h6>
                 <ul>
                     <li><i class="fa fa-star checked"></i></li>
@@ -54,9 +54,9 @@
                 </ul>
             </div>
             <div class="product-content">
-                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="">
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-2.png" alt="">
                 <h3>Pain Killers</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error </p>
+                <p>Painkillers relieve pain by reducing inflammation or blocking pain signals.</p>
                 <h6>Rs.1000.00</h6>
                 <ul>
                     <li><i class="fa fa-star checked"></i></li>
@@ -67,16 +67,74 @@
                 </ul>
             </div>
             <div class="product-content">
-                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="">
-                <h3>panadol</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                <h6>Rs.800.00</h6>
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-9.png" alt="">
+                <h3>Paracetamol</h3>
+                <p>Effective pain relief for headaches and fever  </p>
+                <h6>Rs.150.00</h6>
                 <ul>
                     <li><i class="fa fa-star checked"></i></li>
                     <li><i class="fa fa-star checked"></i></li>
                     <li><i class="fa fa-star checked"></i></li>
                     <li><i class="fa fa-star checked"></i></li>
                     <li><i class="fa fa-star checked"></i></li>
+                </ul>
+            </div>
+        </div>
+        <button class="buy-now-button"><a href="products.php">Buy Now</a></button>
+    </section>
+    <section class="popular-products">
+        <h2><b>Popular Products</b></h2>
+        <div class="products">
+            <div class="product-content">
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-6.png" alt="">
+                <h3>Vitamin C Tablets</h3>
+                <p>Boost your immune system with Vitamin C. </p>
+                <h6>Rs.300.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-4.png" alt="">
+                <h3>Insulin Syringe</h3>
+                <p>Disposable insulin syringes with fine needles. </p>
+                <h6>Rs.1500.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-5.png" alt="">
+                <h3>Blood Pressure Monitor</h3>
+                <p>Accurate and easy-to-use blood pressure monitor. </p>
+                <h6>Rs.8000.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <img class="item" src="./Images\product-icons\Pharmacy-Isometric-Icons-2.png" alt="">
+                <h3>Amoxicillin</h3>
+                <p>Antibiotic used to treat bacterial infections.  </p>
+                <h6>Rs.500.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
                 </ul>
             </div>
         </div>
