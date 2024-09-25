@@ -2,8 +2,8 @@
 body
 {
     font-family: "Roboto";
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: auto;;
 
 }
 
@@ -11,6 +11,7 @@ h1
 {
     color:red;
     text-align: center;
+    margin:auto;
 }
 
 h4
@@ -22,5 +23,5 @@ h4
 p
 {
     color:black;
-    margin-right: 5px; ;
+    margin: auto ;
 }

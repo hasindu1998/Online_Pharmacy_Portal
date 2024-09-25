@@ -18,7 +18,7 @@
       <div class="my-account-content">
             <div class="edit-container">
                 <div class="profile-pic">
-                  <img src="default-profile.png">
+                  <img src="my-account-icon.jpg">
                 </div>
                    <a href="#">Edit Profile</a>
                      <div class="delete-account-container">

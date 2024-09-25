@@ -20,8 +20,86 @@
   <div class="manager-dashboard-container">
     <div class="orders-container">
       <h1 class="manager-headings">Orders</h1>
-      <div class="order-table">
+      <div class="order-table-container">
+          <table class="order-table">
+            <tr>
+              <th class="order-table-heading">Order ID</th>
+              <th class="order-table-heading">Date</th>
+              <th class="order-table-heading">Status</th>
+              <th class="order-table-heading">Amount</th>
+            </tr>
 
+            <tr>
+              <td>001</td>
+              <td>2024-10-10</td>
+              <td class="status-result">Pending</td>
+              <td>4500.00</td>
+            </tr>
+
+            <tr>
+              <td>001</td>
+              <td>2024-10-10</td>
+              <td class="status-result">Pending</td>
+              <td>4500.00</td>
+            </tr>
+
+            <tr>
+              <td>001</td>
+              <td>2024-10-10</td>
+              <td class="status-result">Pending</td>
+              <td>4500.00</td>
+            </tr>
+
+            <tr>
+              <td>001</td>
+              <td>2024-10-10</td>
+              <td class="status-result">Pending</td>
+              <td>4500.00</td>
+            </tr>
+
+            <tr>
+              <td>001</td>
+              <td>2024-10-10</td>
+              <td class="status-result">Pending</td>
+              <td>4500.00</td>
+            </tr>
+
+            <tr>
+              <td>001</td>
+              <td>2024-10-10</td>
+              <td class="status-result">Pending</td>
+              <td>4500.00</td>
+            </tr>
+
+            <tr>
+              <td>001</td>
+              <td>2024-10-10</td>
+              <td class="status-result">Pending</td>
+              <td>4500.00</td>
+            </tr>
+
+            <tr>
+              <td>001</td>
+              <td>2024-10-10</td>
+              <td class="status-result">Pending</td>
+              <td>4500.00</td>
+            </tr>
+
+            <tr>
+              <td>001</td>
+              <td>2024-10-10</td>
+              <td class="status-result">Pending</td>
+              <td>4500.00</td>
+            </tr>
+
+            <tr>
+              <td>001</td>
+              <td>2024-10-10</td>
+              <td class="status-result">Pending</td>
+              <td>4500.00</td>
+            </tr>
+
+          </table>
       </div>
     </div>
 
