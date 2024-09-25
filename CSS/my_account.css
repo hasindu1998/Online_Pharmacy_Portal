@@ -92,7 +92,7 @@ p
     border-radius: 5px;
     border-style: none;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
+
 }
 
 .save-changes-container
@@ -206,7 +206,7 @@ h2.inbox
 .delete-account-button
 {
     padding: 10px 20px 10px 20px;
-    margin-top: 650px;
+    margin-top: 150px;
     border-style: none;
     border-radius: 5px;
     background-color:#b80006;

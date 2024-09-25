@@ -17,11 +17,7 @@ function checkPassword() {
      }
      
      
-    errorMessage.textContent = "";
-    return true;
-
-     
-
-     
-     
-}   
+        errorMessage.textContent = "";
+        return true;
+  
+}
