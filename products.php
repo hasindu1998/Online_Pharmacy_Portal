@@ -53,6 +53,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -64,6 +65,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -75,6 +77,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -86,6 +89,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -97,6 +101,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -108,6 +113,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -119,6 +125,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -130,6 +137,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -141,6 +149,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -152,6 +161,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -163,6 +173,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -174,6 +185,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -185,6 +197,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -196,6 +209,7 @@ else
                 </div>
                 <div class="iproduct-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -207,6 +221,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -218,6 +233,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -229,6 +245,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
@@ -240,6 +257,7 @@ else
                 </div>
                 <div class="product-details-container">
                     <p class="item-name">Panadol</p>
+                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
