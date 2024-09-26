@@ -24,16 +24,19 @@
             <div class="add-product-form-container">
                 <form action="#" method ="POST" enctype="multipart/form-data">
                     <div class="add-porduct-row">
-                        <input type="text" class="add-products-inputs" placeholder="Product ID">
-                        <input type="text" class="add-products-inputs product-name-input" placeholder="Product Name">
+                        <input type="text" class="add-products-inputs" placeholder="Product Name">
+                        <input type="text" class="add-products-inputs product-name-input" placeholder="Price">
                     </div>
 
                     <div class="add-product-row">
-                        <input type="text" class="add-products-inputs" placeholder="Price">
+                        <input type="text" class="add-products-inputs" placeholder="Expire Date">
                         <input type="text" class="add-products-inputs" placeholder="Quantity">
                     </div>
                     <div class="add-product row">
                         <input type="file" class="add-product-inputs choose-file-input">
+                    </div>
+                    <div class="add-product-row">
+                        <textarea>Description</textarea>
                     </div>
 
                     <div class="submit-button-container">

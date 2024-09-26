@@ -59,6 +59,11 @@ h2{
 .submit-button:hover{
   background-color: #0079B8;
 }
+.textarea{
+    width:100%;
+    height:100%;
+    padding:10px 8px;
+}
 
 .product-list-heading{
     text-align: center;

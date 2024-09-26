@@ -1,27 +1,19 @@
-*
-body
-{
-    font-family: "Roboto";
-    margin: 10px;
-    padding: auto;;
 
+.main-content{
+    margin-left: 30px;
 }
 
-h1
+.main-heading
 {
-    color:red;
+    color: black;
     text-align: center;
     margin:auto;
 }
 
-h4
-{
-    color:black;
-    
+.sub-heading{
+    margin-bottom: 5px;
+    font-weight: bold;
 }
-
-p
-{
-    color:black;
-    margin: auto ;
+.paragraph{
+    margin-left: 50px;
 }
