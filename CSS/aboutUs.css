@@ -1,8 +1,8 @@
 
 body {
     font-family: "Roboto";
-    background-color: #2a9ad6;
-    padding: 20px;
+    background-color: white;
+    
   }
   
   .container {
@@ -25,7 +25,7 @@ body {
   .text-section {
     flex: 1;
     padding: 50px;
-    background-color: #f0f0f0;
+   
 
     
   }
@@ -39,15 +39,17 @@ body {
   }
   
   #learnMoreBtn {
-    background-color: black;
-    color: white;
+    background-color:  #0098DA;
+    color:white;
     padding: 10px 20px;
     border: none;
     
   }
-  
-  #learnMoreBtn:hover {
-    background-color: #555;
 
-  }
+  #learnMoreBtn:hover {
+    background-color: rgb(77, 124, 171);
+
+}
+  
+
   

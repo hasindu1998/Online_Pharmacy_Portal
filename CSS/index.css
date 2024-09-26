@@ -132,6 +132,7 @@ img.displaySlide
     text-align: center;
     margin: 0 auto ;
     display: block;
+    padding-top: 10px;
 }
 
 .product-content h3
