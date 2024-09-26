@@ -53,13 +53,6 @@
                 </div>
             </div>
             
-            <div class="form-group gender">
-                <label>Gender</label>
-                <input type="radio" name="gender" value="male" id="male" required> Male
-                <input type="radio" name="gender" value="female" id="female"> Female
-                <input type="radio" name="gender" value="none" id="none"> Prefer not to say
-            </div>
-            
             <button type="submit">Register</button>
         </form>
     </div>

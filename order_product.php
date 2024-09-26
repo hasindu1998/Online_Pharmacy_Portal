@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" >
     <link rel="icon" type="image/png" sizes="32x32" href="./Images/Pharmacy X Icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./Images/Pharmacy X Icon.png">
-    <link rel="stylesheet" href="./CSS/productorder.css">
+   
 </head>
 <body>
     <?php include ("./header.php"); ?>
@@ -92,7 +92,7 @@
                 <textarea id="payment-remark" name="payment_remark" placeholder="Type your comments" required></textarea>
                
 
-                <button type="submit">Submit</button>
+                <button type="button"id = submit-btn> Submit </button>
             </div>
         </form>
     </div>

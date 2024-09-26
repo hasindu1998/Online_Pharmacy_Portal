@@ -1,55 +1,44 @@
 
 body {
-    font-family: "Roboto";
-    background-color: white;
-    
-  }
+  font-family: "Roboto";
+ 
   
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .image-section {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .image-section img {
-    width: 100%;
-    max-width: 800px;
-     }
-  
-  .text-section {
-    flex: 1;
-    padding: 50px;
-   
+}
 
-    
-  }
-  
-  .text-section h2 {
-    margin-bottom: 50px;
-  }
-  
-  .text-section p {
-    margin-bottom: 50px;
-  }
-  
-  #learnMoreBtn {
-    background-color:  #0098DA;
-    color:white;
-    padding: 10px 20px;
-    border: none;
-    
-  }
+.About{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+ padding-top: 5%;
+ padding-left: 5px;
+ 
+}
 
-  #learnMoreBtn:hover {
-    background-color: rgb(77, 124, 171);
+.image {
+  flex: 1;
+  padding :20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+
+.text {
+  flex: 1;
+  padding: 50px; 
+}
+
+
+#learnMoreBtn {
+  background-color:  #0098DA;
+  color:white;
+  padding: 10px 20px;
+  border: none;
+
+ 
+  
+}
+
+#learnMoreBtn:hover {
+  background-color: rgb(77, 124, 171);
 
 }
-  
-
-  
