@@ -388,9 +388,7 @@ if(isset($_POST['Delete_msg']))
     <hr class="order_hr">
 
     <div class="manage_product">
-        <form>
-            <button type="" class="action_btn bg">Manage Products</button>
-        </form>
+        <button  class="action_btn bg" onclick="manage_Product()" >Manage Products</button>
     </div>
 
     <?php include ("./footer.php"); ?>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -143,9 +147,9 @@
 
             <p class="policy-content">
                 PharmacyX  <br>
-                Email: support@pharmacyx.com <br>  
+                Email: pharmacyX@gmail.com <br>  
                 Phone: +1 (123) 456-7890  <br>
-                Address: 1234 PharmacyX Street, Kandy Road, Malabe <br>
+                Address: 166/2,Havelock Road,Colombo 05 <br>
             </p>
 
         </div>
