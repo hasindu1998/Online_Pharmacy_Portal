@@ -331,7 +331,7 @@ if(isset($_POST['Delete_msg']))
             <table>
                 <tr>
                     <th>Message ID</th>
-                    <th>Sender Email</th>
+                    <th>Sender Username</th>
                     <th>Message</th>
                     <th>Attachments</th>
                     <th>Reply</th>
@@ -348,7 +348,7 @@ if(isset($_POST['Delete_msg']))
                         while($row = $result->fetch_assoc()) 
                         {
                             $messageID = $row['message_id'];
-                            $senderEmail = $row['email'];
+                            $senderusername = $row['user_name'];
                             $message = $row['message_text'];
                             $attachment = $row['Uploads_url'];
 
@@ -363,7 +363,7 @@ if(isset($_POST['Delete_msg']))
 
                             echo "<tr>
                                     <td>$messageID</td>
-                                    <td>$senderEmail</td>
+                                    <td>$senderusername</td>
                                     <td>$message</td>
                                     <td>$uploads_Url</td>
                                         <form action='admin_DB.php' method='POST'>

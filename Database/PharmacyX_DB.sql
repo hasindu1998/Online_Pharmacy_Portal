@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 18, 2024 at 10:29 AM
+-- Generation Time: Sep 27, 2024 at 06:50 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -70,6 +70,8 @@ CREATE TABLE `Manager` (
 
 CREATE TABLE `Messages` (
   `message_id` int(11) NOT NULL,
+  `user_name` varchar(100) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
   `message_text` text NOT NULL,
   `contact_no` varchar(15) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
@@ -82,16 +84,16 @@ CREATE TABLE `Messages` (
 -- Dumping data for table `Messages`
 --
 
-INSERT INTO `Messages` (`message_id`, `message_text`, `contact_no`, `email`, `Uploads_url`, `response_text`, `message_date`) VALUES
-(1, 'I want to know the availability of Paracetamol.', '0771234567', 'kulanya.lisaldi@gmail.com', NULL, NULL, '2024-09-17 06:01:22'),
-(2, 'Here is my prescription for the required medicines.', '0777654321', 'deshan.ggd@gmail.com', 'Prescription2.jpeg', NULL, '2024-09-17 06:01:22'),
-(3, 'Can I get a discount on my next purchase?', '0712345678', 'group3@gmail.com', NULL, 'Yes, we are currently offering a 10% discount on all items.', '2024-09-17 06:01:22'),
-(4, 'I have attached my prescription for review. Please let me know the price.', '0771122334', 'johnson@gmail.com', 'prescription2.pdf', 'The total price is LKR 3,500.', '2024-09-17 06:01:22'),
-(6, 'Can I change my delivery address after placing an order?', '0769876543', 'sliit@gmail.com', NULL, 'Yes, you can change your address within 24 hours of placing the order.', '2024-09-17 06:01:22'),
-(7, 'Here is my lab report for the requested medicines.', '0753344556', 'dilshan@gmail.com', 'Prescription3.png', NULL, '2024-09-17 06:01:22'),
-(8, 'Do you have insulin in stock?', '0742233445', 'nipun.munasingha@gmail.com', NULL, NULL, '2024-09-17 06:01:22'),
-(9, 'How long does delivery take to Colombo?', '0719988776', 'reshan.perera@gmail.com', NULL, 'Deliveries to Colombo usually take 1-2 business days.', '2024-09-17 06:01:22'),
-(10, 'I have attached my prescription. Please let me know if all items are available.', '0774455667', 'samarasinghe@gmail.com', 'Prescription3.png', NULL, '2024-09-17 06:01:22');
+INSERT INTO `Messages` (`message_id`, `user_name`, `name`, `message_text`, `contact_no`, `email`, `Uploads_url`, `response_text`, `message_date`) VALUES
+(1, 'user01', 'kulanya', 'I want to know the availability of Paracetamol.', '0771234567', 'kulanya.lisaldi@gmail.com', NULL, NULL, '2024-09-17 06:01:22'),
+(2, 'user01', 'kulanya', 'Here is my prescription for the required medicines.', '0777654321', 'deshan.ggd@gmail.com', 'Prescription2.jpeg', NULL, '2024-09-17 06:01:22'),
+(3, 'user02', 'deshan', 'Can I get a discount on my next purchase?', '0712345678', 'group3@gmail.com', NULL, 'Yes, we are currently offering a 10% discount on all items.', '2024-09-17 06:01:22'),
+(4, 'user01', 'kulanya', 'I have attached my prescription for review. Please let me know the price.', '0771122334', 'johnson@gmail.com', 'prescription2.pdf', 'The total price is LKR 3,500.', '2024-09-17 06:01:22'),
+(6, 'user02', 'deshan', 'Can I change my delivery address after placing an order?', '0769876543', 'sliit@gmail.com', NULL, 'Yes, you can change your address within 24 hours of placing the order.', '2024-09-17 06:01:22'),
+(7, 'user02', 'deshan', 'Here is my lab report for the requested medicines.', '0753344556', 'dilshan@gmail.com', 'Prescription3.png', NULL, '2024-09-17 06:01:22'),
+(8, 'user02', 'deshan', 'Do you have insulin in stock?', '0742233445', 'nipun.munasingha@gmail.com', NULL, NULL, '2024-09-17 06:01:22'),
+(9, 'user02', 'deshan', 'How long does delivery take to Colombo?', '0719988776', 'reshan.perera@gmail.com', NULL, 'Deliveries to Colombo usually take 1-2 business days.', '2024-09-17 06:01:22'),
+(10, 'user01', 'kulanya', 'I have attached my prescription. Pls let me know if items  available.', '0774455667', 'samarasinghe@gmail.com', 'Prescription3.png', NULL, '2024-09-17 06:01:22');
 
 -- --------------------------------------------------------
 
@@ -233,7 +235,8 @@ ALTER TABLE `Manager`
 -- Indexes for table `Messages`
 --
 ALTER TABLE `Messages`
-  ADD PRIMARY KEY (`message_id`);
+  ADD PRIMARY KEY (`message_id`),
+  ADD KEY `fk_user_name` (`user_name`);
 
 --
 -- Indexes for table `Orders`
@@ -330,6 +333,12 @@ ALTER TABLE `Customer`
 --
 ALTER TABLE `Manager`
   ADD CONSTRAINT `manager_ibfk_1` FOREIGN KEY (`user_name`) REFERENCES `User_info` (`user_name`);
+
+--
+-- Constraints for table `Messages`
+--
+ALTER TABLE `Messages`
+  ADD CONSTRAINT `fk_user_name` FOREIGN KEY (`user_name`) REFERENCES `User_info` (`user_name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Orders`
