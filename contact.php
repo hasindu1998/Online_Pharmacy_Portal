@@ -12,10 +12,10 @@ if(isset($_POST["submitBtn"]))
     $contact_no = $_POST['contact'];
     $message_text = $_POST['msg'];
 
-    $query = "INSERT INTO messages (user_name,name,message_text,contact_no,email,) VALUES ('{$user_name}', '{$name}', '{$message_text}', '{$contact_no}', '{$email}')";
+    $query = "INSERT INTO messages (user_name,name,message_text,contact_no,email) VALUES ('{$user_name}', '{$name}', '{$message_text}', '{$contact_no}', '{$email}')";
     $result = mysqli_query($Connection, $query);
 
-    if(mysqli_num_rows($result)>0)
+    if($result)
     {
        header('Location:index.php');
     }
