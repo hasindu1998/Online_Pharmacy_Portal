@@ -1,3 +1,89 @@
+<?php 
+ 
+ session_start();
+
+ require_once './db_Config/config.php';
+
+ // check user login
+
+ if(!isset($_SESSION['username']))
+{
+    header('location: ./signin.php');
+}
+
+// get user data from database
+$query = "SELECT * FROM User_info WHERE user_name = '{$_SESSION['username']}';";
+$result = mysqli_query($Connection, $query);
+
+if($result)
+{
+  $row = mysqli_fetch_assoc($result);
+
+  $firstName = $row['first_name'];
+  $lastName = $row['last_name'];
+  $username = $row['user_name'];
+  $phone = 0;
+  $email = $row['email'];
+  $password = $row['password'];
+
+}
+
+// update changes
+if(isset($_POST['saveBtn']))
+{
+  $firstName = $_POST['F_name'];
+  $lastName = $_POST['L_name'];
+  $phone = $_POST['phone'];
+  $email = $_POST['email'];
+
+  $sql = "UPDATE user_info SET first_name = '$firstName', last_name = '$lastName', email = '$email' WHERE user_name = '" . $_SESSION['username'] . "'";
+  $result = mysqli_query($Connection, $sql);
+
+  if($result && mysqli_affected_rows($Connection) > 0)
+    {
+        header("Location: my_account.php");
+        exit();
+    }
+
+}
+
+//update password
+if(isset($_POST['changePwBtn']))
+{
+  if($_POST['pwd'] == $password )
+  {
+    if($_POST['newPwd'] == $_POST['cnfmPwd'])
+    $newpassword = $_POST['newPwd'];
+
+    {
+      $sql = "UPDATE user_info SET password = '$newpassword' WHERE  user_name = '" . $_SESSION['username'] . "'";
+
+      $result = mysqli_query($Connection, $sql);
+
+      if($result && mysqli_affected_rows($Connection) > 0)
+        {
+            header("Location: my_account.php");
+            exit();
+        }
+    }
+  }
+}
+
+/*if(isset($_POST['deleteBtn']))
+{
+  $sql = "DELETE FROM user_info WHERE user_name = '" . $_SESSION['username'] . "';";
+  $result = mysqli_query($Connection, $sql);
+
+  if($result && mysqli_affected_rows($Connection) > 0)
+    {
+
+      header("Location: logout.php");
+      exit();
+    }
+}*/
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +107,14 @@
                   <img src="my-account-icon.jpg">
                 </div>
                    <a href="#">Edit Profile</a>
+                   <div class="background-img">
+                    <img src="./Images/myaccount-background-image.png" alt="background-image">
+                   </div>
                      <div class="delete-account-container">
-                       <button type="submit" class="delete-account-button">Delete Acoount</button>
+                      <form action="my_account.php" method="POST">
+                             <button type="submit" name="deleteBtn" class="delete-account-button">Delete Acoount</button>
+                      </form>
+                      
                      </div>
                 </div>
         <div class="box">
@@ -33,57 +125,57 @@
                      <div class="account-edit">
                         <div class="input-container">
                            <label>First Name</label>
-                           <input type="text"  required>
+                           <input type="text" name="F_name" value="<?php echo $firstName  ?>">
                         </div>
                         <div class="input-container">
                            <label>Last Name</label>
-                           <input type="text"  required>
+                           <input type="text" name="L_name" value="<?php echo $lastName ?>">
                         </div>
                      </div>
                      <div class="account-edit">
                          <div class="input-container">
                            <label>Username</label>
-                           <input type="text"  required>
+                           <input type="text" name="username" value="<?php echo $username  ?>" disabled >
                          </div>
                          <div class="input-container">
                            <label>Phone Number</label>
-                           <input type="text"  required>
+                           <input type="text"  name="phone" value="<?php echo $phone ?>">
                          </div>
                      </div>
                      <div class="account-edit">
                          <div class="input-container">
                             <label>Email</label>
-                            <input type="email"  required>
+                            <input type="email" name="email" value="<?php echo $email ?>" >
                          </div>
                      </div>
                      <div class="save-changes-container">
-                         <button type="submit" class="save-changes-button" >Save Changes</button>
+                         <button type="submit" name="saveBtn" class="save-changes-button" >Save Changes</button>
                      </div>
                   </div>
                </form>
             </div>
             <div class="change-password-form-container">
             <form action="my_account.php" method="post">
-                 <div class="change-password-form">
+                 <div id="change-password-form">
                  <h3>Change Password</h3>
                  <div class="account-edit">
                     <div class="input-container">
                       <label>Current Password</label>
-                      <input type="password" required>
+                      <input type="password" name="pwd"required>
                     </div>
                  </div>
                  <div class="account-edit">
                    <div class="input-container">
                      <label>New Password</label>
-                     <input type="password" id="newPassword" onkeyup="checkPsassword()" required>
+                     <input type="password" name="newPwd" id="newPassword"  required>
                    </div>
                    <div class="input-container">
                      <label>Confirm Password</label>
-                     <input type="password" id="confirmPassword" onkeyup="checkPsassword()" required>
+                     <input type="password" name="cnfmPwd" id="confirmPassword"  required>
                   </div>
                  </div>
                  <div class="save-changes-container">
-                     <button type="submit" class="save-changes-button" >Save Changes</button>
+                     <button type="submit" name="changePwBtn" class="save-changes-button" >Save Changes</button>
                      <p id="error-message" style="color: red;"> </p>
                  </div>
                  </div>

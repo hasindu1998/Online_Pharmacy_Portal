@@ -1,4 +1,4 @@
-function checkPassword() {
+/*function checkPassword() {
 
     const newPassword = document.getElementById('newPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
@@ -20,4 +20,16 @@ function checkPassword() {
         errorMessage.textContent = "";
         return true;
   
-}
+}*/
+
+document.getElementById('change-password-form').addEventListener('submit', function(e) {
+   e.preventDefault();
+   const password = document.getElementById('password').value;
+   const confirmPassword = document.getElementById('confirmPassword').value;
+
+   if (password !== confirmPassword) {
+       alert('Passwords do not match!');
+   } else {
+       alert('Registration Successful!');
+   }
+});

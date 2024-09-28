@@ -4,6 +4,11 @@ session_start();
 
 require_once './db_Config/config.php';
 
+if(!isset($_SESSION['username']))
+{
+    header('location: ./signin.php');
+}
+
 if(isset($_POST["submitBtn"]))
 {
     $user_name = $_SESSION['username'];

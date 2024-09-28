@@ -37,6 +37,13 @@ p
    
 }
 
+.background-img img
+{
+    width: 400px;
+    height: 400px;
+    margin-top: 50px;
+}
+
 .box
 {
     display: grid;
@@ -130,8 +137,7 @@ p
     
     
 }
-
-.change-password-form
+#change-password-form
 {
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 40px 70px 40px 70px;
@@ -159,7 +165,7 @@ p
     
 }
 
-.edit-container img
+.profile-pic img
 {
     width: 100px;
     height: 100px;
@@ -172,7 +178,7 @@ p
 .edit-container a
 {
     display: block;
-    margin-top: 10px;
+    margin-top: 30px;
     text-decoration: none;
 }
 
