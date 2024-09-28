@@ -1,3 +1,28 @@
+<?php 
+
+session_start();
+
+require_once './db_Config/config.php';
+
+if(isset($_POST["submitBtn"]))
+{
+    $user_name = $_SESSION['username'];
+    $name = $_POST['F_name'];
+    $email = $_POST['email'];
+    $contact_no = $_POST['contact'];
+    $message_text = $_POST['msg'];
+
+    $query = "INSERT INTO messages (user_name,name,message_text,contact_no,email) VALUES ('{$user_name}', '{$name}', '{$message_text}', '{$contact_no}', '{$email}')";
+    $result = mysqli_query($Connection, $query);
+
+    if($result)
+    {
+       header('Location:index.php');
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,36 +51,36 @@
 
         
      <div class="contact_form_container">
-        <form action="contact.php" method="post">
+        <form action="contact.php" name="detailForm" onsubmit="return validateForm()" method="post">
             <div class="contact-form">
-            <div class="account-edit">
+                     <div class="account-edit">
                         <div class="input-container">
                            <label>Name</label>
-                           <input type="text"  required>
+                           <input type="text" name="F_name" class="F_name" required>
                         </div>
                         <div class="input-container">
                             <label>Email</label>
-                            <input type="email"  required>
+                            <input type="email" name="email" class="email" required>
                         </div>
                      </div>
                      <div class="account-edit">
                          <div class="input-container">
                            <label>Phone Number</label>
-                           <input type="text"  required>
+                           <input type="text" name="contact" class="contact"  required>
                          </div>
                          <div class="input-container">
                            <label>Image</label>
-                           <input type="file"  required>
+                           <input type="file">
                          </div>
                      </div>
                      <div class="account-edit">
                          <div class="input-container">
                             <label>Message</label>
-                            <textarea rows="5"></textarea>
+                            <textarea rows="5" name="msg" class="msg"></textarea>
                          </div>
                      </div>
                 <div class="submit-button-container">
-                    <button type="submit" class="submit-button" >Submit</button>
+                    <button type="submit" name="submitBtn" class="submit-button" >Submit</button>
                 </div>
             </div>
         </form>
@@ -82,7 +107,7 @@
      
     </div>
             
-
+    <script src="./js/contact.js"></script>
     <?php include ("./footer.php"); ?>
 </body>
 </html>
