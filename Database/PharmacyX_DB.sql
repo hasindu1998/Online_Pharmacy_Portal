@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 27, 2024 at 06:50 PM
+-- Generation Time: Sep 28, 2024 at 11:19 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -93,7 +93,8 @@ INSERT INTO `Messages` (`message_id`, `user_name`, `name`, `message_text`, `cont
 (7, 'user02', 'deshan', 'Here is my lab report for the requested medicines.', '0753344556', 'dilshan@gmail.com', 'Prescription3.png', NULL, '2024-09-17 06:01:22'),
 (8, 'user02', 'deshan', 'Do you have insulin in stock?', '0742233445', 'nipun.munasingha@gmail.com', NULL, NULL, '2024-09-17 06:01:22'),
 (9, 'user02', 'deshan', 'How long does delivery take to Colombo?', '0719988776', 'reshan.perera@gmail.com', NULL, 'Deliveries to Colombo usually take 1-2 business days.', '2024-09-17 06:01:22'),
-(10, 'user01', 'kulanya', 'I have attached my prescription. Pls let me know if items  available.', '0774455667', 'samarasinghe@gmail.com', 'Prescription3.png', NULL, '2024-09-17 06:01:22');
+(10, 'user01', 'kulanya', 'I have attached my prescription. Pls let me know if items  available.', '0774455667', 'samarasinghe@gmail.com', 'Prescription3.png', NULL, '2024-09-17 06:01:22'),
+(13, 'user01', 'Moditha Marasingha', 'hello admin', '0716899444', 'marasinghamoditha51@gmail.com', NULL, NULL, '2024-09-28 06:19:51');
 
 -- --------------------------------------------------------
 
@@ -164,19 +165,21 @@ CREATE TABLE `Products` (
   `product_description` text DEFAULT NULL,
   `price` decimal(10,2) NOT NULL,
   `stock_quantity` int(11) NOT NULL,
-  `image_url` varchar(255) DEFAULT NULL
+  `image_url` varchar(255) DEFAULT NULL,
+  `expire_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `Products`
 --
 
-INSERT INTO `Products` (`product_id`, `product_name`, `product_description`, `price`, `stock_quantity`, `image_url`) VALUES
-(1, 'Paracetamol', 'Effective pain relief for headaches and fever. 500mg tablets.', 150.00, 100, 'paracetamol.jpg'),
-(2, 'Amoxicillin', 'Antibiotic used to treat bacterial infections. 250mg capsules.', 600.00, 50, 'amoxicillin.jpg'),
-(3, 'Vitamin C Tablets', 'Boost your immune system with Vitamin C. 1000mg tablets.', 200.00, 200, 'vitamin_c.jpg'),
-(4, 'Blood Pressure Monitor', 'Accurate and easy-to-use blood pressure monitor.', 4500.00, 30, 'blood_pressure_monitor.jpg'),
-(5, 'Insulin Syringe', 'Disposable insulin syringes with fine needles.', 50.00, 500, 'insulin_syringe.jpg');
+INSERT INTO `Products` (`product_id`, `product_name`, `product_description`, `price`, `stock_quantity`, `image_url`, `expire_date`) VALUES
+(1, 'Paracetamol', 'Effective pain relief for headaches and fever. 500mg tablets.', 150.00, 100, 'paracetamol.jpg', '0000-00-00'),
+(2, 'Amoxicillin', 'Antibiotic used to treat bacterial infections. 250mg capsules.', 600.00, 50, 'amoxicillin.jpg', '0000-00-00'),
+(3, 'Vitamin C Tablets', 'Boost your immune system with Vitamin C. 1000mg tablets.', 200.00, 200, 'vitamin_c.jpg', '0000-00-00'),
+(4, 'Blood Pressure Monitor', 'Accurate and easy-to-use blood pressure monitor.', 4500.00, 30, 'blood_pressure_monitor.jpg', '0000-00-00'),
+(5, 'Insulin Syringe', 'Disposable insulin syringes with fine needles.', 50.00, 500, 'insulin_syringe.jpg', '0000-00-00'),
+(21, 'Gablin', 'Students Use Only', 250.00, 100, 'test.jpg', '2024-11-29');
 
 -- --------------------------------------------------------
 
@@ -292,7 +295,7 @@ ALTER TABLE `Manager`
 -- AUTO_INCREMENT for table `Messages`
 --
 ALTER TABLE `Messages`
-  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `Orders`
@@ -310,7 +313,7 @@ ALTER TABLE `Payment`
 -- AUTO_INCREMENT for table `Products`
 --
 ALTER TABLE `Products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Constraints for dumped tables
