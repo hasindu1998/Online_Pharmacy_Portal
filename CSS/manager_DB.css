@@ -47,12 +47,22 @@ tr,th,td{
   display: flex;
 }
 .total-amount-show-box{
+  background-color: #0079B8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 150px;
   height: 40px;
+  border-radius: 5px;
   margin-left: 30px;
   margin-top: 20px;
   margin-bottom: 30px;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.total-amount{
+  font-size: 25px;
+  color: white;
 }
 
 .manage-admin-container{

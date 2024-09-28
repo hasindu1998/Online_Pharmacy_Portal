@@ -10,6 +10,7 @@ else
 {
     header('location: ./signin.php');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +47,32 @@ else
             <div class="product-heading">Products</div>
         </div>
 
-        <div class="product-content-container">
+        <?php
+            $sql = "SELECT product_name,product_description,price FROM products";
+
+            $result = mysqli_query($Connection,$sql);
+
+                while($row = $result -> fetch_assoc()){
+
+                    $productName = $row['product_name'];
+                    $productDescription = $row['product_description'];
+                    $price = $row['price'];
+
+                    echo "<div class="products-container">
+                            <div class="product-image-container">
+                                <img src="./Images/product-icons/Pharmacy-Isometric-Icons-1.png" alt="" class="item-image">
+                            </div>
+                            <div class="product-details-container">
+                                <p class="item-name">$productName</p>
+                                <p class = "product-discription">$productDescription</p>
+                                <p class="item-price">Rs.100.00</p>
+                                <button class="item-buynow-button">$price</button>
+                            </div>
+                         </div>";
+                }
+        
+        ?>
+         <div class="product-content-container">
             <div class="products-container">
                 <div class="product-image-container">
                     <img src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="" class="item-image">
@@ -261,8 +287,7 @@ else
                     <p class="item-price">Rs.100.00</p>
                     <button class="item-buynow-button">Buy Now</button>
                 </div>
-            </div>
-
+            </div> 
         </div>
     </div>
 

@@ -2,6 +2,7 @@
 
 session_start();
 
+
 //validate user
 if(isset($_SESSION['username'])){
 
@@ -16,29 +17,30 @@ if(isset($_SESSION['username'])){
 }
 
 //insert admin details
-/*
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-  $firstname = $_POST["firstname"];
-  $lastname = $_POST["lastname"];
-  $username = $_POST["username"];
-  $email = $_POST["email"];
-  $userpassword = $_POST["userpassword"];
-  $usertype = "Admin";
-
-  //Insert data into the database
-  $sql = "INSERT INTO user_info (first_name,last_name,user_name,email,password,user_type) VALUES ('$firstname','$lastname','$username','$email','$userpassword','$usertype')";
-
+if(isset($_POST['addAdmin'])){
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $firstname = $_POST["firstname"];
+    $lastname = $_POST["lastname"];
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $userpassword = $_POST["userpassword"];
+    $usertype = "Admin";
   
-
-  //check whether the data was insert successfully
-  if($Connection->query($sql) === TRUE){
-    echo "<script>alert('Add admin successfully')</script>";
-  }else{
-    echo "Error: " . $sql . "<br>" > $Connection->error;
+    //Insert data into the database
+    $sql_user_info = "INSERT INTO user_info (first_name,last_name,user_name,email,password,user_type) VALUES ('$firstname','$lastname','$username','$email','$userpassword','$usertype')";
+  
+    $sql_admin = "INSERT INTO admin (user_name) VALUES ('$username')";
+  
+    
+  
+    //check whether the data was insert successfully
+    if(($Connection->query($sql_user_info) === TRUE) && ($Connection->query($sql_admin) ===TRUE)){
+      echo "<script>alert('Add admin successfully')</script>";
+    }else{
+      echo "Error: " . $sql . "<br>" > $Connection->error;
+    }
   }
 }
-*/
-
 //check admin status
 $AdminStatus = '----';
 $inputValue = '';
@@ -101,6 +103,32 @@ if(isset($_POST['deactivate'])){
   }
 }
 
+if(isset($_POST['delete'])){
+  $username = $_POST['adminInput'];
+
+  if(empty($username)){
+    $AdminStatus = 'Empty';
+  }else{
+    $sql = "DELETE user_info, admin FROM user_info JOIN admin ON user_info.user_name = admin.username WHERE user_info.user_name = $username";
+
+    $result = mysqli_query($Connection, $sql);
+
+    if($result && mysqli_affected_rows($Connection) > 0){
+      $AdminStatus = 'Deleted';
+    }else{
+      $AdminStatus = 'Failed';
+    }
+  }
+}
+
+//Count total amount
+$sql = "SELECT SUM(Order_total) AS totalAmount FROM orders";
+$result = mysqli_query($Connection, $sql);
+
+if(mysqli_num_rows($result) > 0){
+  $row = mysqli_fetch_assoc($result);
+  $totalAmount = $row['totalAmount'];
+}
 
 ?>
 
@@ -135,83 +163,46 @@ if(isset($_POST['deactivate'])){
               <th class="order-table-heading">Amount</th>
             </tr>
 
-            <tr>
-              <td>001</td>
-              <td>2024-10-10</td>
-              <td class="status-result">Pending</td>
-              <td>4500.00</td>
-            </tr>
+            <?php
+              $sql = "SELECT order_id,order_status,order_date,Order_total FROM orders;";
 
-            <tr>
-              <td>001</td>
-              <td>2024-10-10</td>
-              <td class="status-result">Pending</td>
-              <td>4500.00</td>
-            </tr>
+              $result = mysqli_query($Connection, $sql);
+            
 
-            <tr>
-              <td>001</td>
-              <td>2024-10-10</td>
-              <td class="status-result">Pending</td>
-              <td>4500.00</td>
-            </tr>
+              if(mysqli_num_rows($result) > 0){
 
-            <tr>
-              <td>001</td>
-              <td>2024-10-10</td>
-              <td class="status-result">Pending</td>
-              <td>4500.00</td>
-            </tr>
+                while($row = $result -> fetch_assoc()){
+                  $orderId = $row['order_id'];
+                  $date = $row['order_date'];
+                  $status = $row['order_status'];
+                  $total = $row['Order_total'];
+                }
 
-            <tr>
-              <td>001</td>
-              <td>2024-10-10</td>
-              <td class="status-result">Pending</td>
-              <td>4500.00</td>
-            </tr>
+                echo "<tr>
+                        <td>$orderId</td>
+                        <td>$date</td>
+                        <td class=status-result>$status</td>
+                        <td>$total</td>
+                      </tr>";
+            }else{
+              echo "<tr>
+                      <td colspan = '8'>No Orders Found</td>
+                    </tr>";
+            }
+            
+            ?>
+            
 
-            <tr>
-              <td>001</td>
-              <td>2024-10-10</td>
-              <td class="status-result">Pending</td>
-              <td>4500.00</td>
-            </tr>
-
-            <tr>
-              <td>001</td>
-              <td>2024-10-10</td>
-              <td class="status-result">Pending</td>
-              <td>4500.00</td>
-            </tr>
-
-            <tr>
-              <td>001</td>
-              <td>2024-10-10</td>
-              <td class="status-result">Pending</td>
-              <td>4500.00</td>
-            </tr>
-
-            <tr>
-              <td>001</td>
-              <td>2024-10-10</td>
-              <td class="status-result">Pending</td>
-              <td>4500.00</td>
-            </tr>
-
-            <tr>
-              <td>001</td>
-              <td>2024-10-10</td>
-              <td class="status-result">Pending</td>
-              <td>4500.00</td>
-            </tr>
-
+            
           </table>
       </div>
     </div>
 
     <div class="total-amount-container">
-      <h2 class="total-amount-heading">Today Earned Amount: </h2>
-      <div class="total-amount-show-box"></div>
+      <h2 class="total-amount-heading">Total Earned Amount: </h2>
+      <div  class="total-amount-show-box">
+        <h3 class="total-amount"><?php echo $totalAmount ?></h3>
+      </div>
     </div>
 
     <div class="manage-admin-container">
@@ -234,7 +225,7 @@ if(isset($_POST['deactivate'])){
                 <input type="password" class="form-input-box-right" placeholder="Re-Enter Password">
               </div>
               <div class="add-admin-button-container">
-                <button type="submit" class="add-admin-button">Add Admin</button>
+                <button type="submit" class="add-admin-button" name="addAdmin">Add Admin</button>
               </div>
             </div>
           </form>
@@ -245,23 +236,24 @@ if(isset($_POST['deactivate'])){
         <h1 class="check-admin-heading">Manage Admins</h1>
 
         <div class="control-admin-form">
-          <div class="check-admin">
-            <form action="manager_DB.php" method="POST">
-              <input type="text" class="check-admin-input" placeholder="UserName" name="adminInput" value= "<?php echo $inputValue; ?>">
-              <button type="submit" class="check-admin-button" name="check">Check</button>
-            </form>
-          </div>
+          <form action="manager_DB.php" method="POST">
+            <div class="check-admin">
+                <input type="text" class="check-admin-input" placeholder="UserName" name="adminInput" value= "<?php echo $inputValue; ?>">
+                <button type="submit" class="check-admin-button" name="check">Check</button>
+              
+            </div>
 
-          <div class="admin-satus-container">
-            <h3 class="status-heading">Status : </h3>
-            <div class="admin-status"><?php echo $AdminStatus ?></div>
-          </div>
+            <div class="admin-satus-container">
+              <h3 class="status-heading">Status : </h3>
+              <div class="admin-status"><?php echo $AdminStatus ?></div>
+            </div>
 
-          <div class="admin-control-buttons">
-            <button class="activate" name="activate">Activate</button>
-            <button class="deactivate" name="deactivate">Deactivate</button>
-            <button class="delete" name="delete">Delete</button>
-          </div>
+            <div class="admin-control-buttons">
+              <button class="activate" name="activate">Activate</button>
+              <button class="deactivate" name="deactivate">Deactivate</button>
+              <button class="delete" name="delete">Delete</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
