@@ -29,137 +29,36 @@ else
 //Handle the form for creat and update
 if($_SERVER['REQUEST_METHOD']==='POST')
 {
-    if(isset($_POST['action']))
+    if(isset($_POST['submitbtn']))
     {
         $product_name = $_POST['product_name'];
         $price = $_POST['price'];
         $expire_date = $_POST['expire_date'];
         $quantity = $_POST['quantity'];
         $description = $_POST['description'];
-        $image = $_POST['image'];
+        $img_url = "test.jpg";
+
         //Upload an image
 
-
-
-
+        $sql = "INSERT INTO Products (product_name, product_description, price, stock_quantity, image_url, expire_date ) VALUES ('$product_name', '$description', '$price', '$quantity', '$img_url', '$expire_date')";
     
-        if ($_POST['action'] == 'create') 
-        {
-            //Creat new products
-            $sql = "INSERT INTO Products (product_name, product_description, price, stock_quantity, image_url)
-            VALUES ('$product_name','$description','$price','$quantity','$image')";
-        
-        }
-        //Update the products
-        else if ($_POST['action'] == 'update')
-        {
-            $id = $_POST['product_id'];
-            $sql ="UPDATE Products SET
-            product_name = '$product_name',
-            product_description = '$description',
-            price = '$price',
-            stork_quantity = '$quantity',
-            image = '$image'
-            WHERE id = '$product_id'";
-        }
+        $result = mysqli_query($Connection, $sql);
 
-        if ($Connection->query($sql)===TRUE)
+        if($result)
         {
-            echo "Product save successfully.";
+            echo " <script> alert('Product added!'); </script> ";
+            header('location: addDelete_Product.php');
         }
         else
         {
-            echo "Error!";
+            echo " <script> alert('Error!'); </script> ";
+            header('location: addDelete_Product.php');
         }
+
     }
 }
-//Handle the product delation
-if($_SERVER['REQUEST_METHOD']==='GET' && isset($_GET['delete']))
-{
-    $product_id = $_GET['delete'];
-    $sql = "DELETE FROM Products id = '$product_id'";
-
-    if ($Connection->query($sql)===TRUE)
-    {
-        echo "Product deleted.";
-    }
-    else
-    {
-        echo "Erroe deleting!";
-    }
-}    
-
-//Products dispaling in the table
-$products = [];
-$sql = "SELECT * FROM Products";
-$result = $Connection->query($sql);
-if ($result-> num_row > 0)
-{
-    while($row = $result->fetch_assoc())
-    {
-        $products = $row;
-    }
-}
-
-$Connection->close();
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -185,27 +84,26 @@ $Connection->close();
 
         <div class="add-product-form">
             <div class="add-product-form-container">
-                <form action="#" method ="POST" enctype="multipart/form-data">
+                <form action="addDelete_Product.php" method ="POST" enctype="multipart/form-data">
                     
-
                     <div class="add-porduct-row">
-                        <input type="text" class="add-products-inputs" placeholder="Product Name">
-                        <input type="text" class="add-products-inputs product-name-input" placeholder="Price">
+                        <input type="text" class="add-products-inputs" placeholder="Product Name" name="product_name" >
+                        <input type="text" class="add-products-inputs product-name-input" placeholder="Price" name="price" >
                     </div>
 
                     <div class="add-product-row">
-                        <input type="text" class="add-products-inputs" placeholder="Expire Date">
-                        <input type="text" class="add-products-inputs" placeholder="Quantity">
+                        <input type="date" class="add-products-inputs" placeholder="Expire Date" name="expire_date" >
+                        <input type="text" class="add-products-inputs" placeholder="Quantity" name="quantity" >
                     </div>
                     <div class="add-product row">
                         <input type="file" class="add-product-inputs choose-file-input">
                     </div>
-                    <div class="add-product-row">
-                        <textarea>Description</textarea>
+                    <div class="add-product-row description_box">
+                        <textarea name="description" placeholder="Description" cols="55" rows="4" ></textarea>
                     </div>
 
                     <div class="submit-button-container">
-                        <button class="submit-button">Submit</button>
+                        <button class="submit-button" name="submitbtn" >Submit</button>
                     </div>
 
                 </form>
@@ -229,36 +127,47 @@ $Connection->close();
                     <th>Action</th>
                     <th>Action</th>
                 </tr>
-                <tr>
-                    <td>001</td>
-                    <td>Panadol</td>
-                    <td>100.00</td>
-                    <td>50</td>
-                    <td><button class="edit-product-button">Edit</button></td>
-                    <td><button class="delete-product-button">Delete</button></td>
-                </tr>
 
-                <tr>
-                    <td>002</td>
-                    <td>Panadol</td>
-                    <td>100.00</td>
-                    <td>50</td>
-                    <td><button class="edit-product-button">Edit</button></td>
-                    <td><button class="delete-product-button">Delete</button></td>
-                </tr>
+                <?php 
+            
+                    $sql = "SELECT * FROM Products;";
+                    $result = mysqli_query($Connection, $sql);
 
-                <tr>
-                    <td>003</td>
-                    <td>Panadol</td>
-                    <td>100.00</td>
-                    <td>50</td>
-                    <td><button class="edit-product-button">Edit</button></td>
-                    <td><button class="delete-product-button">Delete</button></td>
-                </tr>
+                    if(mysqli_num_rows($result) > 0)
+                    {
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                            $pID = $row['product_id'];
+                            $pName = $row['product_name'];
+                            $qty = $row['stock_quantity'];
+                            $P_price = $row['price'];
+                            
+                            echo "<tr>
+                                    <td>$pID</td>
+                                    <td>$pName</td>
+                                    <td>$qty</td>
+                                    <td>$P_price</td>
+                                    <td><form action='addDelete_Product.php' method='POST'><button class='edit-product-button'>Edit</button></form></td>
+                                    <td><form action='addDelete_Product.php' method='POST'><button class='delete-product-button'>Delete</button></form></td>
+                                </tr>";
+                        }
+                    }
+                    else
+                    {
+                        echo "<tr>";
+                        echo "<td colspan='6'>No products found</td>";
+                        echo "</tr>";
+                    }
+                    
+                    $Connection->close();
+
+                ?>
+
             </table>
         </div>
     </div>
 
     <?php include ("./footer.php"); ?>
+
 </body>
 </html>
