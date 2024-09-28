@@ -1,7 +1,4 @@
-<?php
-//By Moditha IT23539990
-session_start();
-?>
+<!-- By Marasingha MAMN IT23539990 -->
 
 <!DOCTYPE html>
 <html>

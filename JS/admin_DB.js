@@ -10,3 +10,8 @@ function Mark_shipped()
             document.getElementById("Shipped_form").submit();
         } 
 }
+
+function manage_Product()
+{
+    window.location.href = "addDelete_Product.php";
+}

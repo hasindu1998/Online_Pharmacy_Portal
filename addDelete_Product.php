@@ -1,3 +1,166 @@
+<?php 
+//Deshan G G D IT23539372
+
+session_start();
+
+//check if the user is logged in
+if(isset($_SESSION['username']))
+{
+    //check if the user is admin
+    if($_SESSION['user_type']=='Admin')
+    {
+        require_once './db_Config/config.php';
+    }
+    else if($_SESSION['user_type']=='Manager')
+    {
+        header('location: ./manager_DB.php');
+    }
+    else
+    {
+        header('location: ./index.php');
+    }
+}
+else
+{
+    header('location: ./index.php');
+}
+
+
+//Handle the form for creat and update
+if($_SERVER['REQUEST_METHOD']==='POST')
+{
+    if(isset($_POST['action']))
+    {
+        $product_name = $_POST['product_name'];
+        $price = $_POST['price'];
+        $expire_date = $_POST['expire_date'];
+        $quantity = $_POST['quantity'];
+        $description = $_POST['description'];
+        $image = $_POST['image'];
+        //Upload an image
+
+
+
+
+    
+        if ($_POST['action'] == 'create') 
+        {
+            //Creat new products
+            $sql = "INSERT INTO Products (product_name, product_description, price, stock_quantity, image_url)
+            VALUES ('$product_name','$description','$price','$quantity','$image')";
+        
+        }
+        //Update the products
+        else if ($_POST['action'] == 'update')
+        {
+            $id = $_POST['product_id'];
+            $sql ="UPDATE Products SET
+            product_name = '$product_name',
+            product_description = '$description',
+            price = '$price',
+            stork_quantity = '$quantity',
+            image = '$image'
+            WHERE id = '$product_id'";
+        }
+
+        if ($Connection->query($sql)===TRUE)
+        {
+            echo "Product save successfully.";
+        }
+        else
+        {
+            echo "Error!";
+        }
+    }
+}
+//Handle the product delation
+if($_SERVER['REQUEST_METHOD']==='GET' && isset($_GET['delete']))
+{
+    $product_id = $_GET['delete'];
+    $sql = "DELETE FROM Products id = '$product_id'";
+
+    if ($Connection->query($sql)===TRUE)
+    {
+        echo "Product deleted.";
+    }
+    else
+    {
+        echo "Erroe deleting!";
+    }
+}    
+
+//Products dispaling in the table
+$products = [];
+$sql = "SELECT * FROM Products";
+$result = $Connection->query($sql);
+if ($result-> num_row > 0)
+{
+    while($row = $result->fetch_assoc())
+    {
+        $products = $row;
+    }
+}
+
+$Connection->close();
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +186,8 @@
         <div class="add-product-form">
             <div class="add-product-form-container">
                 <form action="#" method ="POST" enctype="multipart/form-data">
+                    
+
                     <div class="add-porduct-row">
                         <input type="text" class="add-products-inputs" placeholder="Product Name">
                         <input type="text" class="add-products-inputs product-name-input" placeholder="Price">
