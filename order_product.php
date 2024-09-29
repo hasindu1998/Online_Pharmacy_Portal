@@ -1,3 +1,25 @@
+<?php
+
+require_once './db_Config/config.php';
+
+if(isset($_POST['order_btn']))
+{
+    $user_name = $_POST[''];
+    $f_Name = $_POST[''];
+    $street_name = $_POST[''];
+    $city = $_POST[''];
+    $postal_code = $_POST['pword'];
+    $date = $_POST['confirmPassword'];
+    $order = "Active";
+    $quantity = "Customer";
+    $prescription =
+
+    $sql = "SELECT user_name FROM user_info WHERE user_name = '$user_Name'; ";
+
+    $result = mysqli_query($Connection, $sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,17 +44,19 @@
         <form action="#" method="post" enctype="multipart/form-data">
             <div class="step">
                 <h3>Step 1</h3>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+                <label for="username">User Name</label>
+                <input type="text" id="username" name="username" placeholder="Enter Your User Name" required>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="mail@example.com" required>
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter Your Full Name" required>
 
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+                <label for="name">Address</label>
+                <input type="text" id="Home Address"  placeholder="Enter Your Home Address" required>
+                <input type="text" id="street" placeholder="street"  placeholder="Street" required>
+                <input type="text" id="City"  placeholder="City" required>
 
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" placeholder="Enter Your Address" required>
+                <label>Date </label>
+                <input type="date" id="date" name="date" >
 
                 <label for="postal-code">Postal Code</label>
                 <input type="text" id="postal-code" name="postal_code" placeholder="Enter Your Postal Code" required>
@@ -52,14 +76,11 @@
                 <input type="number" id="quantity" name="quantity" min="1" value="1">
 
                 <label for="prescription">Add Your Prescription</label>
-                <textarea id="prescription" name="prescription" placeholder="Type your comments"></textarea>
-
-                <label for="prescription-file"></label>
                 <input type="file" id="prescription-file" name="prescription_file">
                 <br>
                 
-                <button type="button" id = place-order-btn>OK/Place My Order</button>
-                <button type="button"id = delete-order-btn> Delete Order </button>
+                <button type="button" id = place-order-btn name="order_btn">OK/Place My Order</button>
+                <button type="button"id = delete-order-btn name="delete_btn"> Delete Order </button>
             </div>
 
             <hr>

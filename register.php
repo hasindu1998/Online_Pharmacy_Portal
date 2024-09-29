@@ -1,3 +1,58 @@
+<?php
+require_once './db_Config/config.php';
+
+if(isset($_POST['Submit_frm']))
+{
+    $f_Name = $_POST['firstName'];
+    $l_Name = $_POST['lastname'];
+    $user_Name = $_POST['username'];
+    $e_Mail = $_POST['email'];
+    $P_word = $_POST['pword'];
+    $re_entr_pwd = $_POST['confirmPassword'];
+    $acc_status = "Active";
+    $user_type = "Customer";
+
+    $sql = "SELECT user_name FROM user_info WHERE user_name = '$user_Name'; ";
+
+    $result = mysqli_query($Connection, $sql);
+
+    if(mysqli_num_rows($result) > 0)
+    {
+        echo 'username not available';
+    }
+
+    else
+    {
+        if ($P_word != $re_entr_pwd) 
+        {
+            echo "<script>alert('Error! Passwords do not match.');</script>";
+        } 
+        else 
+        {
+            $sql =" INSERT INTO user_info(user_name,first_name,last_name,email,password,acc_status,user_type) 
+            VALUES('$user_Name','$f_Name','$l_Name','$e_Mail','$P_word' ,'$acc_status','$user_type'); ";
+
+            $result = mysqli_query($Connection, $sql);
+
+            if($result)
+            {
+                echo " <script> alert('Account Created!'); </script> ";
+                header('location: signin.php');
+            }
+            else
+            {
+                echo " <script> alert('Error!'); </script> ";
+            }
+            
+        }
+       
+    }
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,45 +71,78 @@
     
 <div class="container">
         <h2>Registration</h2>
-        <form id="registrationForm">
+
+        <?php
+
+          if(!empty($errorMessage)) {
+
+            echo"
+            <div calss='alert alert-warning alert-dismissible fade show' role='alert'>
+            <strong> $errorMessage </strong>
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-lable='close'></button>
+            </div>
+                ";
+          }
+        ?>
+
+
+        
+        <form action="register.php" method="POST" id="registrationForm">
             <div class="form-row">
                 <div class="form-column">
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" placeholder="Enter Your Full Name" required>
-                    </div>
                     
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="mail@example.com" required>
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName"  placeholder="Enter Your Fist Name" >
                     </div>
+
+                    <div class="form-group">
+                        <label for="username">User name</label>
+                        <input type="text" id="username" name="username"  placeholder="Enter Your Username">
+                    </div>
+                    
                     
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Minimum of 8 characters" required>
+                        <input type="password" id="password" name="pword"  placeholder="Minimum of 8 characters" >
                     </div>
+
+                    
                 </div>
                 
                 <div class="form-column">
+
                     <div class="form-group">
-                        <label for="username">User Name</label>
-                        <input type="text" id="username" placeholder="Enter Your User Name" required>
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" name="lastname"  placeholder="Enter Your Last Name" >
                     </div>
-                    
+
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="Enter Your Phone Number" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email"  name="email"  placeholder="mail@example.com" >
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" id="confirmPassword" placeholder="Minimum of 8 characters" required>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Minimum of 8 characters" >
                     </div>
                 </div>
+
             </div>
-            
-            <button type="submit">Register</button>
+
+            <div class="status">
+                <input type="radio" name="status" value="user" id="user" > <label>User</label>
+                <input type="radio" name="status" value="admin" id="admin"> <label>Admin</label>
+            </div>
+
+            <br>
+
+            <button type="submit" name="Submit_frm" >Submit</button>
+            <br> <br>
+            <button type="reset" id="reset" name="Reset_frm" >Reset</Button>
+
         </form>
+        
     </div>
     <script src="./js/order.js"></script>
     
