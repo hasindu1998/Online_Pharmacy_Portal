@@ -82,6 +82,11 @@ if(isset($_POST['changePwBtn']))
     }
 }*/
 
+//profile pic
+$baseProfilePicUrl = './Images/Profile_Pics/'; 
+$profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProfilePicUrl.$_SESSION['profilePic_url']) : './Images/Profile_Pics/student-avatar-illustratio.jpg'; // Default profile picture
+
+
 ?>
 
 <!DOCTYPE html>
@@ -103,9 +108,9 @@ if(isset($_POST['changePwBtn']))
 
       <div class="my-account-content">
             <div class="edit-container">
-                <div class="profile-pic">
-                  <img src="my-account-icon.jpg">
-                </div>
+            <div class="profile-pic">
+                  <img src="<?php echo $profilePicUrl; ?>">
+                </div> 
                    <a href="#">Edit Profile</a>
                    <div class="background-img">
                     <img src="./Images/myaccount-background-image.png" alt="background-image">
@@ -183,11 +188,18 @@ if(isset($_POST['changePwBtn']))
           </div>
         </div>
      </div>
-    <h2 class="inbox"><b>Inbox</b></h2>
+    
+     
     <div class="inbox-container">
-            
+    <h2 class="inbox"><b>Inbox</b></h2>
             <div class="inbox-content">
-
+                <table>
+                  <tr>
+                    <th>Message ID</th>
+                    <th>Message</th>
+                    <th>Reply</th>
+                  </tr>
+                </table>
             </div>
      </div>
 

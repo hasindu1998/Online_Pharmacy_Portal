@@ -182,7 +182,7 @@ p
     text-decoration: none;
 }
 
-.inbox-container
+.inbox-content
 {
     display: flex;
     justify-content: left;
@@ -194,14 +194,38 @@ p
     margin-bottom: 30px;
     margin-right: 20px;
     width: 1300px;
-    height: 250px;
+    height: 350px;
+    overflow: scroll;
 }
+
+.inbox-content table
+{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.inbox-content table tr
+{
+    border-bottom: 2px solid #f2f2f2;
+
+}
+
+.inbox-content table tr th
+{
+    background-color: #5bb3d9;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 
 h2.inbox
 {
     margin-left: 100px;
     margin-top: 30px;
 }
+
+
 
 .delete-account-container
 {
