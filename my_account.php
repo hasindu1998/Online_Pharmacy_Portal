@@ -41,8 +41,9 @@ if(isset($_POST['saveBtn']))
 
   if($result && mysqli_affected_rows($Connection) > 0)
     {
-        header("Location: my_account.php");
-        exit();
+      $_SESSION['firstname'] = $firstName;
+      header("Location: my_account.php");
+      exit();
     }
 
 }

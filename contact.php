@@ -9,7 +9,7 @@ if(!isset($_SESSION['username']))
     header('location: ./signin.php');
 }
 
-if(isset($_POST["submitBtn"]))
+if (isset($_POST["submitBtn"])) 
 {
     $user_name = $_SESSION['username'];
     $name = $_POST['F_name'];
@@ -17,13 +17,41 @@ if(isset($_POST["submitBtn"]))
     $contact_no = $_POST['contact'];
     $message_text = $_POST['msg'];
 
-    $query = "INSERT INTO messages (user_name,name,message_text,contact_no,email) VALUES ('{$user_name}', '{$name}', '{$message_text}', '{$contact_no}', '{$email}')";
-    $result = mysqli_query($Connection, $query);
+    $upload_name = NULL; 
 
-    if($result)
+    // Check file was submitted or not
+    if (isset($_FILES['cntactFile']) && $_FILES['cntactFile']['error'] === UPLOAD_ERR_OK) 
     {
-       header('Location:index.php');
+        $upload_name = $_FILES['cntactFile']['name'];
+        
+        // target location
+        $target_directory = "./Images/PrescriptionMessage/";
+        
+        // Move file
+        move_uploaded_file($_FILES['cntactFile']['tmp_name'],$target_directory . $upload_name);
+
+        // save file name in database
+        $query = "INSERT INTO messages (user_name, name, message_text, contact_no, email, Uploads_url) 
+                  VALUES ('{$user_name}', '{$name}', '{$message_text}', '{$contact_no}', '{$email}', '{$upload_name}')";
+    } 
+    else 
+    {
+        // save details without file name
+        $query = "INSERT INTO messages (user_name, name, message_text, contact_no, email) 
+                  VALUES ('{$user_name}', '{$name}', '{$message_text}', '{$contact_no}', '{$email}')";
+    } 
+
+    $result = mysqli_query($Connection, $query);
+    if ($result) 
+    {
+        header('Location: index.php');
+        exit();
+    } 
+    else 
+    {
+        // js alert ekk danna
     }
+
 }
 
 ?>
@@ -54,9 +82,8 @@ if(isset($_POST["submitBtn"]))
             <img src="./Images/contact-us-img.jpg">
         </div>
 
-        
      <div class="contact_form_container">
-        <form action="contact.php" name="detailForm" onsubmit="return validateForm()" method="post">
+        <form action="contact.php" name="detailForm" onsubmit="return validateForm()" method="POST" enctype="multipart/form-data">
             <div class="contact-form">
                      <div class="account-edit">
                         <div class="input-container">
@@ -75,7 +102,7 @@ if(isset($_POST["submitBtn"]))
                          </div>
                          <div class="input-container">
                            <label>Image</label>
-                           <input type="file">
+                           <input type="file" name="cntactFile" accept=".jpg,.jpeg,.png,.pdf" >
                          </div>
                      </div>
                      <div class="account-edit">
@@ -107,12 +134,11 @@ if(isset($_POST["submitBtn"]))
                 
              </div>
         </div>
-    
 
-     
     </div>
             
     <script src="./js/contact.js"></script>
     <?php include ("./footer.php"); ?>
+
 </body>
 </html>
