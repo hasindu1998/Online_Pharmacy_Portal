@@ -50,9 +50,11 @@ else
         <div class="products-heading-container">
             <div class="product-heading">Products</div>
         </div>
+         <div class="product-content-container">
 
         <?php
-            $sql = "SELECT product_name,product_description,price FROM products";
+
+            $sql = "SELECT * FROM products";
 
             $result = mysqli_query($Connection,$sql);
 
@@ -61,237 +63,27 @@ else
                     $productName = $row['product_name'];
                     $productDescription = $row['product_description'];
                     $price = $row['price'];
+                    $product_id = $row['product_id'];
+                    $img = $row['image_url'];
+                    $image_URL= "./Images/product-icons/".$img;
 
-                    echo "<div class="products-container">
-                            <div class="product-image-container">
-                                <img src="./Images/product-icons/Pharmacy-Isometric-Icons-1.png" alt="" class="item-image">
+                    echo "<div class='products-container'>
+                            <div class='product-image-container'>
+                                <img src='$image_URL' alt='' class='item-image' >
                             </div>
-                            <div class="product-details-container">
-                                <p class="item-name">$productName</p>
-                                <p class = "product-discription">$productDescription</p>
-                                <p class="item-price">Rs.100.00</p>
-                                <button class="item-buynow-button">$price</button>
+                            <div class='product-details-container'>
+                                <p class='item-name'>$productName</p>
+                                <p class = 'product-discription'>$productDescription</p>
+                                <p class='item-price'>$price</p>
+                                <form action='' method='POST'>
+                                    <input type='hidden' name='prdct_id' value='$product_id'>
+                                    <button class='item-buynow-button' name='buynow' >Buy Now</button>
+                                </form>
                             </div>
-                         </div>";
+                          </div>";
                 }
-        
         ?>
-         <div class="product-content-container">
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
 
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-2.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-3.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-4.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-5.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-9.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-6.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-7.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-8.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-9.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-1.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-9.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-2.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-3.png" alt="" class="item-image">
-                </div>
-                <div class="iproduct-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-4.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-5.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-6.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="products-container">
-                <div class="product-image-container">
-                    <img src="./Images\product-icons\Pharmacy-Isometric-Icons-9.png" alt="" class="item-image">
-                </div>
-                <div class="product-details-container">
-                    <p class="item-name">Panadol</p>
-                    <p class = "product-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati corporis velit error  </p>
-                    <p class="item-price">Rs.100.00</p>
-                    <button class="item-buynow-button">Buy Now</button>
-                </div>
-            </div> 
         </div>
     </div>
 
