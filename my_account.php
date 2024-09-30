@@ -200,6 +200,27 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                     <th>Message</th>
                     <th>Reply</th>
                   </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>I want to know the availability of paracetamol.</td>
+                    <td>yes available</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>I want to know the availability of paracetamol.</td>
+                    <td>yes available</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>I want to know the availability of paracetamol.</td>
+                    <td>yes available</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>I want to know the availability of paracetamol.</td>
+                    <td>yes available</td>
+                  </tr>
+                  
                 </table>
             </div>
      </div>

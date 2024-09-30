@@ -198,26 +198,33 @@ p
     overflow: scroll;
 }
 
-.inbox-content table
+table
 {
     width: 100%;
     border-collapse: collapse;
+}
+
+table th
+{
+    background-color: #0098DA;
+    color: black;
+    
+}
+
+table td
+{
     text-align: center;
 }
 
-.inbox-content table tr
+table tr
 {
     border-bottom: 2px solid #f2f2f2;
-
 }
 
-.inbox-content table tr th
+table tr:nth-child(even)
 {
-    background-color: #5bb3d9;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    background-color: #f2f2f2;
 }
-
 
 h2.inbox
 {
