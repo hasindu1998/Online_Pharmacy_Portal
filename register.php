@@ -1,7 +1,9 @@
 <?php
-require_once './db_Config/config.php';
-
+$result;
 if(isset($_POST['Submit_frm']))
+
+
+ 
 {
     $f_Name = $_POST['firstName'];
     $l_Name = $_POST['lastname'];
@@ -12,42 +14,51 @@ if(isset($_POST['Submit_frm']))
     $acc_status = "Active";
     $user_type = "Customer";
 
+    require_once './db_Config/config.php';
+
     $sql = "SELECT user_name FROM user_info WHERE user_name = '$user_Name'; ";
 
     $result = mysqli_query($Connection, $sql);
 
     if(mysqli_num_rows($result) > 0)
     {
-        echo 'username not available';
+        echo "<script> alert('!Username not available'); </script>" ;
     }
 
-    else
-    {
-        if ($P_word != $re_entr_pwd) 
-        {
-            echo "<script>alert('Error! Passwords do not match.');</script>";
-        } 
-        else 
-        {
-            $sql =" INSERT INTO user_info(user_name,first_name,last_name,email,password,acc_status,user_type) 
-            VALUES('$user_Name','$f_Name','$l_Name','$e_Mail','$P_word' ,'$acc_status','$user_type'); ";
+    else if (empty($f_Name)|| empty($l_Name)|| empty($user_Name)||empty($e_Mail)||empty($P_word)||empty($re_entr_pwd))
+    {   
+        echo"<script> alert('Fill All Fields!'); </script>";
+           
+    }
 
-            $result = mysqli_query($Connection, $sql);
-
-            if($result)
-            {
-                echo " <script> alert('Account Created!'); </script> ";
-                header('location: signin.php');
-            }
-            else
-            {
-                echo " <script> alert('Error!'); </script> ";
-            }
-            
-        }
+    else if ($P_word !== $re_entr_pwd)
+    {   
+        echo "<script>alert('!Passwords do not match.');</script>";
        
     }
 
+    else{
+
+    $sql ="INSERT INTO user_info(user_name,first_name,last_name,email,password,acc_status,user_type)
+    VALUES ('$user_Name','$f_Name','$l_Name','$e_Mail','$P_word' ,'$acc_status','$user_type');";
+       
+
+       $result = mysqli_query($Connection, $sql);
+
+       if($result)
+       {
+
+            echo "<script> alert('Welcome to PhamacyX'); </script>";
+            header('location: signin.php');
+       }
+       else
+       {
+            echo " <script> alert('Error!'); </script> ";
+       }
+
+    }
+
+    
 }
 
 ?>
@@ -72,21 +83,6 @@ if(isset($_POST['Submit_frm']))
 <div class="container">
         <h2>Registration</h2>
 
-        <?php
-
-          if(!empty($errorMessage)) {
-
-            echo"
-            <div calss='alert alert-warning alert-dismissible fade show' role='alert'>
-            <strong> $errorMessage </strong>
-            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-lable='close'></button>
-            </div>
-                ";
-          }
-        ?>
-
-
-        
         <form action="register.php" method="POST" id="registrationForm">
             <div class="form-row">
                 <div class="form-column">
@@ -130,21 +126,17 @@ if(isset($_POST['Submit_frm']))
 
             </div>
 
-            <div class="status">
-                <input type="radio" name="status" value="user" id="user" > <label>User</label>
-                <input type="radio" name="status" value="admin" id="admin"> <label>Admin</label>
-            </div>
 
             <br>
 
-            <button type="submit" name="Submit_frm" >Submit</button>
-            <br> <br>
-            <button type="reset" id="reset" name="Reset_frm" >Reset</Button>
+            <button type="submit" name="Submit_frm" id="submit" >SingUp</button>
+            
+            
 
         </form>
         
     </div>
-    <script src="./js/order.js"></script>
+    
     
 
     

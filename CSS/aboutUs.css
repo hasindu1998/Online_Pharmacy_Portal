@@ -1,8 +1,6 @@
 
 body {
-  font-family: "Roboto";
- 
-  
+  font-family: "Roboto"; 
 }
 
 .About{
@@ -16,23 +14,37 @@ body {
 
 .image {
   flex: 1;
-  padding :20px;
+  padding :10px;
   width: 100%;
-  max-width: 800px;
+  max-width: 760px;
+  
 }
 
 
 .text {
-  flex: 1;
-  padding: 50px; 
+  flex: 2;
+  padding: 100px;
+  line-height: 40px; 
+  
+
 }
 
+h1{
+  font-size: 80px;
+  text-shadow:2px 2px 5px #0098DA;
+}
+.hidden-content a{
+  color: brown;
+  font-style: italic;
+
+}
 
 #learnMoreBtn {
   background-color:  #0098DA;
   color:white;
   padding: 10px 20px;
   border: none;
+  border-style:groove;
 
  
   
@@ -42,3 +54,4 @@ body {
   background-color: rgb(77, 124, 171);
 
 }
+

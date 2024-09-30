@@ -21,25 +21,27 @@ session_start();
     
     <div class="About">
     <div class="image">
-      <img src="./Images/About us 1.jpg" alt="About Us Image">
+      <img src="./Images/AboutUs.png" alt="About Us Image">
     </div>
     
     <div class="text">
-      <h2>About Us</h2>
+      <h1>About Us</h1>
       <br>
-      <p>Welcome to PharmacyX, your trusted partner in health and wellness. 
+      <p>Welcome to<b> PharmacyX</b>, your trusted partner in health and wellness. 
         Our mission is to provide you with high-quality, accessible, and affordable healthcare solutions tailored to meet your unique needs.
         PhamacyX founded in 2024 and it is committed to offering an extensive range of medications, healthcare products, and wellness services all from the comfort of your home.
          With a focus on safety, convenience, and customer care. We are dedicated to helping you live healthier and happier lives.</p>
          <br>
       <button id="learnMoreBtn">Learn More</button>
+      
       <div id="hidden-content" class="hidden-content">
-
-        <div class="person1">
-          <img src="About us 1.jpg" alt="About Us Image">
+      
+      <a href="/products.php">Check our product</a><br>
+      <a href="/t&c.php">Check t&c</a><br>
+      <a href = "/privacyPolicy.php">Check Privacy Policy</a>
+          
         </div>
         
-    </div>
     </div>
   </div>
 
