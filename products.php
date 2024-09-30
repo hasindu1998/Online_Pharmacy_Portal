@@ -64,11 +64,12 @@ else
                     $productDescription = $row['product_description'];
                     $price = $row['price'];
                     $product_id = $row['product_id'];
-                    $img = $row['img_url'];
+                    $img = $row['image_url'];
+                    $image_URL= "./Images/product-icons/".$img;
 
                     echo "<div class='products-container'>
                             <div class='product-image-container'>
-                                <img src='./Images/product-icons/Pharmacy-Isometric-Icons-1.png' alt='' class='item-image' >
+                                <img src='$image_URL' alt='' class='item-image' >
                             </div>
                             <div class='product-details-container'>
                                 <p class='item-name'>$productName</p>
