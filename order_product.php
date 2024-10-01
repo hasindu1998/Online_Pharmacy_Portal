@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+// get product id from products.php
+if(isset($_POST['buynowbtn']))
+{
+    $product_id = $_POST['prdct_id'];
+}
+else
+{
+    header('location: ./index.php');
+}
 
 ?>
 
@@ -23,83 +34,34 @@
     <div class="container">
         
         <h2>Place Your Order</h2>
-        <form action="#" method="POST" >
+        <form action="paymentpage.php" method="POST" >
             <div class="step">
                 <h3>Step 1</h3>
                 <label for="username">First Name</label>
-                <input type="text" id="username" name="username" placeholder="Enter Your User Name" required>
+                <input type="text" id="username" name="firstname" placeholder="Enter Your User Name" required>
 
                 <label for="fullname">Last Name</label>
-                <input type="text" id="fullname" name="Last name" placeholder="Enter Your Full Name" required>
+                <input type="text" id="fullname" name="Lastname" placeholder="Enter Your Full Name" required>
 
                 <label for="name">Address</label>
-                <input type="text" id="Home Address"  placeholder="Enter Your Home Address" required>
-                <input type="text" id="street" placeholder="street"  placeholder="Street" required>
-                <input type="text" id="City"  placeholder="City" required>
-
-                <label>Date </label>
-                <input type="date" id="date" name="date" >
+                <input type="text" id="street" placeholder="street" name="street" placeholder="Street" required>
+                <input type="text" id="City"  placeholder="City" name="city" required>
 
                 <label for="postal-code">Postal Code</label>
                 <input type="text" id="postal-code" name="postal_code" placeholder="Enter Your Postal Code" required>
 
-                <label for="order">Order</label>
-                <select id="order" name="order">
-                    <option value="" disabled selected>select</option>
-                    <option value="item1">Item 1</option>
-                    <option value="item2">Item 2</option>
-                    <option value="item3">Item 3</option>
-                     <option value="item4">Item 4</option>
-                    <option value="item5">Item 5</option>
-                    
-                </select>
-
                 <label for="quantity">Quantity</label>
                 <input type="number" id="quantity" name="quantity" min="1" value="1">
 
-                <label for="prescription">Add Your Prescription</label>
-                <input type="file" id="prescription-file" name="prescription_file">
                 <br>
+
+                <input type="hidden" id="product_id" name="product_id" value="<?php echo $product_id; ?>">
                 
                 
-                <button type="button" id = place-order-btn name="order_btn">OK/Place My Order</button>
-                <button type="button"id = update-btn name="update_btn"> Update Order </button>
+                <button type="submit" id="place-order-btn" name="placeorder">Place My Order</button>
                 <button type="button"id = delete-order-btn name="delete_btn"> Delete Order </button>
                 
                 
-            </div>
-
-            <hr>
-            <div class="step">
-                <h3>Step 2</h3>
-                <label for="calculated-amount">Calculated Amount</label>
-                <input type="text" id="calculated-amount" name="calculated_amount" readonly>
-            </div>
-
-           
-            <hr>
-            <div class="step">
-                <h3>Step 3</h3>
-                <label for="deposited-amount">Deposited Amount</label>
-                <input type="number" id="deposited-amount" name="deposited_amount" required>
-
-                <label for="deposited-date">Deposited Date</label>
-                <input type="date" id="deposited-date" name="deposited_date" required>
-
-                <label for="bank">Bank</label>
-                <input type="text" id="bank" name="bank" required>
-
-                <label for="branch">Branch</label>
-                <input type="text" id="branch" name="branch" required>
-
-                <label for="payment-slip">Add Your Payment Slip</label>
-                <input type="file" id="payment-slip" name="payment_slip" required>
-
-                <label for="payment-remark">Payment Remark</label>
-                <textarea id="payment-remark" name="payment_remark" placeholder="Type your comments" required></textarea>
-               
-
-                <button type="button"id = submit-btn> Submit </button>
             </div>
         </form>
     </div>

@@ -75,9 +75,9 @@ else
                                 <p class='item-name'>$productName</p>
                                 <p class = 'product-discription'>$productDescription</p>
                                 <p class='item-price'>$price</p>
-                                <form action='' method='POST'>
+                                <form action='./order_product.php' method='POST' >
                                     <input type='hidden' name='prdct_id' value='$product_id'>
-                                    <button class='item-buynow-button' name='buynow' >Buy Now</button>
+                                    <button class='item-buynow-button' name='buynowbtn' >Buy Now</button>
                                 </form>
                             </div>
                           </div>";
