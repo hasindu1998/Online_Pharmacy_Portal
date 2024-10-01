@@ -77,6 +77,22 @@ p
     margin: 15px 0;
 }
 
+.upload-profile
+{
+    margin-top: 20px;
+}
+
+.addProfileBtn
+{
+    background-color: #0098DA;
+    color: #fff;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 8px 18px 8px 18px;
+}
+
 .input-container
 {
     width: 100%;
