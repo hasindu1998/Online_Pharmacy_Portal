@@ -40,6 +40,7 @@ if(isset($_POST['placeorder']))
 }
 if(isset($_POST['Submit_payment']))
 {
+    $username = $_SESSION['username'];
     $paid_amount = $_POST['deposited_amount'];
     $bank = $_POST['bank'];
     $payment_remark = $_POST['payment_remark'];
@@ -49,8 +50,19 @@ if(isset($_POST['Submit_payment']))
     //get order id
     $sql = "SELECT order_id FROM Orders WHERE user_name = '$username' ORDER BY order_id DESC LIMIT 1";
     $result = mysqli_query($Connection,$sql);
-    $row = mysqli_fetch_assoc($result);
-    $order_id = $row['order_id'];
+    if ($result) 
+    {
+        if (mysqli_num_rows($result) > 0) 
+        {
+            $row = mysqli_fetch_assoc($result);
+            $order_id = $row['order_id']; // Extract 'order_id' from the row
+        } 
+        else 
+        {
+            echo "<script>alert('No orders found for this user!');</script>";
+            $order_id = null;  
+        }
+    }
 
     // Move file
     move_uploaded_file($_FILES['payment_slip']['tmp_name'],$target_directory . $payslipurl);
