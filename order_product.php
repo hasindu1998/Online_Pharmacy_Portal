@@ -1,23 +1,5 @@
 <?php
 
-require_once './db_Config/config.php';
-
-if(isset($_POST['order_btn']))
-{
-    $user_name = $_POST[''];
-    $f_Name = $_POST[''];
-    $street_name = $_POST[''];
-    $city = $_POST[''];
-    $postal_code = $_POST['pword'];
-    $date = $_POST['confirmPassword'];
-    $order = "Active";
-    $quantity = "Customer";
-    $prescription =
-
-    $sql = "SELECT user_name FROM user_info WHERE user_name = '$user_Name'; ";
-
-    $result = mysqli_query($Connection, $sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -41,14 +23,14 @@ if(isset($_POST['order_btn']))
     <div class="container">
         
         <h2>Place Your Order</h2>
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="#" method="POST" >
             <div class="step">
                 <h3>Step 1</h3>
-                <label for="username">User Name</label>
+                <label for="username">First Name</label>
                 <input type="text" id="username" name="username" placeholder="Enter Your User Name" required>
 
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Enter Your Full Name" required>
+                <label for="fullname">Last Name</label>
+                <input type="text" id="fullname" name="Last name" placeholder="Enter Your Full Name" required>
 
                 <label for="name">Address</label>
                 <input type="text" id="Home Address"  placeholder="Enter Your Home Address" required>
@@ -79,8 +61,12 @@ if(isset($_POST['order_btn']))
                 <input type="file" id="prescription-file" name="prescription_file">
                 <br>
                 
+                
                 <button type="button" id = place-order-btn name="order_btn">OK/Place My Order</button>
+                <button type="button"id = update-btn name="update_btn"> Update Order </button>
                 <button type="button"id = delete-order-btn name="delete_btn"> Delete Order </button>
+                
+                
             </div>
 
             <hr>
