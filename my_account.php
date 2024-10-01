@@ -99,9 +99,10 @@ if(isset($_POST['addProfilePic']))
       // save file name in database
       $query = "UPDATE user_info SET profilepic_url = '$upload_name' WHERE user_name = '" . $_SESSION['username'] . "'";
       $result = mysqli_query($Connection, $query);
-      if ($result) 
+      if ($result)
       {
-        exit();
+        $_SESSION['profilePic_url'] = $upload_name;
+        header("Location: my_account.php");
       } 
       else 
       {
@@ -140,7 +141,7 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                   <img src="<?php echo $profilePicUrl; ?>">
                 </div> 
                   <div class="upload-profile">
-                    <form action="my_account.php" method="POST">
+                    <form action="my_account.php" method="POST" enctype="multipart/form-data">
                         <input type="file" name="profilePIC" accept=".jpg,.jpeg,.png" >
                         <button type="submit" name="addProfilePic" class="addProfileBtn">Add Picture</button>
                     </form>
