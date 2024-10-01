@@ -32,12 +32,8 @@ if(isset($_POST['addAdmin'])){
     //Insert data into the database
     $sql_user_info = "INSERT INTO user_info (first_name,last_name,user_name,email,password,user_type) VALUES ('$firstname','$lastname','$username','$email','$userpassword','$usertype')";
   
-    $sql_admin = "INSERT INTO admin (user_name) VALUES ('$username')";
-  
-    
-  
     //check whether the data was insert successfully
-    if(($Connection->query($sql_user_info) === TRUE) && ($Connection->query($sql_admin) ===TRUE)){
+    if(($Connection->query($sql_user_info) === TRUE)){
       echo "<script>alert('Add admin successfully')</script>";
     }else{
       echo "Error: " . $sql . "<br>" > $Connection->error;
@@ -112,7 +108,7 @@ if(isset($_POST['delete'])){
   if(empty($username)){
     $AdminStatus = 'Empty';
   }else{
-    $sql = "DELETE user_info, admin FROM user_info JOIN admin ON user_info.user_name = admin.username WHERE user_info.user_name = $username";
+    $sql = "DELETE FROM User_info WHERE user_name = '$username' AND user_type = 'Admin'";
 
     $result = mysqli_query($Connection, $sql);
 
@@ -167,7 +163,7 @@ if(mysqli_num_rows($result) > 0){
             </tr>
 
             <?php
-              $sql = "SELECT order_id,order_status,order_date,Order_total FROM orders;";
+              $sql = "SELECT * FROM orders;";
 
               $result = mysqli_query($Connection, $sql);
             
@@ -179,14 +175,14 @@ if(mysqli_num_rows($result) > 0){
                   $date = $row['order_date'];
                   $status = $row['order_status'];
                   $total = $row['Order_total'];
-                }
 
-                echo "<tr>
+                  echo "<tr>
                         <td>$orderId</td>
                         <td>$date</td>
                         <td class=status-result>$status</td>
                         <td>$total</td>
                       </tr>";
+                }
             }else{
               echo "<tr>
                       <td colspan = '8'>No Orders Found</td>
@@ -194,9 +190,7 @@ if(mysqli_num_rows($result) > 0){
             }
             
             ?>
-            
 
-            
           </table>
       </div>
     </div>
