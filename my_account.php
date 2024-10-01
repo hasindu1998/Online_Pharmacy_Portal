@@ -83,6 +83,33 @@ if(isset($_POST['changePwBtn']))
     }
 }*/
 
+//profile pic upload
+if(isset($_POST['addProfilePic']))
+{
+  if(isset($_FILES['profilePIC']) && $_FILES['profilePIC']['error'] === UPLOAD_ERR_OK) 
+    {
+      $upload_name = $_FILES['profilePIC']['name'];
+        
+      //propic location
+      $target_directory = "./Images/Profile_Pics/";
+        
+      // Move pic to location
+      move_uploaded_file($_FILES['profilePIC']['tmp_name'],$target_directory . $upload_name);
+
+      // save file name in database
+      $query = "UPDATE user_info SET profilepic_url = '$upload_name' WHERE user_name = '" . $_SESSION['username'] . "'";
+      $result = mysqli_query($Connection, $query);
+      if ($result) 
+      {
+        exit();
+      } 
+      else 
+      {
+        // js alert ekk danna
+      }
+    }
+}
+
 //profile pic
 $baseProfilePicUrl = './Images/Profile_Pics/'; 
 $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProfilePicUrl.$_SESSION['profilePic_url']) : './Images/Profile_Pics/student-avatar-illustratio.jpg'; // Default profile picture
@@ -112,12 +139,12 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
             <div class="profile-pic">
                   <img src="<?php echo $profilePicUrl; ?>">
                 </div> 
-                   <div class="upload-profile">
+                  <div class="upload-profile">
                     <form action="my_account.php" method="POST">
-                    <input type="file" name="profile" accept=".jpg,.jpeg,.png,.pdf" >
-                    <button type="submit" name="addProfileBtn" class="addProfileBtn">Add Profile</button>
+                        <input type="file" name="profilePIC" accept=".jpg,.jpeg,.png" >
+                        <button type="submit" name="addProfilePic" class="addProfileBtn">Add Picture</button>
                     </form>
-                   </div>
+                  </div>
                    <div class="background-img">
                     <img src="./Images/myaccount-background-image.png" alt="background-image">
                    </div>
@@ -130,7 +157,7 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                 </div>
         <div class="box">
         <div class="account-information-form-container">
-               <form action="my_account.php" method="post">
+               <form action="my_account.php" method="POST">
                   <div class="my-account-form">
                   <h3>Account Information</h3>
                      <div class="account-edit">
