@@ -34,7 +34,7 @@ else
     <div class="container">
         
         <h2>Place Your Order</h2>
-        <form action="paymentpage.php" method="POST" >
+        <form action="./paymentpage.php" method="POST">
             <div class="step">
                 <h3>Step 1</h3>
                 <label for="username">First Name</label>
@@ -59,7 +59,7 @@ else
                 
                 
                 <button type="submit" id="place-order-btn" name="placeorder">Place My Order</button>
-                <button type="button"id = delete-order-btn name="delete_btn"> Delete Order </button>
+                <button type="button"id = "delete-order-btn" name="delete_btn"> Delete Order </button>
                 
                 
             </div>

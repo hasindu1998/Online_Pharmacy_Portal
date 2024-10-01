@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 01, 2024 at 08:14 AM
+-- Generation Time: Oct 01, 2024 at 07:47 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -85,7 +85,8 @@ INSERT INTO `Orders` (`order_id`, `user_name`, `order_status`, `order_type`, `qt
 (2, 'user01', 'Pending', 'General', 1, 'Kulanya Lisaldi', '456 Marine Drive', 'Galle', '80000', NULL, 4, 4500.00, '2024-09-17 12:42:40'),
 (3, 'user01', 'Pending', 'Prescription', 3, 'Kulanya Lisaldi', '789 Kandy Street', 'Kandy', '20000', 'Prescription2.jpeg', 5, 150.00, '2024-09-17 12:42:40'),
 (4, 'user02', 'Pending', 'General', 4, 'Deshan GGD', '25 Temple Road', 'Negombo', '11500', NULL, 1, 600.00, '2024-09-17 12:42:40'),
-(5, 'user02', 'Pending', 'Prescription', 2, 'Deshan GGD', '18 Beach Road', 'Matara', '81000', 'Prescription1.png', 3, 400.00, '2024-09-17 12:42:40');
+(5, 'user02', 'Pending', 'Prescription', 2, 'Deshan GGD', '18 Beach Road', 'Matara', '81000', 'Prescription1.png', 3, 400.00, '2024-09-17 12:42:40'),
+(14, 'user01', 'Pending', 'General', 1, 'Kulanya Lisaldi', 'Somi Kelum', 'Kegalle', '71220', NULL, 4, 4500.00, '2024-10-01 17:42:39');
 
 -- --------------------------------------------------------
 
@@ -97,6 +98,8 @@ CREATE TABLE `Payment` (
   `payment_id` int(11) NOT NULL,
   `order_id` int(11) DEFAULT NULL,
   `amount` decimal(10,2) DEFAULT NULL,
+  `bank` varchar(50) DEFAULT NULL,
+  `remark` text DEFAULT NULL,
   `payment_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `receipt_url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -105,11 +108,11 @@ CREATE TABLE `Payment` (
 -- Dumping data for table `Payment`
 --
 
-INSERT INTO `Payment` (`payment_id`, `order_id`, `amount`, `payment_date`, `receipt_url`) VALUES
-(2, 2, 4500.00, '2024-09-14 03:45:00', 'receipt2.pdf'),
-(3, 3, 150.00, '2024-09-13 09:15:00', 'receipt3.pdf'),
-(4, 4, 600.00, '2024-09-15 05:50:00', 'receipt4.pdf'),
-(5, 5, 400.00, '2024-09-14 03:00:00', 'receipt5.pdf');
+INSERT INTO `Payment` (`payment_id`, `order_id`, `amount`, `bank`, `remark`, `payment_date`, `receipt_url`) VALUES
+(2, 2, 4500.00, NULL, NULL, '2024-09-14 03:45:00', 'receipt2.pdf'),
+(3, 3, 150.00, NULL, NULL, '2024-09-13 09:15:00', 'receipt3.pdf'),
+(4, 4, 600.00, NULL, NULL, '2024-09-15 05:50:00', 'receipt4.pdf'),
+(5, 5, 400.00, NULL, NULL, '2024-09-14 03:00:00', 'receipt5.pdf');
 
 -- --------------------------------------------------------
 
@@ -162,7 +165,7 @@ CREATE TABLE `User_info` (
 --
 
 INSERT INTO `User_info` (`user_name`, `first_name`, `last_name`, `email`, `phone_no`, `password`, `profilepic_url`, `acc_status`, `user_type`) VALUES
-('admin01', 'Moditha', 'Marasingha', 'moditha2003@gmail.com', '0716899444', 'mod123', 'propic3.jpeg', 'Active', 'Admin'),
+('admin01', 'Moditha', 'Marasingha', 'moditha2003@gmail.com', '0716899444', 'mod123', 'WhatsApp Image 2023-10-02 at 8.12.10 PM.jpeg', 'Active', 'Admin'),
 ('manager01', 'Hasindu', 'Sankalpa', 'sam.wilson@pharmacyx.com', '0772245566', 'managerPass02', 'propic4.jpeg', 'Active', 'Manager'),
 ('manager02', 'Medhani', 'Paboda', 'kate.brown@pharmacyx.com', NULL, 'managerPass03', 'propic2.png', 'Active', 'Manager'),
 ('user01', 'Kulanya', 'Lisaldi', 'alice.johnson@gmail.com', '1234567891', 'userPass01', 'propic5.jpeg', 'Active', 'Customer'),
@@ -221,7 +224,7 @@ ALTER TABLE `Messages`
 -- AUTO_INCREMENT for table `Orders`
 --
 ALTER TABLE `Orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `Payment`

@@ -1,10 +1,11 @@
 <?php 
 session_start();
 
+require_once './db_Config/config.php';
+
 // get order details from order_product.php
 if(isset($_POST['placeorder']))
 {
-    require_once './db_Config/config.php';
 
     $product_id = $_POST['product_id'];
     $username = $_SESSION['username'];
@@ -51,14 +52,15 @@ if(isset($_POST['Submit_payment']))
     $row = mysqli_fetch_assoc($result);
     $order_id = $row['order_id'];
 
+    // Move file
+    move_uploaded_file($_FILES['payment_slip']['tmp_name'],$target_directory . $payslipurl);
+
     //add payment details to payments table
-    $sql = "INSERT INTO Payment (order_id, amount, bank, remark, recipt_url)
+    $sql = "INSERT INTO Payment (order_id, amount, bank, remark, receipt_url)
             VALUES ('$order_id', '$paid_amount', '$bank', '$payment_remark', '$payslipurl')";
     $result = mysqli_query($Connection,$sql);
-
     if($result)
     {
-        move_uploaded_file($_FILES['payment_slip']['tmp_name'],$target_directory . $payslipurl);
         echo "<script>alert('Payment Submitted Successfully!')</script>";
         header('location: ./index.php');
     }
@@ -83,10 +85,6 @@ if(isset($_POST['Delete_order']))
         echo "<script>alert('Order Deleted Successfully!')</script>";
         header('location: ./index.php');
     }
-}
-else
-{
-    header('location: ./index.php');
 }
 
 ?>
