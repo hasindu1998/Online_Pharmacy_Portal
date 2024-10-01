@@ -38,7 +38,19 @@ if($_SERVER['REQUEST_METHOD']==='POST')
         $description = $_POST['description'];
         $img_url = "test.jpg";
 
-        //Upload an image
+        if(isset($_FILES['prdct_IMAGE']) && $_FILES['prdct_IMAGE']['error'] === UPLOAD_ERR_OK)
+        {
+            $upload_name = $_FILES['prdct_IMAGE']['name'];
+            
+            // target location
+            $target_directory = "./Images/product-icons/";
+            
+            // Move file
+            move_uploaded_file($_FILES['prdct_IMAGE']['tmp_name'],$target_directory . $upload_name);
+
+            // save file name in database
+            $img_url = $upload_name;
+        }
 
         $sql = "INSERT INTO Products (product_name, product_description, price, stock_quantity, image_url, expire_date ) VALUES ('$product_name', '$description', '$price', '$quantity', '$img_url', '$expire_date')";
     
@@ -96,7 +108,7 @@ if($_SERVER['REQUEST_METHOD']==='POST')
                         <input type="text" class="add-products-inputs" placeholder="Quantity" name="quantity" >
                     </div>
                     <div class="add-product row">
-                        <input type="file" class="add-product-inputs choose-file-input">
+                        <input type="file" class="add-product-inputs choose-file-input" name="prdct_IMAGE">
                     </div>
                     <div class="add-product-row description_box">
                         <textarea name="description" placeholder="Description" cols="55" rows="4" ></textarea>

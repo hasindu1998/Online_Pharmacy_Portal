@@ -20,7 +20,7 @@ if (isset($_POST["submitBtn"]))
     $upload_name = NULL; 
 
     // Check file was submitted or not
-    if (isset($_FILES['cntactFile']) && $_FILES['cntactFile']['error'] === UPLOAD_ERR_OK) 
+    if(isset($_FILES['cntactFile']) && $_FILES['cntactFile']['error'] === UPLOAD_ERR_OK) 
     {
         $upload_name = $_FILES['cntactFile']['name'];
         
