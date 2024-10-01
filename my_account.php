@@ -112,13 +112,18 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
             <div class="profile-pic">
                   <img src="<?php echo $profilePicUrl; ?>">
                 </div> 
-                   <a href="#">Edit Profile</a>
+                   <div class="upload-profile">
+                    <form action="my_account.php" method="POST">
+                    <input type="file" name="profile" accept=".jpg,.jpeg,.png,.pdf" >
+                    <button type="submit" name="addProfileBtn" class="addProfileBtn">Add Profile</button>
+                    </form>
+                   </div>
                    <div class="background-img">
                     <img src="./Images/myaccount-background-image.png" alt="background-image">
                    </div>
                      <div class="delete-account-container">
                       <form action="my_account.php" method="POST">
-                             <button type="submit" name="deleteBtn" class="delete-account-button">Delete Acoount</button>
+                             <button type="submit" onclick="confirmDelete()" name="deleteBtn" class="delete-account-button">Delete Acoount</button>
                       </form>
                       
                      </div>
