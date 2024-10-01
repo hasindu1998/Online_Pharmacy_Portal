@@ -22,7 +22,7 @@
   
 }*/
 
-document.getElementById('change-password-form').addEventListener('submit', function(e) {
+/*document.getElementById('change-password-form').addEventListener('submit', function(e) {
    e.preventDefault();
    const password = document.getElementById('password').value;
    const confirmPassword = document.getElementById('confirmPassword').value;
@@ -32,4 +32,15 @@ document.getElementById('change-password-form').addEventListener('submit', funct
    } else {
        alert('Registration Successful!');
    }
-});
+});*/
+
+function confirmDelete() {
+   if (confirm("Are you sure you want to delete this account?")) {
+       // Code to delete the account
+       alert("Account deleted");
+   } else {
+       // User canceled the deletion
+       alert("Account not deleted");
+   }
+}
+
