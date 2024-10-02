@@ -22,7 +22,7 @@ if($result)
   $firstName = $row['first_name'];
   $lastName = $row['last_name'];
   $username = $row['user_name'];
-  $phone = 0;
+  $phone = $row['phone_no'];
   $email = $row['email'];
   $password = $row['password'];
 
@@ -36,7 +36,7 @@ if(isset($_POST['saveBtn']))
   $phone = $_POST['phone'];
   $email = $_POST['email'];
 
-  $sql = "UPDATE user_info SET first_name = '$firstName', last_name = '$lastName', email = '$email' WHERE user_name = '" . $_SESSION['username'] . "'";
+  $sql = "UPDATE user_info SET first_name = '$firstName', last_name = '$lastName', email = '$email', phone_no = '$phone' WHERE user_name = '" . $_SESSION['username'] . "'";
   $result = mysqli_query($Connection, $sql);
 
   if($result && mysqli_affected_rows($Connection) > 0)
@@ -142,7 +142,7 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                 </div> 
                   <div class="upload-profile">
                     <form action="my_account.php" method="POST" enctype="multipart/form-data">
-                        <input type="file" name="profilePIC" accept=".jpg,.jpeg,.png" >
+                        <input type="file" name="profilePIC" class="profilePIC" accept=".jpg,.jpeg,.png" >
                         <button type="submit" name="addProfilePic" class="addProfileBtn">Add Picture</button>
                     </form>
                   </div>
@@ -233,26 +233,29 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                     <th>Message</th>
                     <th>Reply</th>
                   </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>I want to know the availability of paracetamol.</td>
-                    <td>yes available</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>I want to know the availability of paracetamol.</td>
-                    <td>yes available</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>I want to know the availability of paracetamol.</td>
-                    <td>yes available</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>I want to know the availability of paracetamol.</td>
-                    <td>yes available</td>
-                  </tr>
+                  <?php 
+                      $sql = "SELECT * FROM Messages WHERE response_text IS NOT NULL;";
+                      $result = mysqli_query($Connection, $sql);
+
+                      if(mysqli_num_rows($result) > 0)
+                      {
+                        while($row = $result->fetch_assoc()) 
+                        {
+                          $messageID = $row['message_id'];
+                          $message = $row['message_text'];
+                          $reply = $row['response_text'];
+
+                        echo" <tr>
+                              <td>$messageID</td>
+                              <td>$message</td>
+                              <td>$reply</td>
+                         </tr>";
+
+                        }
+                      }
+
+                  ?>
+                  
                   
                 </table>
             </div>
