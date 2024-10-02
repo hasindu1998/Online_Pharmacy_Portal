@@ -72,22 +72,6 @@ else
   <link rel="icon" type="image/png" sizes="16x16" href="./Images/Pharmacy X Icon.png">
 </head>
 <body>
-<<<<<<< HEAD
-  <div class="container-top">
-    <div class="main-container">
-      <div class="container">
-        <div class="login-container">
-          <div class="login-image-container">
-            <img src="./Images/Login-image.jpg" alt="" class="login-image">
-          </div>
-          <div class="login-form">
-            <form action="" method="post">
-              <h3 class="login-heading">Log In</h3>
-              <div class="login-inputs-box">
-                <input type="text" class="username-box" name="username" placeholder="Username">
-    
-                <input type="text" class="username-box" name="password" placeholder="Password">
-=======
   <div class="main-container">
     <div class="container">
       <div class="login-container">
@@ -111,29 +95,17 @@ else
   
               <div class="signup-button-container">
                 <a href="./register.php" class="signup-button">Sign Up</a>
->>>>>>> 488e64bfe83a423fa17ea2eea7014e4d98128a49
               </div>
-              <div class="login-button-container">
-                <button type="submit" name="signin" class="login-button">Login</button>
-              </div>
-    
-              <div class="signup-container">
-                <h3 class="signup-heading">Still don't have an account?</h3>
-    
-                <div class="signup-button-container">
-                  <a href="./register.php" class="signup-button">Sign Up</a>
-                </div>
 
-                <p class="error"> <?php echo $errors; ?> </p>
-    
-                <div class="pages-container">
-                  <a href="./t&c.php" class="page-links">Terms & Conditions</a>
-                  <h4 class="middle-section">||</h4>
-                  <a href="./privacyPolicy.php" class="page-links">Privacy Policy</a>
-                </div>
+              <p class="error"> <?php echo $errors; ?> </p>
+  
+              <div class="pages-container">
+                <a href="./t&c.php" class="page-links">Terms & Conditions</a>
+                <h4 class="middle-section">||</h4>
+                <a href="./privacyPolicy.php" class="page-links">Privacy Policy</a>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
