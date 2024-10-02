@@ -152,7 +152,7 @@ if(mysqli_num_rows($result) > 0){
 
   <div class="manager-dashboard-container">
     <div class="orders-container">
-      <h1 class="manager-headings">Orders</h1>
+        <h1 class="manager-headings">Orders</h1>
       <div class="order-table-container">
           <table class="order-table">
             <tr>
@@ -236,8 +236,7 @@ if(mysqli_num_rows($result) > 0){
           <form action="manager_DB.php" method="POST">
             <div class="check-admin">
                 <input type="text" class="check-admin-input" placeholder="UserName" name="adminInput" value= "<?php echo $inputValue; ?>">
-                <button type="submit" class="check-admin-button" name="check">Check</button>
-              
+                <button type="submit" class="check-admin-button" name="check">Check</button> 
             </div>
 
             <div class="admin-satus-container">

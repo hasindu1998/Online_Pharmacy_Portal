@@ -37,8 +37,8 @@ else
     <?php include("./header.php"); ?>
     <div class="main-image-container">
         <div class="main-heading-container">
-            <h1 class="main-heading">Order Medicine Easily by Uploading Prescription</h1>
-           <a href="#prducts"><button class="main-heading-button" >Try Now</button></a>
+            <h1 class="main-heading">Quick, Easy, and Affordable Healthcare Solutions.</h1>
+           <a href="#prducts"><button class="main-heading-button" >Shop Now</button></a>
         </div>
         
             <img src="./Images/Product-Page-Image.jpg" alt="" class="main-image">
