@@ -70,6 +70,10 @@ if($_SERVER['REQUEST_METHOD']==='POST')
     }
 }
 
+//Handle the form for delete
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -159,8 +163,11 @@ if($_SERVER['REQUEST_METHOD']==='POST')
                                     <td>$pName</td>
                                     <td>$qty</td>
                                     <td>$P_price</td>
-                                    <td><form action='addDelete_Product.php' method='POST'><button class='edit-product-button'>Edit</button></form></td>
-                                    <td><form action='addDelete_Product.php' method='POST'><button class='delete-product-button'>Delete</button></form></td>
+                                    <form action='addDelete_Product.php' method='POST'>
+                                    <input type='hidden' name='product_id' value='$pID'>
+                                    <td><button type='submit' name='editprdct' class='edit-product-button'>Edit</button></td>
+                                    <td><button type='submit' name='deletprdct' class='delete-product-button'>Delete</button></td>
+                                    </form>
                                 </tr>";
                         }
                     }

@@ -38,7 +38,7 @@ else
     <div class="main-image-container">
         <div class="main-heading-container">
             <h1 class="main-heading">Order Medicine Easily by Uploading Prescription</h1>
-            <button class="main-heading-button">Try Now</button>
+           <a href="#prducts"><button class="main-heading-button" >Try Now</button></a>
         </div>
         
             <img src="./Images/Product-Page-Image.jpg" alt="" class="main-image">
@@ -48,7 +48,7 @@ else
 
     <div class="products-section-container">
         <div class="products-heading-container">
-            <div class="product-heading">Products</div>
+            <div class="product-heading" id="prducts" >Products</div>
         </div>
          <div class="product-content-container">
 
