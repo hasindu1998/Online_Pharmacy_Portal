@@ -82,9 +82,9 @@ else
           <form action="" method="post">
             <h3 class="login-heading">Log In</h3>
             <div class="login-inputs-box">
-              <input type="text" class="username-box" name="username" placeholder="Username">
+              <input type="text" class="username-box" name="username" placeholder="Username" required>
   
-              <input type="text" class="username-box" name="password" placeholder="Password">
+              <input type="password" class="username-box" name="password" placeholder="Password" required>
             </div>
             <div class="login-button-container">
               <button type="submit" name="signin" class="login-button">Login</button>
