@@ -44,7 +44,9 @@ if (isset($_POST["submitBtn"]))
     $result = mysqli_query($Connection, $query);
     if ($result) 
     {
+        echo "<script> alert('Message sent successfully'); </script>";
         header('Location: index.php');
+        
         exit();
     } 
     else 
@@ -83,7 +85,7 @@ if (isset($_POST["submitBtn"]))
         </div>
 
      <div class="contact_form_container">
-        <form action="contact.php" name="detailForm" onsubmit="return validateForm()" method="POST" enctype="multipart/form-data">
+        <form action="contact.php" name="detailForm" method="POST" enctype="multipart/form-data">
             <div class="contact-form">
                      <div class="account-edit">
                         <div class="input-container">
