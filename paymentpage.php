@@ -83,6 +83,8 @@ if(isset($_POST['Submit_payment']))
 }
 if(isset($_POST['Delete_order']))
 {
+    $username = $_SESSION['username'];
+
     //get order id
     $sql = "SELECT order_id FROM Orders WHERE user_name = '$username' ORDER BY order_id DESC LIMIT 1";
     $result = mysqli_query($Connection,$sql);
@@ -95,6 +97,7 @@ if(isset($_POST['Delete_order']))
     if($result)
     {
         echo "<script>alert('Order Deleted Successfully!')</script>";
+        sleep(1);
         header('location: ./index.php');
     }
 }
@@ -147,10 +150,12 @@ if(isset($_POST['Delete_order']))
                 <textarea id="payment-remark" name="payment_remark" placeholder="Type your comments" required></textarea>
                     
 
-                <button type="submit" name="Submit_payment" id="Submitbtn"> Proceed Payment </button>
-                <button type="submit" name="Delete_order" id="deletebtn"> Delete Order </button>
+                <button type="submit" name="Submit_payment" id="place-order-btn"> Proceed Payment </button>
 
             </div>
+        </form>
+        <form action="paymentpage.php" method="POST">
+            <button type="submit" name="Delete_order" id="delete-order-btn" > Delete Order </button>
         </form>
     </div>
 

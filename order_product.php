@@ -59,7 +59,6 @@ else
                 
                 
                 <button type="submit" id="place-order-btn" name="placeorder">Place My Order</button>
-                <button type="button"id = "delete-order-btn" name="delete_btn"> Delete Order </button>
                 
                 
             </div>
