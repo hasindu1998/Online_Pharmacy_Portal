@@ -67,6 +67,9 @@ p
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    border-style: none;
+    padding: 40px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .signin_form h2
