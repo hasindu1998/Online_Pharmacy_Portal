@@ -71,6 +71,24 @@ if($_SERVER['REQUEST_METHOD']==='POST')
 }
 
 //Handle the form for delete
+if(isset($_POST['deletprdct']))
+{
+    $product_id = $_POST['product_id'];
+
+    $sql = "DELETE FROM Products WHERE product_id = '$product_id'";
+    $result = mysqli_query($Connection, $sql);
+
+    if($result)
+    {
+        echo " <script> alert('Product deleted!'); </script> ";
+        header('location: addDelete_Product.php');
+    }
+    else
+    {
+        echo " <script> alert('Error!'); </script> ";
+        header('location: addDelete_Product.php');
+    }
+}
 
 
 

@@ -234,7 +234,7 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                     <th>Reply</th>
                   </tr>
                   <?php 
-                      $sql = "SELECT * FROM Messages WHERE response_text IS NOT NULL;";
+                      $sql = "SELECT * FROM Messages WHERE response_text IS NOT NULL AND user_name='" . $_SESSION['username'] . "';";
                       $result = mysqli_query($Connection, $sql);
 
                       if(mysqli_num_rows($result) > 0)
@@ -252,6 +252,21 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                          </tr>";
 
                         }
+                      }
+                      else
+                      {
+                        echo "<tr>";
+                        echo "<td colspan='3'>No messages found</td>";
+                        echo "</tr>";
+                        echo "<tr>";
+                        echo "<td colspan='3'>No messages found</td>";
+                        echo "</tr>";
+                        echo "<tr>";
+                        echo "<td colspan='3'>No messages found</td>";
+                        echo "</tr>";
+                        echo "<tr>";
+                        echo "<td colspan='3'>No messages found</td>";
+                        echo "</tr>";
                       }
 
                   ?>
