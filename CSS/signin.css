@@ -3,21 +3,25 @@
   font-family: "Roboto";
 }
 
+.container-top{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding-top: 100px;
+}
 .main-container{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .container{
   display: flex;
   justify-content: center;
+  align-items: center;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 10px 50px;
   border-radius: 15px;
-  margin-top: 20px;
-  margin-bottom: auto;
 }
 
 .login-image{
