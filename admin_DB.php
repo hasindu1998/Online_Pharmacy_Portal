@@ -192,7 +192,6 @@ if(isset($_POST['submit_rply']))
     if($result && mysqli_affected_rows($Connection) > 0)
     {
         header("Location: ".$_SERVER['PHP_SELF']);
-        exit();
     }
 }
 //delete message
@@ -206,7 +205,6 @@ if(isset($_POST['Delete_msg']))
     if($result && mysqli_affected_rows($Connection) > 0)
     {
         header("Location: ".$_SERVER['PHP_SELF']);
-        exit();
     }
 }
 ?>
