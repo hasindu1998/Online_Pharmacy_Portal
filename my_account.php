@@ -188,7 +188,7 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                          </div>
                      </div>
                      <div class="save-changes-container">
-                         <button type="submit" name="saveBtn" class="save-changes-button" >Save Changes</button>
+                         <button type="submit" onclick="alert('Successfully changed')" name="saveBtn" class="save-changes-button" >Save Changes</button>
                      </div>
                   </div>
                </form>
