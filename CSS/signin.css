@@ -100,11 +100,12 @@
 
 .signup-button{
   background-color: white;
-  color: #3b1a69;
+  color: #0098DA;
   text-align: center;
   text-decoration: none;
   border-style: solid;
   font-family: Arial;
+  border-color: #0098DA;
 }
 .signup-button:hover{
   background-color: #0098DA;
