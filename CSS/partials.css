@@ -57,7 +57,8 @@
 
 .user_profile img 
 {
-  height: 41px;
+  height: 45px;
+  width: 45px;
   border-radius: 100%;
   display: inline-block;
 }

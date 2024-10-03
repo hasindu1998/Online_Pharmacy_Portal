@@ -151,7 +151,7 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                    </div>
                      <div class="delete-account-container">
                       <form action="my_account.php" method="POST">
-                             <button type="submit" onclick="confirmDelete()" name="deleteBtn" class="delete-account-button">Delete Acoount</button>
+                             <button type="submit" onclick="confirmDelete()" name="deleteBtn" class="delete-account-button">Delete Account</button>
                       </form>
                       
                      </div>

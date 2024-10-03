@@ -8,7 +8,7 @@ if(!isset($_SESSION['username']))
 {
     header('location: ./signin.php');
 }
-
+//Update contact details
 if (isset($_POST["submitBtn"])) 
 {
     $user_name = $_SESSION['username'];
@@ -44,7 +44,7 @@ if (isset($_POST["submitBtn"]))
     $result = mysqli_query($Connection, $query);
     if ($result) 
     {
-        echo "<script> alert('Message sent successfully'); </script>";
+        echo "<script>alert('Message sent successfully');</script>";
         header('Location: index.php');
         
         exit();
