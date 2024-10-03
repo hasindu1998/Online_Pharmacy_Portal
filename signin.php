@@ -85,7 +85,12 @@ else
               <div class="login-inputs-box">
                 <input type="text" class="username-box" name="username" placeholder="Username" required>
     
-                <input type="password" class="username-box" name="password" placeholder="Password" required>
+                <input type="password" class="username-box" name="password" placeholder="Password" id="password" required>
+              </div>
+              <div class="special-tasks">
+                <div class="remember-me">
+                  <input type="checkbox" class="remember-me" id="showpw" onclick="showPassword()" > <h4 class="remember-me-content">Show Password</h4>
+                </div>
               </div>
               <div class="login-button-container">
                 <button type="submit" name="signin" class="login-button">Login</button>
@@ -112,5 +117,6 @@ else
       </div>
     </div>
   </div>
+  <script src="./JS/signin.js"></script>
 </body>
 </html>
