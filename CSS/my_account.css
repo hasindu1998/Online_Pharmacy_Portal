@@ -219,6 +219,7 @@ p
 table
 {
     width: 100%;
+    height: fit-content;
     border-collapse: collapse;
 }
 
@@ -226,13 +227,14 @@ table th
 {
     background-color: #0098DA;
     color: black;
-    height: 60px;
+    height: 70px;
     
 }
 
 table td
 {
     text-align: center;
+    height: 70px;
 }
 
 table tr
