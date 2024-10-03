@@ -1,4 +1,5 @@
 <?php
+session_start();
 $result;
 if(isset($_POST['Submit_frm']))
 
