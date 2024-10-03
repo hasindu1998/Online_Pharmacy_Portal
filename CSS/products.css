@@ -3,7 +3,7 @@
 
 .main-image-container{
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
 }
 
 .main-heading{
@@ -12,7 +12,7 @@
   font-weight: 500;
   z-index: 1;
   width: 100%;
-  margin-top: 200px;
+  margin-top: 240px;
   margin-left: 45px;
 }
 
@@ -36,11 +36,41 @@ background-color: #0098DA;
 color: #fff;
 }
 
-.main-image{
-  height: 700px;
+
+
+#main-image{
+  height: 820px;
+  width: 1000px;
   object-fit: contain;
   object-position: right;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation: fadeIn 1s forwards;
 }
+
+.main-image:active{
+  opacity: 1;
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
 
 .products-heading-container{
   display: flex;

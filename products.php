@@ -37,11 +37,14 @@ else
     <?php include("./header.php"); ?>
     <div class="main-image-container">
         <div class="main-heading-container">
-            <h1 class="main-heading">Quick, Easy, and Affordable Healthcare Solutions.</h1>
+            <h1 class="main-heading">Quick, Easy, and Affordable <br> Healthcare Solutions.</h1>
            <a href="#prducts"><button class="main-heading-button" >Shop Now</button></a>
         </div>
         
-            <img src="./Images/Product-Page-Image.jpg" alt="" class="main-image">
+        <div id="image-container">
+            <img src="./Images/product-image-slider-1.jpg" alt="" id="main-image">
+        </div>
+            
         
         
     </div>
@@ -88,6 +91,9 @@ else
     </div>
 
     <?php include("./footer.php"); ?>
+
+    <script src="./JS/products.js"></script>
+    
 </body>
 
 </html>
