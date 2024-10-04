@@ -1,7 +1,6 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color:white;
     background-image: url(./Images/FAQ-background.jpg);
     
 }
@@ -10,11 +9,6 @@ body {
     padding-right: 0px;
     padding-bottom: 200px;
     padding-top:  0%;
-    background-color:#f9f9f9;
-   
-    
- 
-    
 
 }
 h1{

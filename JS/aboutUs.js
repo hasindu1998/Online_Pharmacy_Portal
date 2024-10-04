@@ -1,3 +1,5 @@
+//By Medhani
+
 // Get references to the button and the hidden content
 const learnMoreBtn = document.getElementById('learnMoreBtn');
 const hiddenContent = document.getElementById('hidden-content');

@@ -13,7 +13,7 @@
 <body>
     <header>
         <div class="main_header">
-            <img src="images/Pharmacy X.png" alt="PharmacyX Logo">
+        <a href="index.php"><img src="images/Pharmacy X.png" alt="PharmacyX Logo"></a>
             <nav>
                 <ul>
                     <li><a href="index.php">Home</a></li>

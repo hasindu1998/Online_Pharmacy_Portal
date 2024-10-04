@@ -130,7 +130,7 @@ if(isset($_POST['Submit_frm']))
 
             <br>
 
-            <button type="submit" name="Submit_frm" id="submit" >SingUp</button>
+            <button type="submit" name="Submit_frm" id="submit" >Create Account</button>
             
             
 
