@@ -70,18 +70,18 @@ if(isset($_POST['changePwBtn']))
   }
 }
 
-/*if(isset($_POST['deleteBtn']))
+if(isset($_POST['deleteBtn']))
 {
   $sql = "DELETE FROM user_info WHERE user_name = '" . $_SESSION['username'] . "';";
   $result = mysqli_query($Connection, $sql);
 
   if($result && mysqli_affected_rows($Connection) > 0)
-    {
+  {
 
-      header("Location: logout.php");
-      exit();
-    }
-}*/
+    header("Location: logout.php");
+    exit();
+  }
+}
 
 //profile pic upload
 if(isset($_POST['addProfilePic']))
