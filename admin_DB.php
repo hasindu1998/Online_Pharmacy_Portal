@@ -164,7 +164,7 @@ else
 
 
 //Order Requests section mark as shipped functionality
-if(isset($_POST['Shipped']) && $_POST['Shipped'] == 'shipped')
+if(isset($_POST['Shipped']))
 {
     $orderID = $_POST['order_id'];
 
@@ -272,7 +272,7 @@ if(isset($_POST['Delete_msg']))
                                 END AS payment_status
                             FROM Orders o
                             LEFT JOIN Payment p ON o.order_id = p.order_id
-                            WHERE o.order_status = 'Pending';";
+                            WHERE o.order_status IN ('Pending', 'Shipped');";
 
                     $result = mysqli_query($Connection, $sql);
 
@@ -296,7 +296,24 @@ if(isset($_POST['Delete_msg']))
                                 $orderType = "<a href='$PrescriptionLink' target='_blank'>Prescription</a>";
                             }
 
-                            echo "<tr>
+                            if($orderStat=='Shipped')
+                            {
+                                echo "<tr>
+                                    <td><span class='ordertb_title'>ID:</span> $ID </td>
+                                    <td><span class='ordertb_title'>Customer:</span> $customer</td>
+                                    <td><span class='ordertb_title'>Date:</span> $date</td>
+                                    <td><span class='ordertb_title'>Status:</span> <span class='order_stat_row'>$status</span> </td>
+                                    <td><span class='ordertb_title'>Total:</span> $total </td>
+                                    <td><span class='order_stat_row'>$paymentStatus</span></td>
+                                    <td>$orderType</td>
+                                    <td class='disable_box'>
+                                        <input type='submit' value='Mark as Shipped' disabled>
+                                    </td>
+                                </tr>";
+                            }
+                            else
+                            {
+                                echo "<tr>
                                     <td><span class='ordertb_title'>ID:</span> $ID </td>
                                     <td><span class='ordertb_title'>Customer:</span> $customer</td>
                                     <td><span class='ordertb_title'>Date:</span> $date</td>
@@ -305,13 +322,13 @@ if(isset($_POST['Delete_msg']))
                                     <td><span class='order_stat_row'>$paymentStatus</span></td>
                                     <td>$orderType</td>
                                     <td class='shipped_box'>
-                                        <span class='ordertb_title'>Mark as Shipped:</span>
-                                        <form action='admin_DB.php' method='POST' id='Shipped_form'>
+                                        <form action='admin_DB.php' method='POST'>
                                             <input type='hidden' value=\"$ID\" name='order_id'>
-                                            <input type='checkbox' name='Shipped' value=\"shipped\" onchange='Mark_shipped()'>
+                                            <input type='submit' name='Shipped' value='Mark as Shipped'>
                                         </form>
                                     </td>
                                 </tr>";
+                            }
                         }
                     }
                     else
