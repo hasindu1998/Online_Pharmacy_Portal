@@ -86,7 +86,7 @@ if(isset($_POST['deleteBtn']))
 //profile pic upload
 if(isset($_POST['addProfilePic']))
 {
-  if(isset($_FILES['profilePIC']) && $_FILES['profilePIC']['error'] === UPLOAD_ERR_OK) 
+  if(isset($_FILES['profilePIC']) && $_FILES['profilePIC']['error'] === UPLOAD_ERR_OK)
     {
       $upload_name = $_FILES['profilePIC']['name'];
         
@@ -114,7 +114,6 @@ if(isset($_POST['addProfilePic']))
 //profile pic
 $baseProfilePicUrl = './Images/Profile_Pics/'; 
 $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProfilePicUrl.$_SESSION['profilePic_url']) : './Images/Profile_Pics/student-avatar-illustratio.jpg'; // Default profile picture
-
 
 ?>
 

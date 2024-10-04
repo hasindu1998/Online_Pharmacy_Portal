@@ -90,6 +90,28 @@ if(isset($_POST['deletprdct']))
     }
 }
 
+//Handle the form for edit
+if(isset($_POST['editprdct']))
+{
+    $product_id = $_POST['product_id'];
+    $qty = $_POST['qtyedit'];
+    $price = $_POST['Priceedt'];
+
+    $sql = "UPDATE Products SET stock_quantity = '$qty', price = '$price' WHERE product_id = '$product_id'";
+    $result = mysqli_query($Connection, $sql);
+
+    if($result)
+    {
+        echo " <script> alert('Product updated!'); </script> ";
+        header('location: addDelete_Product.php');
+    }
+    else
+    {
+        echo " <script> alert('Error!'); </script> ";
+        header('location: addDelete_Product.php');
+    }
+}
+
 
 
 ?>
@@ -179,9 +201,9 @@ if(isset($_POST['deletprdct']))
                             echo "<tr>
                                     <td>$pID</td>
                                     <td>$pName</td>
-                                    <td>$qty</td>
-                                    <td>$P_price</td>
                                     <form action='addDelete_Product.php' method='POST'>
+                                    <td><input type='number' value='$qty' min='0' name='qtyedit'></td>
+                                    <td><input type='text' value='$P_price' name='Priceedt'></td>
                                     <input type='hidden' name='product_id' value='$pID'>
                                     <td><button type='submit' name='editprdct' class='edit-product-button'>Edit</button></td>
                                     <td><button type='submit' name='deletprdct' class='delete-product-button'>Delete</button></td>
