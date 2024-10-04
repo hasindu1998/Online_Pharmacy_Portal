@@ -36,9 +36,9 @@ session_start();
       
       <div id="hidden-content" class="hidden-content">
       
-      <a href="/products.php">Check our product</a><br>
-      <a href="/t&c.php">Check t&c</a><br>
-      <a href = "/privacyPolicy.php">Check Privacy Policy</a>
+      <a href="products.php">Check our product</a><br>
+      <a href="t&c.php">Check t&c</a><br>
+      <a href = "privacyPolicy.php">Check Privacy Policy</a>
           
         </div>
         

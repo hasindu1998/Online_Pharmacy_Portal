@@ -45,10 +45,10 @@ else
 
                 <label for="name">Address</label>
                 <input type="text" id="street" placeholder="street" name="street" placeholder="Street" required>
-                <input type="text" id="City"  placeholder="City" name="city" required>
+                <input type="text" id="City"  placeholder="City" name="city" >
 
                 <label for="postal-code">Postal Code</label>
-                <input type="text" id="postal-code" name="postal_code" placeholder="Enter Your Postal Code" required>
+                <input type="text" id="postal-code" name="postal_code" placeholder="Enter Your Postal Code" required >
 
                 <label for="quantity">Quantity</label>
                 <input type="number" id="quantity" name="quantity" min="1" value="1">

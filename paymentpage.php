@@ -38,6 +38,7 @@ if(isset($_POST['placeorder']))
         echo "<script>alert('Failed to Place Order!')</script>";
     }
 }
+
 if(isset($_POST['Submit_payment']))
 {
     $username = $_SESSION['username'];
@@ -68,8 +69,8 @@ if(isset($_POST['Submit_payment']))
     move_uploaded_file($_FILES['payment_slip']['tmp_name'],$target_directory . $payslipurl);
 
     //add payment details to payments table
-    $sql = "INSERT INTO Payment (order_id, amount, bank, remark, receipt_url)
-            VALUES ('$order_id', '$paid_amount', '$bank', '$payment_remark', '$payslipurl')";
+    $sql = "INSERT INTO Payment (order_id, amount,bank,remark, receipt_url)
+            VALUES ('$order_id', '$paid_amount',' $bank ','$payment_remark','$payslipurl')";
     $result = mysqli_query($Connection,$sql);
     if($result)
     {
@@ -138,8 +139,8 @@ if(isset($_POST['Delete_order']))
             <div class="step">
                 <h3>Step 3</h3>
                 <label for="deposited-amount">Deposited Amount</label>
-                <input type="number" id="deposited-amount" name="deposited_amount" required>
-
+                <input type="number" id="deposited-amount" name="deposited_amount" required >
+                
                 <label for="bank">Bank</label>
                 <input type="text" id="bank" name="bank" required>
 
