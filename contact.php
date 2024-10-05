@@ -51,7 +51,7 @@ if (isset($_POST["submitBtn"]))
     } 
     else 
     {
-        echo "<script>alert('Message didn't sent successfully');</script>";
+        echo "<script>alert('Message doesn't sent successfully');</script>";
     }
 
 }
@@ -114,7 +114,7 @@ if (isset($_POST["submitBtn"]))
                          </div>
                      </div>
                 <div class="submit-button-container">
-                    <button type="submit" name="submitBtn" class="submit-button" >Submit</button>
+                    <button type="submit" name="submitBtn" class="submit-button" onclick="alert('Message sent successfully')" >Submit</button>
                 </div>
             </div>
         </form>
