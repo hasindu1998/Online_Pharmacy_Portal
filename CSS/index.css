@@ -93,6 +93,11 @@ img.displaySlide
     color: #585858;
 }
 
+.popular-products h2
+{
+    font-size: 28px;
+}
+
 .products
 {
     display: flex;
