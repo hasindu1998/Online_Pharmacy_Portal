@@ -205,13 +205,16 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                  <div class="account-edit">
                    <div class="input-container">
                      <label>New Password</label>
-                     <input type="password" name="newPwd" id="newPassword"  required>
+                     <input type="password" name="newPwd" class="newPassword"  required>
                    </div>
-                   <div class="input-container">
+                   <div class="input-container">]
+
                      <label>Confirm Password</label>
-                     <input type="password" name="cnfmPwd" id="confirmPassword"  required>
+                     <input type="password" name="cnfmPwd" class="confirmPassword" onkeyup=checkPassword(); required>
                   </div>
                  </div>
+                 
+                 <div class="display-error"> </div>
                  <div class="save-changes-container">
                      <button type="submit" name="changePwBtn" class="save-changes-button" >Save Changes</button>
                      <p id="error-message" style="color: red;"> </p>

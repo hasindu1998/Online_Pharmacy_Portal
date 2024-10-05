@@ -51,7 +51,7 @@ if (isset($_POST["submitBtn"]))
     } 
     else 
     {
-        // js alert ekk danna
+        echo "<script>alert('Message didn't sent successfully');</script>";
     }
 
 }
