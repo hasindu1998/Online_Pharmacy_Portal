@@ -117,6 +117,12 @@ tr,th,td{
   margin-left: 30px;
 }
 
+.display-error{
+  color: red;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .form-rows{
   display: flex;
 }

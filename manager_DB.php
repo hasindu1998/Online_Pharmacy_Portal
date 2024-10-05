@@ -215,12 +215,13 @@ if(mysqli_num_rows($result) > 0){
               </div>
               <div class="form-rows">
                 <input type="text" class="form-input-box" placeholder="Username" name="username">
-                <input type="text" class="form-input-box-right" placeholder="E mail" name="email">
+                <input type="text" class="form-input-box-right " placeholder="E mail" name="email">
               </div>
               <div class="form-rows">
-                <input type="password" class="form-input-box" placeholder="Enter Password" name="userpassword">
-                <input type="password" class="form-input-box-right" placeholder="Re-Enter Password">
+                <input type="password" class="form-input-box enter-password" placeholder="Enter Password" name="userpassword">
+                <input type="password" class="form-input-box-right re-enter-password" placeholder="Re-Enter Password" onkeyup= checkPassword();>
               </div>
+              <div class="display-error"> </div>
               <div class="add-admin-button-container">
                 <button type="submit" class="add-admin-button" name="addAdmin">Add Admin</button>
               </div>
@@ -256,7 +257,7 @@ if(mysqli_num_rows($result) > 0){
   </div>
 
   <?php include("./footer.php"); ?>
-  <script src="./js/index.js"></script>
+  <script src="./js/manager_DB.js"></script>
 </body>
 
 </html>
