@@ -70,6 +70,7 @@ if(isset($_POST['changePwBtn']))
   }
 }
 
+//delete account
 if(isset($_POST['deleteBtn']))
 {
   $sql = "DELETE FROM user_info WHERE user_name = '" . $_SESSION['username'] . "';";
@@ -207,10 +208,10 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                      <label>New Password</label>
                      <input type="password" name="newPwd" class="newPassword"  required>
                    </div>
-                   <div class="input-container">]
+                   <div class="input-container">
 
                      <label>Confirm Password</label>
-                     <input type="password" name="cnfmPwd" class="confirmPassword" onkeyup=checkPassword(); required>
+                     <input type="password" name="cnfmPwd" class="confirmPassword" onkeyup="checkPassword()" required>
                   </div>
                  </div>
                  

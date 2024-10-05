@@ -7,7 +7,7 @@ function checkPassword(){
         document.querySelector('.display-error').style.color = 'blue';
     }
     else{
-        document.querySelector('.display-error').innerHTML = "Password does not match";
+        document.querySelector('.display-error').innerHTML = "Password mismatch";
         document.querySelector('.display-error').style.color = 'red';
     }
     if(passwordConfirm === '')
@@ -28,4 +28,3 @@ function confirmDelete() {
        alert("Account not deleted");
    }
 }
-
