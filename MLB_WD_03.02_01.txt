@@ -1,0 +1,13 @@
+Group ID - MLB_WD_03.02_01
+Batch No - 03.2
+Topic - Online Pharmacy Portal
+Project Link - 
+Github Repo - 
+
+Group Members
+
+1. IT23539990 | Marasingha M A M N - 0716899444 - Admin dashboard, Login, My orders
+2. IT23538832 | Sankalpa M M G H C - 0767892645 - Products page, Manager dashboard, Privacy Policy
+3. IT23539372 | Deshan G G D       - 0770401105 - Product add/delete page, T&C
+4. IT23573000 | Lisaldi H B K      - 0701536490 - Home, Contact us, User account
+5. IT23569522 | Medhani W A P      - 0701545074 - Register page, Order page, FAQ, About us
