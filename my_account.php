@@ -215,7 +215,7 @@ $profilePicUrl = isset($_SESSION['profilePic_url']) ? htmlspecialchars($baseProf
                   </div>
                  </div>
                  
-                 <div class="display-error"> </div>
+                 <div class="display-error"></div>
                  <div class="save-changes-container">
                      <button type="submit" name="changePwBtn" class="save-changes-button" >Save Changes</button>
                      <p id="error-message" style="color: red;"> </p>

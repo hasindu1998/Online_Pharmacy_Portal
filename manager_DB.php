@@ -219,7 +219,7 @@ if(mysqli_num_rows($result) > 0){
               </div>
               <div class="form-rows">
                 <input type="password" class="form-input-box enter-password" placeholder="Enter Password" name="userpassword">
-                <input type="password" class="form-input-box-right re-enter-password" placeholder="Re-Enter Password" onkeyup= checkPassword();>
+                <input type="password" class="form-input-box-right re-enter-password" placeholder="Re-Enter Password" onkeyup= "checkPassword();">
               </div>
               <div class="display-error"> </div>
               <div class="add-admin-button-container">
