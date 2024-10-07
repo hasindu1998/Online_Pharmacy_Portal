@@ -1,3 +1,6 @@
+//Sankalpa M M G H C
+//IT23538832
+
 
 //Check Password is matched with the Re-enter password
 function checkPassword(){
