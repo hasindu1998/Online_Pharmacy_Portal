@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 01, 2024 at 07:47 PM
+-- Generation Time: Oct 06, 2024 at 07:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -83,10 +83,10 @@ CREATE TABLE `Orders` (
 INSERT INTO `Orders` (`order_id`, `user_name`, `order_status`, `order_type`, `qty`, `receiver_name`, `street`, `city`, `postal_code`, `prescription_url`, `product_id`, `Order_total`, `order_date`) VALUES
 (1, 'user01', 'Pending', 'Prescription', 2, 'Kulanya Lisaldi', '123 Galle Road', 'Colombo', '00100', 'Prescription3.png', 2, 800.00, '2024-09-17 12:42:40'),
 (2, 'user01', 'Pending', 'General', 1, 'Kulanya Lisaldi', '456 Marine Drive', 'Galle', '80000', NULL, 4, 4500.00, '2024-09-17 12:42:40'),
-(3, 'user01', 'Pending', 'Prescription', 3, 'Kulanya Lisaldi', '789 Kandy Street', 'Kandy', '20000', 'Prescription2.jpeg', 5, 150.00, '2024-09-17 12:42:40'),
-(4, 'user02', 'Pending', 'General', 4, 'Deshan GGD', '25 Temple Road', 'Negombo', '11500', NULL, 1, 600.00, '2024-09-17 12:42:40'),
-(5, 'user02', 'Pending', 'Prescription', 2, 'Deshan GGD', '18 Beach Road', 'Matara', '81000', 'Prescription1.png', 3, 400.00, '2024-09-17 12:42:40'),
-(14, 'user01', 'Pending', 'General', 1, 'Kulanya Lisaldi', 'Somi Kelum', 'Kegalle', '71220', NULL, 4, 4500.00, '2024-10-01 17:42:39');
+(3, 'user01', 'Shipped', 'Prescription', 3, 'Kulanya Lisaldi', '789 Kandy Street', 'Kandy', '20000', 'Prescription2.jpeg', 5, 150.00, '2024-09-17 12:42:40'),
+(4, 'user02', 'Shipped', 'General', 4, 'Deshan GGD', '25 Temple Road', 'Negombo', '11500', NULL, 1, 600.00, '2024-09-17 12:42:40'),
+(5, 'user02', 'Shipped', 'Prescription', 2, 'Deshan GGD', '18 Beach Road', 'Matara', '81000', 'Prescription1.png', 3, 400.00, '2024-09-17 12:42:40'),
+(15, 'user01', 'Pending', 'General', 1, 'Moditha Marasingha', 'Somi Kelum', 'Kegalle', '71220', NULL, 4, 4500.00, '2024-10-01 18:29:29');
 
 -- --------------------------------------------------------
 
@@ -112,7 +112,8 @@ INSERT INTO `Payment` (`payment_id`, `order_id`, `amount`, `bank`, `remark`, `pa
 (2, 2, 4500.00, NULL, NULL, '2024-09-14 03:45:00', 'receipt2.pdf'),
 (3, 3, 150.00, NULL, NULL, '2024-09-13 09:15:00', 'receipt3.pdf'),
 (4, 4, 600.00, NULL, NULL, '2024-09-15 05:50:00', 'receipt4.pdf'),
-(5, 5, 400.00, NULL, NULL, '2024-09-14 03:00:00', 'receipt5.pdf');
+(5, 5, 400.00, NULL, NULL, '2024-09-14 03:00:00', 'receipt5.pdf'),
+(6, 15, 4500.00, 'BOC', 'test 1234', '2024-10-01 18:29:46', 'IC-Payment-Receipt-11290_PDF.pdf');
 
 -- --------------------------------------------------------
 
@@ -137,10 +138,10 @@ CREATE TABLE `Products` (
 INSERT INTO `Products` (`product_id`, `product_name`, `product_description`, `price`, `stock_quantity`, `image_url`, `expire_date`) VALUES
 (1, 'Paracetamol', 'Effective pain relief for headaches and fever. 500mg tablets.', 150.00, 100, 'Pharmacy-Isometric-Icons-2.png', '0000-00-00'),
 (2, 'Amoxicillin', 'Antibiotic used to treat bacterial infections. 250mg capsules.', 600.00, 50, 'Pharmacy-Isometric-Icons-3.png', '0000-00-00'),
-(3, 'Vitamin C Tablets', 'Boost your immune system with Vitamin C. 1000mg tablets.', 200.00, 200, 'Pharmacy-Isometric-Icons-9.png', '0000-00-00'),
-(4, 'Blood Pressure Monitor', 'Accurate and easy-to-use blood pressure monitor.', 4500.00, 30, 'Pharmacy-Isometric-Icons-5.png', '0000-00-00'),
+(3, 'Vitamin C Tablets', 'Boost your immune system with Vitamin C. 1000mg tablets.', 200.00, 100, 'Pharmacy-Isometric-Icons-9.png', '0000-00-00'),
+(4, 'Blood Pressure Monitor', 'Accurate and easy-to-use blood pressure monitor.', 2500.00, 30, 'Pharmacy-Isometric-Icons-5.png', '0000-00-00'),
 (5, 'Insulin Syringe', 'Disposable insulin syringes with fine needles.', 50.00, 500, 'Pharmacy-Isometric-Icons-4.png', '0000-00-00'),
-(21, 'Gablin', 'Students Use Only', 250.00, 100, 'Pharmacy-Isometric-Icons-1.png', '2024-11-29');
+(26, 'Vitamin E Capsules', 'Best For Hair Growth and Skin. Low Price', 30.00, 70, 'vitamin E.webp', '2025-03-04');
 
 -- --------------------------------------------------------
 
@@ -165,11 +166,13 @@ CREATE TABLE `User_info` (
 --
 
 INSERT INTO `User_info` (`user_name`, `first_name`, `last_name`, `email`, `phone_no`, `password`, `profilepic_url`, `acc_status`, `user_type`) VALUES
-('admin01', 'Moditha', 'Marasingha', 'moditha2003@gmail.com', '0716899444', 'mod123', 'WhatsApp Image 2023-10-02 at 8.12.10 PM.jpeg', 'Active', 'Admin'),
+('admin01', 'Moditha', 'Marasingha', 'moditha2003@gmail.com', '0716899555', 'mod123', 'WhatsApp Image 2023-10-02 at 8.12.10 PM.jpeg', 'Active', 'Admin'),
 ('manager01', 'Hasindu', 'Sankalpa', 'sam.wilson@pharmacyx.com', '0772245566', 'managerPass02', 'propic4.jpeg', 'Active', 'Manager'),
-('manager02', 'Medhani', 'Paboda', 'kate.brown@pharmacyx.com', NULL, 'managerPass03', 'propic2.png', 'Active', 'Manager'),
+('manager02', 'Medhani', 'Paboda', 'medhani@gmail.com', NULL, 'managerPass03', 'propic2.png', 'Active', 'Manager'),
+('Nipun12', 'Nipun', 'Munasingha', 'nipun@gmail.com', NULL, '1234', NULL, 'Active', 'Customer'),
+('ThimiraT', 'Thimira', 'Thathsarana', 'thimira@gmail.com', '0774545787', 'Thimira1234', NULL, 'Inactive', 'Customer'),
 ('user01', 'Kulanya', 'Lisaldi', 'alice.johnson@gmail.com', '1234567891', 'userPass01', 'propic5.jpeg', 'Active', 'Customer'),
-('user02', 'Deshan', 'GGD', 'bob.williams@gmail.com', NULL, 'userPass02', 'propic1.jpg', 'Active', 'Customer');
+('user02', 'Deshan', 'GGD', 'bob.williams@gmail.com', '0774545787', 'userPass02', 'propic1.jpg', 'Active', 'Customer');
 
 --
 -- Indexes for dumped tables
@@ -224,19 +227,19 @@ ALTER TABLE `Messages`
 -- AUTO_INCREMENT for table `Orders`
 --
 ALTER TABLE `Orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `Payment`
 --
 ALTER TABLE `Payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `Products`
 --
 ALTER TABLE `Products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Constraints for dumped tables
