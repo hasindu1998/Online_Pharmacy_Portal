@@ -1,3 +1,5 @@
+//By Medhani
+
 document.addEventListener('DOMContentLoaded', function() {
     const faqQuestions = document.querySelectorAll('.faq-question');
 
