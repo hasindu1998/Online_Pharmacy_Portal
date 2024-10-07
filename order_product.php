@@ -1,6 +1,6 @@
 <?php
 session_start();
-//IT23569522 Medhani W A P
+
 // get product id from products.php
 if(isset($_POST['buynowbtn']))
 {
