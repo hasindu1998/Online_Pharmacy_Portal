@@ -40,6 +40,39 @@ if(isset($_POST['placeorder']))
     }
 }
 
+if(isset($_POST['Updateandorder']))
+{
+    $order_id_updte = $_POST['order_id'];
+    $product_id = $_POST['product_id'];
+    $username = $_SESSION['username'];
+    $fullname = $_POST['firstname']." ".$_POST['Lastname'];
+    $street = $_POST['street'];
+    $city = $_POST['city'];
+    $postal_code = $_POST['postal_code'];
+    $quantity = $_POST['quantity'];
+    $order_type = "General";
+
+    //update order details
+    $sql = "UPDATE Orders SET qty = '$quantity', receiver_name = '$fullname', street = '$street', city = '$city', postal_code = '$postal_code' WHERE order_id = '$order_id_updte'";
+    $result = mysqli_query($Connection,$sql);
+    if($result)
+    {
+        echo "<script>alert('Order Updated Successfully!')</script>";
+    }
+    else
+    {
+        echo "<script>alert('Failed to Update Order!')</script>";
+    }
+    
+    //get product price
+    $sql = "SELECT * FROM Products WHERE product_id = '$product_id'";
+    $result = mysqli_query($Connection,$sql);
+    $row = mysqli_fetch_assoc($result);
+
+    //calculate total price
+    $total_price = $row['price'] * $quantity;
+}
+
 if(isset($_POST['Submit_payment']))
 {
     $username = $_SESSION['username'];
@@ -104,27 +137,6 @@ if(isset($_POST['Delete_order']))
     }
 }
 
-//update order details
-if(isset($_POST['Update_dtails']))
-{
-    $firstName = $_POST['firstname'];
-    $lastName = $_POST['Lastname'];
-    $street = $_POST['street'];
-    $city = $_POST['city'];
-    $postal_code = $_POST['postal_code'];
-    $quantity = $_POST['quantity'];
-    $sql = "UPDATE Orders SET receiver_name = '$firstName $lastName', street = '$street', city = '$city', postal_code = '$postal_code', qty = '$quantity' WHERE product_id = '$product_id'";
-    $result = mysqli_query($Connection,$sql);
-    if($result)
-    {
-        echo "<script>alert('Order Details Updated Successfully!')</script>";
-    }
-    else
-    {
-        echo "<script>alert('Failed to Update Order Details!')</script>";
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -181,6 +193,7 @@ if(isset($_POST['Update_dtails']))
             <button type="submit" name="Delete_order" id="delete-order-btn" > Delete Order </button>
         </form>
         <form action="Update_order.php" method="POST">
+            <input type="hidden" id="product_id" name="product_id" value="<?php echo $product_id; ?>">
             <button type="submit" name="Edit_order" id="Edit_order" > Edit Order </button>
         </form>
     </div>

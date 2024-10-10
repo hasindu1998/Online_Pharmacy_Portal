@@ -1,10 +1,12 @@
 <?php
 session_start();
+require_once './db_Config/config.php';
 //IT23569522 Medhani W A P
 //edit order function
 if(isset($_POST['Edit_order']))
 {
     //get order id
+    $product_id = $_POST['product_id'];
     $username = $_SESSION['username'];
     $sql = "SELECT order_id FROM Orders WHERE user_name = '$username' ORDER BY order_id DESC LIMIT 1";
     $result = mysqli_query($Connection,$sql);
@@ -24,7 +26,7 @@ if(isset($_POST['Edit_order']))
             $postal_code = $row['postal_code'];
             $quantity = $row['qty'];
 
-            $nameParts = explode(" ",$fullName);
+            $nameParts = explode(" ",$fullname);
             $firstName = $nameParts[0];
             $lastName = $nameParts[1];
         } 
@@ -73,15 +75,18 @@ if(isset($_POST['Edit_order']))
                 <input type="text" id="City"  placeholder="City" name="city" value="<?php echo $city ?>" >
 
                 <label for="postal-code">Postal Code</label>
-                <input type="text" id="postal-code" name="postal_code" placeholder="Enter Your Postal Code" value="<?php echo $$postal_code ?>" required >
+                <input type="text" id="postal-code" name="postal_code" placeholder="Enter Your Postal Code" value="<?php echo $postal_code ?>" required >
 
                 <label for="quantity">Quantity</label>
                 <input type="number" id="quantity" name="quantity" min="1" value="1" value="<?php echo $quantity ?>" >
 
                 <br>
+
+                <input type="hidden"  name="order_id" value="<?php echo $order_id; ?>">
+
+                <input type="hidden" id="product_id" name="product_id" value="<?php echo $product_id; ?>">
                 
-                <button type="submit" id="place-order-btn" name="placeorder">Place My Order</button>
-                <button type="submit" id="place-order-btn" name="Update_dtails">Update Details</button>
+                <button type="submit" id="place-order-btn" name="Updateandorder">Update And Proceed to Payment</button>
             </div>
         </form>
     </div>
