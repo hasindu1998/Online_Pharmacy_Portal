@@ -1,4 +1,4 @@
-# Online_Pharmacy_Portal
+<h1 align="center" id="title">Online Pharmacy Portal</h1>
 
 ## Colour Palette
 
