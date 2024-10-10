@@ -143,8 +143,8 @@ if(isset($_POST['editprdct']))
                 <form action="addDelete_Product.php" method ="POST" enctype="multipart/form-data">
                     
                     <div class="add-porduct-row">
-                        <input type="text" class="add-products-inputs" placeholder="Product Name" name="product_name" >
-                        <input type="text" class="add-products-inputs product-name-input" placeholder="Price" name="price" >
+                        <input type="text" class="add-products-inputs product-name" placeholder="Product Name" name="product_name" onkeydown="checkProductDetails();">
+                        <input type="text" class="add-products-inputs product-name-input product-price" placeholder="Price" name="price" onkeydown="checkProductDetails();">
                     </div>
 
                     <div class="add-product-row">
@@ -157,7 +157,7 @@ if(isset($_POST['editprdct']))
                     <div class="add-product-row description_box">
                         <textarea name="description" placeholder="Description" cols="55" rows="4" ></textarea>
                     </div>
-
+                    <div class="error-content"></div>
                     <div class="submit-button-container">
                         <button class="submit-button" name="submitbtn" >Submit</button>
                     </div>
@@ -227,6 +227,6 @@ if(isset($_POST['editprdct']))
     </div>
 
     <?php include ("./footer.php"); ?>
-
+    <script src="./JS/addDelete_Product.js"></script>
 </body>
 </html>
