@@ -104,6 +104,27 @@ if(isset($_POST['Delete_order']))
     }
 }
 
+//update order details
+if(isset($_POST['Update_dtails']))
+{
+    $firstName = $_POST['firstname'];
+    $lastName = $_POST['Lastname'];
+    $street = $_POST['street'];
+    $city = $_POST['city'];
+    $postal_code = $_POST['postal_code'];
+    $quantity = $_POST['quantity'];
+    $sql = "UPDATE Orders SET receiver_name = '$firstName $lastName', street = '$street', city = '$city', postal_code = '$postal_code', qty = '$quantity' WHERE product_id = '$product_id'";
+    $result = mysqli_query($Connection,$sql);
+    if($result)
+    {
+        echo "<script>alert('Order Details Updated Successfully!')</script>";
+    }
+    else
+    {
+        echo "<script>alert('Failed to Update Order Details!')</script>";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -158,6 +179,9 @@ if(isset($_POST['Delete_order']))
         </form>
         <form action="paymentpage.php" method="POST">
             <button type="submit" name="Delete_order" id="delete-order-btn" > Delete Order </button>
+        </form>
+        <form action="Update_order.php" method="POST">
+            <button type="submit" name="Edit_order" id="Edit_order" > Edit Order </button>
         </form>
     </div>
 
