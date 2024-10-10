@@ -32,55 +32,37 @@ session_start();
     <div class="FAQ">
         <h2>Frequently Asked Questions</h2>
 
-        <div class="faq1">
+        
             <div class="faq-question">1.What services does this wesite provide? </div>
             <div class="faq-answer">Our website offers prescription refills, over-the-counter medicines, health consultations, and home delivery services.</div>
-        </div>
-
-        <div class="faq2">
+        
             <div class="faq-question">2.How do I order a product?</div>
             <div class="faq-answer">First you should logging to the our website and create your own accout.Then you can vist our order page in our PhamacyX website.The you can make your own orders</div>
-        </div>
-
-        <div class="faq3">
+        
             <div class="faq-question">3.How long does it take to process a prescription?</div>
             <div class="faq-answer">Most prescriptions are processed within 1-2 business days. For same-day pickup, please place your request by [cut-off time].</div>
-        </div>
-
-        <div class="faq4">
+        
             <div class="faq-question">4.Can I pay for my prescription online?</div>
             <div class="faq-answer">No.You can't pay online.You can do your payment to the bank and opload your bank recipte to the website.</div>
-        </div>
-
-        <div class="faq5">
+        
             <div class="faq-question">5.Are your products genuine and safe?</div>
             <div class="faq-answer">All our products are sourced from licensed suppliers and meet strict quality and safety standards.</div>
-        </div>
-
-        <div class="faq6">
+        
             <div class="faq-question">6.Is my personal information secure on your website?</div>
             <div class="faq-answer">Yes, we use encryption and other security measures to ensure your personal and payment information is protected.</div>
-        </div>
-
-        <div class="faq7">
+        
             <div class="faq-question">7.Do you offer medication counseling?</div>
             <div class="faq-answer">Yes, our pharmacists can provide detailed information on how to take your medication, potential side effects, and drug interactions.</div>
-        </div>
-
-        <div class="faq8">
+        
             <div class="faq-question">8.Can I view my prescription history online?</div>
             <div class="faq-answer">Yes, by logging into your account, you can view your prescription history, refill requests, and order status.</div>
-        </div>
-
-        <div class="faq9">
+        
             <div class="faq-question">9.Can I cancel my order?</div>
             <div class="faq-answer">You can cancel an order before it has been processed by contacting our support team or through your account dashboard.</div>
-        </div>
-
-        <div class="faq10">
+        
             <div class="faq-question">10.Can I return a medication?</div>
             <div class="faq-answer">Due to health and safety regulations, we cannot accept returns on prescription medications. However, OTC products may be eligible for return under certain conditions.</div>
-        </div>
+        
     </div>
 
     <script src="./js/faq.js"></script>
