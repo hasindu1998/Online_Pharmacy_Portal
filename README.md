@@ -2,13 +2,11 @@
 
 <p align="center">
  <img src="./Preview/Screenshot 2024-10-10 at 1.02.21 PM.png" alt="Image" style="width: 80%;"/>
- Homepage
- <br>
+ <br>Homepage<br><br>
  <img src="./Preview/Screenshot 2024-10-10 at 1.02.40 PM.png" alt="Image" style="width: 80%;"/>
- Products Page
- <br>
+ <br>Products Page<br><br>
  <img src="./Preview/Screenshot 2024-10-10 at 1.03.00 PM.png" alt="Image" style="width: 80%;"/>
- Admin Dashboard
+<br>Admin Dashboard<br><br>
 </p>
 
 ## Colour Palette
