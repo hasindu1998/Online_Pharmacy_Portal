@@ -1,10 +1,15 @@
 <h1 align="center" id="title">Online Pharmacy Portal</h1>
 
+<p align="center">
  <img src="./Preview/Screenshot 2024-10-10 at 1.02.21 PM.png" alt="Image" style="width: 80%;"/>
+ Homepage
  <br>
  <img src="./Preview/Screenshot 2024-10-10 at 1.02.40 PM.png" alt="Image" style="width: 80%;"/>
+ Products Page
  <br>
  <img src="./Preview/Screenshot 2024-10-10 at 1.03.00 PM.png" alt="Image" style="width: 80%;"/>
+ Admin Dashboard
+</p>
 
 ## Colour Palette
 
