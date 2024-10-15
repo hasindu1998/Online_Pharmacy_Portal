@@ -35,8 +35,6 @@ h2 {
    padding-right: 0%;
     font-size: 80px;
 
-
-
 }
 
 /* FAQ Question */
@@ -45,17 +43,12 @@ h2 {
     background-color:skyblue;
     color:black;
     padding: 20px;
-    cursor: pointer;
     border: none;
     text-align:left;
     width: 100%;
     margin-bottom: 10px;
     border-radius: 5px;
-    outline:rgb(4, 168, 233);
-    transition: background-color 0.3s;
 }
-
-
 
 /* FAQ Answer  */
 .faq-answer {
@@ -70,7 +63,6 @@ h2 {
 }
 
 /* Image */
-
 
 .FAQImage {
     max-width: 50%;

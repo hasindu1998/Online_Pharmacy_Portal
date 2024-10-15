@@ -132,16 +132,11 @@ if(isset($_POST['Submit_frm']))
 
             <br>
 
-            <button type="submit" name="Submit_frm" id="submit" >Create Account</button>
-            
-            
+            <button type="submit" name="Submit_frm" id="submit" >Create Account</button>   
 
         </form>
         
     </div>
-    
-    
-
     
 </body>
 </html>
