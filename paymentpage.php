@@ -189,9 +189,15 @@ if(isset($_POST['Delete_order']))
 
             </div>
         </form>
+        <br>
+
         <form action="paymentpage.php" method="POST">
             <button type="submit" name="Delete_order" id="delete-order-btn" > Delete Order </button>
         </form>
+
+        <br>
+        
+
         <form action="Update_order.php" method="POST">
             <input type="hidden" id="product_id" name="product_id" value="<?php echo $product_id; ?>">
             <button type="submit" name="Edit_order" id="Edit_order" > Edit Order </button>
