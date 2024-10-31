@@ -84,7 +84,7 @@ if(isset($_POST['activate'])){
   }
 }
 
-//Deactivate adin function
+//Deactivate admin function
 if(isset($_POST['deactivate'])){
   $username = $_POST['adminInput'];
 
@@ -101,6 +101,7 @@ if(isset($_POST['deactivate'])){
     }
   }
 }
+
 
 if(isset($_POST['delete'])){
   $username = $_POST['adminInput'];

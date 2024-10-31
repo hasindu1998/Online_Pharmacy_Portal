@@ -22,4 +22,6 @@ function changeImage() {
     imageElement.src = images[countIndex]; 
     document.querySelector('.main-heading').innerHTML = heading[countIndex];
 }
+
+
 setInterval(changeImage, 3000);
